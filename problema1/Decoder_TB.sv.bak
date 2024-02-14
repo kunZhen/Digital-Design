@@ -1,0 +1,47 @@
+module BCD_Decoder_Testbench;
+
+  reg [3:0] test_input;
+  wire [6:0] test_output;
+
+  BCD_Decoder uut (
+    .switches(test_input),
+    .seg_display(test_output)
+  );
+
+  initial begin
+    // Prueba 1
+    test_input = 4'b0000;
+    #10;
+    
+    // Prueba 2
+    test_input = 4'b0001;
+    #10;
+    
+    // Prueba 3
+    test_input = 4'b0010;
+    #10;
+    
+    // Prueba 4
+    test_input = 4'b0111;
+    #10;
+    
+    // Prueba 5
+    test_input = 4'b1001;
+    #10;
+
+    // Prueba 6
+    test_input = 4'b0100;
+    #10;
+
+    // Prueba 7
+    test_input = 4'b1100;
+    #10;
+
+    // Prueba 8
+    test_input = 4'b1011;
+    #10;
+
+    $stop;
+  end
+
+endmodule

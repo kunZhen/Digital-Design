@@ -1,0 +1,15 @@
+vendor_name = ModelSim
+source_file = 1, C:/Users/jespinoz/Documents/TEC/Taller/Lab1/Decoder_TB.sv
+source_file = 1, C:/Users/jespinoz/Documents/TEC/Taller/Lab1/Decoder.sv
+source_file = 1, C:/Users/jespinoz/Documents/TEC/Taller/Lab1/db/Decoder.cbx.xml
+design_name = Decoder
+instance = comp, \bcd_output[0]~output , bcd_output[0]~output, Decoder, 1
+instance = comp, \bcd_output[1]~output , bcd_output[1]~output, Decoder, 1
+instance = comp, \bcd_output[2]~output , bcd_output[2]~output, Decoder, 1
+instance = comp, \bcd_output[3]~output , bcd_output[3]~output, Decoder, 1
+instance = comp, \bcd_output[4]~output , bcd_output[4]~output, Decoder, 1
+instance = comp, \binary_input[0]~input , binary_input[0]~input, Decoder, 1
+instance = comp, \binary_input[1]~input , binary_input[1]~input, Decoder, 1
+instance = comp, \binary_input[2]~input , binary_input[2]~input, Decoder, 1
+instance = comp, \binary_input[3]~input , binary_input[3]~input, Decoder, 1
+instance = comp, \~QUARTUS_CREATED_GND~I , ~QUARTUS_CREATED_GND~I, Decoder, 1

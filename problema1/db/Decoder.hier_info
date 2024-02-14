@@ -1,0 +1,12 @@
+|Decoder
+binary_input[0] => bcd_output[0].DATAIN
+binary_input[1] => bcd_output[1].DATAIN
+binary_input[2] => bcd_output[2].DATAIN
+binary_input[3] => bcd_output[3].DATAIN
+bcd_output[0] << binary_input[0].DB_MAX_OUTPUT_PORT_TYPE
+bcd_output[1] << binary_input[1].DB_MAX_OUTPUT_PORT_TYPE
+bcd_output[2] << binary_input[2].DB_MAX_OUTPUT_PORT_TYPE
+bcd_output[3] << binary_input[3].DB_MAX_OUTPUT_PORT_TYPE
+bcd_output[4] << <GND>
+
+
