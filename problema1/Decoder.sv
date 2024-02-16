@@ -1,11 +1,11 @@
 // Decodificador BCD de 4 bits
 module Decoder (
-    input logic [3:0] binary_input, // input de 4 bits
+    input logic [3:0] bcd_input, // input de 4 bits
     output logic [4:0] bcd_output	// output de 5 bits
 );
 
     always_comb begin // Se ejecuta cuando hay un cambio en los inputs
-        case (binary_input)
+        case (bcd_input)
             4'b0000: bcd_output = 5'b00000; // 0
             4'b0001: bcd_output = 5'b00001; // 1
             4'b0010: bcd_output = 5'b00010; // 2

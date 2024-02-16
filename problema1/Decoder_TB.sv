@@ -1,55 +1,47 @@
-module Decoder_TB;
+module Decoder_TB(
+    output logic [6:0] seg_output
+    );
 
-  reg [3:0] test_input;
-  wire [4:0] test_output;
+  reg [3:0] bcd_input;
+  reg [3:0] seg_input_tens;
+  reg [3:0] seg_input_units;
+  
+  wire [4:0] bcd_output;
+  wire [6:0] seg_output_units;
+  wire [6:0] seg_output_tens;
 
-  Decoder uut (
-    .binary_input(test_input),
-    .bcd_output(test_output)
+  Decoder decoder(
+    .bcd_input(bcd_input),
+    .bcd_output(bcd_output)
   );
 
+  
+  Sevenseg seg_tens(
+	 .seg_input(seg_input_tens),
+	 .seg_output(seg_output_tens)
+  );
+  
+   Sevenseg seg_units(
+	 .seg_input(seg_input_units),
+	 .seg_output(seg_output_units)
+  );
+  
+  
   initial begin
     // Prueba 1
-    test_input = 4'b0000;
-    #10;
-    $display("Test 1: Input = %b, Output = %b", test_input, test_output);
+	 
+    bcd_input = 4'b1100;
+    #40;
+    seg_input_tens = {3'b000, bcd_output[4]};
+    seg_input_units = bcd_output[3:0];
+    #40;
+	 
+    $display("Test 1: BCD Input = %b, BCD Output = %b", bcd_input, bcd_output);
+    $display("Test 1: Seven Segment Input Tens = %b, Seven Segment Output Tens  = %b", seg_input_tens, seg_output_tens);
+    $display("Test 1: Seven Segment Input Units = %b, Seven Segment Output Units = %b", seg_input_units, seg_output_units);
     
-    // Prueba 2
-    test_input = 4'b0001;
-    #10;
-    $display("Test 2: Input = %b, Output = %b", test_input, test_output);
-    
-    // Prueba 3
-    test_input = 4'b0010;
-    #10;
-    $display("Test 3: Input = %b, Output = %b", test_input, test_output);
-    
-    // Prueba 4
-    test_input = 4'b0111;
-    #10;
-    $display("Test 4: Input = %b, Output = %b", test_input, test_output);
-    
-    // Prueba 5
-    test_input = 4'b1001;
-    #10;
-    $display("Test 5: Input = %b, Output = %b", test_input, test_output);
-
-    // Prueba 6
-    test_input = 4'b0100;
-    #10;
-    $display("Test 6: Input = %b, Output = %b", test_input, test_output);
-
-    // Prueba 7
-    test_input = 4'b1100;
-    #10;
-    $display("Test 7: Input = %b, Output = %b", test_input, test_output);
-
-    // Prueba 8
-    test_input = 4'b1011;
-    #10;
-    $display("Test 8: Input = %b, Output = %b", test_input, test_output);
-
     $stop;
+	 
   end
 
 endmodule
