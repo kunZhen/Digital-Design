@@ -1,47 +1,31 @@
-module Decoder_TB(
-    output logic [6:0] seg_output
-    );
+module Decoder_TB();
 
-  reg [3:0] bcd_input;
-  reg [3:0] seg_input_tens;
-  reg [3:0] seg_input_units;
-  
-  wire [4:0] bcd_output;
-  wire [6:0] seg_output_units;
-  wire [6:0] seg_output_tens;
-
-  Decoder decoder(
-    .bcd_input(bcd_input),
-    .bcd_output(bcd_output)
-  );
-
-  
-  Sevenseg seg_tens(
-	 .seg_input(seg_input_tens),
-	 .seg_output(seg_output_tens)
-  );
-  
-   Sevenseg seg_units(
-	 .seg_input(seg_input_units),
-	 .seg_output(seg_output_units)
-  );
-  
-  
-  initial begin
-    // Prueba 1
-	 
-    bcd_input = 4'b1100;
-    #40;
-    seg_input_tens = {3'b000, bcd_output[4]};
-    seg_input_units = bcd_output[3:0];
-    #40;
-	 
-    $display("Test 1: BCD Input = %b, BCD Output = %b", bcd_input, bcd_output);
-    $display("Test 1: Seven Segment Input Tens = %b, Seven Segment Output Tens  = %b", seg_input_tens, seg_output_tens);
-    $display("Test 1: Seven Segment Input Units = %b, Seven Segment Output Units = %b", seg_input_units, seg_output_units);
-    
-    $stop;
-	 
-  end
-
+	logic [3:0] bcd_input;
+	logic [6:0] seven_segments; 
+	
+	Decoder deco(
+	.bcd_input(bcd_input),
+	.seven_segments(seven_segments)
+	);
+	
+	initial begin
+	
+		bcd_input = 4'b0000; #20; //0
+		bcd_input = 4'b0001; #20; //1
+		bcd_input = 4'b0010; #20; //2
+		bcd_input = 4'b0011; #20; //3
+		bcd_input = 4'b0100; #20; //4
+		bcd_input = 4'b0101; #20; //5
+		bcd_input = 4'b0110; #20; //6 
+		bcd_input = 4'b0111; #20; //7
+		bcd_input = 4'b1000; #20; //8
+		bcd_input = 4'b1001; #20; //9
+		bcd_input = 4'b1010; #20; //10
+		bcd_input = 4'b1011; #20; //11
+		bcd_input = 4'b1100; #20; //12
+		bcd_input = 4'b1101; #20; //13
+		bcd_input = 4'b1110; #20; //14
+		bcd_input = 4'b1111; #20; //15
+	
+	end
 endmodule

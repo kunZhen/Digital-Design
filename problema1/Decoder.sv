@@ -1,30 +1,27 @@
-// Decodificador BCD de 4 bits
-module Decoder (
-    input logic [3:0] bcd_input, // input de 4 bits
-    output logic [4:0] bcd_output	// output de 5 bits
+module Decoder(
+    input logic [3:0] bcd_input,
+    output logic [6:0] seven_segments
 );
 
-    always_comb begin // Se ejecuta cuando hay un cambio en los inputs
+	always @(bcd_input) begin
         case (bcd_input)
-            4'b0000: bcd_output = 5'b00000; // 0
-            4'b0001: bcd_output = 5'b00001; // 1
-            4'b0010: bcd_output = 5'b00010; // 2
-            4'b0011: bcd_output = 5'b00011; // 3
-            4'b0100: bcd_output = 5'b00100; // 4
-            4'b0101: bcd_output = 5'b00101; // 5
-            4'b0110: bcd_output = 5'b00110; // 6
-            4'b0111: bcd_output = 5'b00111; // 7
-            4'b1000: bcd_output = 5'b01000; // 8
-            4'b1001: bcd_output = 5'b01001; // 9
-            4'b1010: bcd_output = 5'b10000; // 10
-            4'b1011: bcd_output = 5'b10001; // 11
-            4'b1100: bcd_output = 5'b10010; // 12
-            4'b1101: bcd_output = 5'b10011; // 13
-            4'b1110: bcd_output = 5'b10100; // 14
-            4'b1111: bcd_output = 5'b10101; // 15
-            // Otros casos no contemplados, se pueden manejar según las necesidades
-            default: bcd_output = 5'b00000; // Por ejemplo, establecer a 0 en caso de entrada no válida
-        endcase
-    end
-
+            4'b0000: seven_segments = 7'b1000000; // Hex 0
+            4'b0001: seven_segments = 7'b1111001; // Hex 1
+            4'b0010: seven_segments = 7'b0100100; // Hex 2
+            4'b0011: seven_segments = 7'b0110000; // Hex 3
+            4'b0100: seven_segments = 7'b0011001; // Hex 4
+            4'b0101: seven_segments = 7'b0010010; // Hex 5
+            4'b0110: seven_segments = 7'b0000010; // Hex 6
+            4'b0111: seven_segments = 7'b1111000; // Hex 7
+            4'b1000: seven_segments = 7'b0000000; // Hex 8
+            4'b1001: seven_segments = 7'b0010000; // Hex 9
+            4'b1010: seven_segments = 7'b0001000; // Hex A
+            4'b1011: seven_segments = 7'b0000011; // Hex B
+            4'b1100: seven_segments = 7'b1000110; // Hex C
+            4'b1101: seven_segments = 7'b0100001; // Hex D
+            4'b1110: seven_segments = 7'b0000110; // Hex E
+            4'b1111: seven_segments = 7'b0001110; // Hex F
+            default: seven_segments = 7'b0000000; // Display blank for invalid input
+			endcase
+	end
 endmodule
