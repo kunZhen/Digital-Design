@@ -9,28 +9,110 @@ z2
 !i10f 100
 cModel Technology
 Z0 dC:/Users/Usuario/Documents/TallerDisenoDigital/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema2/simulation/modelsim
-Esum_1
-Z1 w1708117325
+Eseven_segments
+Z1 w1708282657
 Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z3 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 2
+R0
+Z4 8C:/Users/Usuario/Documents/TallerDisenoDigital/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema2/seven_segments.vhd
+Z5 FC:/Users/Usuario/Documents/TallerDisenoDigital/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema2/seven_segments.vhd
+l0
+L6 1
+VPc:YJT51NFnPUJN@K^UXO1
+!s100 i?f9589j9hU6dk=6L>c[Y2
+Z6 OV;C;2020.1;71
+31
+Z7 !s110 1708293235
+!i10b 1
+Z8 !s108 1708293235.000000
+Z9 !s90 -reportprogress|300|-93|-work|work|C:/Users/Usuario/Documents/TallerDisenoDigital/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema2/seven_segments.vhd|
+Z10 !s107 C:/Users/Usuario/Documents/TallerDisenoDigital/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema2/seven_segments.vhd|
+!i113 1
+Z11 o-93 -work work
+Z12 tExplicit 1 CvgOpt 0
+Aseven_segments_display
+R2
+R3
+DEx4 work 14 seven_segments 0 22 Pc:YJT51NFnPUJN@K^UXO1
+!i122 2
+l27
+L17 13
+VXl5alaPU6J<h8Mi[<A13]0
+!s100 5XG]EEf8<bRR8FoFBQ0_D0
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Eseven_segmets_tb
+Z13 w1708293208
+R2
+R3
+!i122 3
+R0
+Z14 8C:/Users/Usuario/Documents/TallerDisenoDigital/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema2/seven_segmets_tb.vhd
+Z15 FC:/Users/Usuario/Documents/TallerDisenoDigital/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema2/seven_segmets_tb.vhd
+l0
+L6 1
+V[ik6h0PT[Lb<6]kWRMP7o3
+!s100 SDKNiL_IFBNVF26Rn;mzk1
+R6
+31
+R7
+!i10b 1
+R8
+Z16 !s90 -reportprogress|300|-93|-work|work|C:/Users/Usuario/Documents/TallerDisenoDigital/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema2/seven_segmets_tb.vhd|
+!s107 C:/Users/Usuario/Documents/TallerDisenoDigital/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema2/seven_segmets_tb.vhd|
+!i113 1
+R11
+R12
+Atestbench
+R2
+R3
+DEx4 work 16 seven_segmets_tb 0 22 [ik6h0PT[Lb<6]kWRMP7o3
+!i122 3
+l27
+L10 54
+Vc^@Vgm9o[WCkgn@==im=>3
+!s100 KXK;m4f2;:nQ]VgYH[;`]1
+R6
+31
+R7
+!i10b 1
+R8
+R16
+Z17 !s107 C:/Users/Usuario/Documents/TallerDisenoDigital/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema2/seven_segmets_tb.vhd|
+!i113 1
+R11
+R12
+Esum_1
+Z18 w1708117325
+R2
+R3
 !i122 0
 R0
-Z4 8C:/Users/Usuario/Documents/TallerDisenoDigital/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema2/sum_1.vhd
-Z5 FC:/Users/Usuario/Documents/TallerDisenoDigital/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema2/sum_1.vhd
+Z19 8C:/Users/Usuario/Documents/TallerDisenoDigital/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema2/sum_1.vhd
+Z20 FC:/Users/Usuario/Documents/TallerDisenoDigital/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema2/sum_1.vhd
 l0
 L6 1
 V_n5Mjj_j1<3Jz@3T=zj?U2
 !s100 <SZCOf>`oHFkK>V09cAh40
-Z6 OV;C;2020.1;71
+R6
 31
-Z7 !s110 1708246911
+R7
 !i10b 1
-Z8 !s108 1708246911.000000
-Z9 !s90 -reportprogress|300|-93|-work|work|C:/Users/Usuario/Documents/TallerDisenoDigital/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema2/sum_1.vhd|
-Z10 !s107 C:/Users/Usuario/Documents/TallerDisenoDigital/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema2/sum_1.vhd|
+R8
+Z21 !s90 -reportprogress|300|-93|-work|work|C:/Users/Usuario/Documents/TallerDisenoDigital/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema2/sum_1.vhd|
+Z22 !s107 C:/Users/Usuario/Documents/TallerDisenoDigital/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema2/sum_1.vhd|
 !i113 1
-Z11 o-93 -work work
-Z12 tExplicit 1 CvgOpt 0
+R11
+R12
 Asynth
 R2
 R3
@@ -45,19 +127,19 @@ R6
 R7
 !i10b 1
 R8
-R9
-R10
+R21
+R22
 !i113 1
 R11
 R12
 Esum_4
-Z13 w1708244246
+Z23 w1708244246
 R2
 R3
 !i122 1
 R0
-Z14 8C:/Users/Usuario/Documents/TallerDisenoDigital/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema2/sum_4.vhd
-Z15 FC:/Users/Usuario/Documents/TallerDisenoDigital/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema2/sum_4.vhd
+Z24 8C:/Users/Usuario/Documents/TallerDisenoDigital/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema2/sum_4.vhd
+Z25 FC:/Users/Usuario/Documents/TallerDisenoDigital/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema2/sum_4.vhd
 l0
 L6 1
 VV:SBlB]cEkho`S6fnHN;i0
@@ -67,8 +149,8 @@ R6
 R7
 !i10b 1
 R8
-Z16 !s90 -reportprogress|300|-93|-work|work|C:/Users/Usuario/Documents/TallerDisenoDigital/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema2/sum_4.vhd|
-Z17 !s107 C:/Users/Usuario/Documents/TallerDisenoDigital/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema2/sum_4.vhd|
+Z26 !s90 -reportprogress|300|-93|-work|work|C:/Users/Usuario/Documents/TallerDisenoDigital/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema2/sum_4.vhd|
+Z27 !s107 C:/Users/Usuario/Documents/TallerDisenoDigital/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema2/sum_4.vhd|
 !i113 1
 R11
 R12
@@ -86,49 +168,8 @@ R6
 R7
 !i10b 1
 R8
-R16
-R17
-!i113 1
-R11
-R12
-Esum_4_tb
-Z18 w1708246880
-R2
-R3
-!i122 2
-R0
-Z19 8C:/Users/Usuario/Documents/TallerDisenoDigital/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema2/sum_4_tb.vhd
-Z20 FC:/Users/Usuario/Documents/TallerDisenoDigital/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema2/sum_4_tb.vhd
-l0
-L6 1
-V0n?Wj>CF67bKV<dkfRa602
-!s100 B]MNm_bg_V]No5eZ;5<Ad2
-R6
-31
-R7
-!i10b 1
-R8
-Z21 !s90 -reportprogress|300|-93|-work|work|C:/Users/Usuario/Documents/TallerDisenoDigital/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema2/sum_4_tb.vhd|
-!s107 C:/Users/Usuario/Documents/TallerDisenoDigital/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema2/sum_4_tb.vhd|
-!i113 1
-R11
-R12
-Atestbench
-R2
-R3
-DEx4 work 8 sum_4_tb 0 22 0n?Wj>CF67bKV<dkfRa602
-!i122 2
-l26
-L10 51
-VbNWNB@@9Z73ZifQBU76^<3
-!s100 NYDe?WgS><z6XfUB_[R]L0
-R6
-31
-R7
-!i10b 1
-R8
-R21
-Z22 !s107 C:/Users/Usuario/Documents/TallerDisenoDigital/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema2/sum_4_tb.vhd|
+R26
+R27
 !i113 1
 R11
 R12
