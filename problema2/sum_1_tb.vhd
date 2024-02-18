@@ -6,7 +6,7 @@ use IEEE.STD_LOGIC_1164.all;
 entity sum_1_tb is -- no inputs or outputs
 end;
 
--- ARQUITECTURE
+-- ARCHITECTURE
 architecture testbench of sum_1_tb is
     signal a, b, cin, s, cout: STD_LOGIC;
 

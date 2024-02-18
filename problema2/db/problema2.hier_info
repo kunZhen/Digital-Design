@@ -8,11 +8,11 @@ b[1] => sum_1:sum_1_bit1.b
 b[2] => sum_1:sum_1_bit2.b
 b[3] => sum_1:sum_1_bit3.b
 cin => sum_1:sum_1_bit0.cin
-s[0] <= sum_1:sum_1_bit0.s
-s[1] <= sum_1:sum_1_bit1.s
-s[2] <= sum_1:sum_1_bit2.s
-s[3] <= sum_1:sum_1_bit3.s
-cout <= sum_1:sum_1_bit3.cout
+s[0] << sum_1:sum_1_bit0.s
+s[1] << sum_1:sum_1_bit1.s
+s[2] << sum_1:sum_1_bit2.s
+s[3] << sum_1:sum_1_bit3.s
+cout << sum_1:sum_1_bit3.cout
 
 
 |sum_4|sum_1:sum_1_bit0
