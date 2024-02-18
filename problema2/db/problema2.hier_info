@@ -1,4 +1,54 @@
-|sum_1
+|sum_4
+a[0] => sum_1:sum_1_bit0.a
+a[1] => sum_1:sum_1_bit1.a
+a[2] => sum_1:sum_1_bit2.a
+a[3] => sum_1:sum_1_bit3.a
+b[0] => sum_1:sum_1_bit0.b
+b[1] => sum_1:sum_1_bit1.b
+b[2] => sum_1:sum_1_bit2.b
+b[3] => sum_1:sum_1_bit3.b
+cin => sum_1:sum_1_bit0.cin
+s[0] <= sum_1:sum_1_bit0.s
+s[1] <= sum_1:sum_1_bit1.s
+s[2] <= sum_1:sum_1_bit2.s
+s[3] <= sum_1:sum_1_bit3.s
+cout <= sum_1:sum_1_bit3.cout
+
+
+|sum_4|sum_1:sum_1_bit0
+a => p.IN0
+a => g.IN0
+b => p.IN1
+b => g.IN1
+cin => s.IN1
+cin => cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|sum_4|sum_1:sum_1_bit1
+a => p.IN0
+a => g.IN0
+b => p.IN1
+b => g.IN1
+cin => s.IN1
+cin => cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|sum_4|sum_1:sum_1_bit2
+a => p.IN0
+a => g.IN0
+b => p.IN1
+b => g.IN1
+cin => s.IN1
+cin => cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|sum_4|sum_1:sum_1_bit3
 a => p.IN0
 a => g.IN0
 b => p.IN1

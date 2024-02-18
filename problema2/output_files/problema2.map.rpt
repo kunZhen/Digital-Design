@@ -1,5 +1,5 @@
 Analysis & Elaboration report for problema2
-Fri Feb 16 14:10:13 2024
+Sun Feb 18 02:17:36 2024
 Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
 
 
@@ -37,10 +37,10 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------------------------------------------------+
 ; Analysis & Elaboration Summary                                                 ;
 +-------------------------------+------------------------------------------------+
-; Analysis & Elaboration Status ; Successful - Fri Feb 16 14:10:13 2024          ;
+; Analysis & Elaboration Status ; Successful - Sun Feb 18 02:17:36 2024          ;
 ; Quartus Prime Version         ; 22.1std.0 Build 915 10/25/2022 SC Lite Edition ;
 ; Revision Name                 ; problema2                                      ;
-; Top-level Entity Name         ; sum_1                                          ;
+; Top-level Entity Name         ; sum_4                                          ;
 ; Family                        ; Cyclone V                                      ;
 ; Logic utilization (in ALMs)   ; N/A until Partition Merge                      ;
 ; Total registers               ; N/A until Partition Merge                      ;
@@ -74,7 +74,7 @@ https://fpgasoftware.intel.com/eula.
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
-; Top-level entity name                                                           ; sum_1              ; problema2          ;
+; Top-level entity name                                                           ; sum_4              ; problema2          ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
@@ -161,20 +161,24 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Elaboration
     Info: Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
-    Info: Processing started: Fri Feb 16 14:10:03 2024
+    Info: Processing started: Sun Feb 18 02:17:26 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off problema2 -c problema2 --analysis_and_elaboration
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file sum_1.vhd
-    Info (12022): Found design unit 1: sum_1-synth File: C:/Users/Usuario/Documents/TallerDisenoDigital/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema2/sum_1.vhd Line: 9
-    Info (12023): Found entity 1: sum_1 File: C:/Users/Usuario/Documents/TallerDisenoDigital/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema2/sum_1.vhd Line: 4
+    Info (12022): Found design unit 1: sum_1-synth File: C:/Users/Usuario/Documents/TallerDisenoDigital/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema2/sum_1.vhd Line: 12
+    Info (12023): Found entity 1: sum_1 File: C:/Users/Usuario/Documents/TallerDisenoDigital/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema2/sum_1.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file sum_1_tb.vhd
-    Info (12022): Found design unit 1: sum_1_tb-testbench File: C:/Users/Usuario/Documents/TallerDisenoDigital/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema2/sum_1_tb.vhd Line: 7
-    Info (12023): Found entity 1: sum_1_tb File: C:/Users/Usuario/Documents/TallerDisenoDigital/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema2/sum_1_tb.vhd Line: 4
-Info (12127): Elaborating entity "sum_1" for the top level hierarchy
+    Info (12022): Found design unit 1: sum_1_tb-testbench File: C:/Users/Usuario/Documents/TallerDisenoDigital/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema2/sum_1_tb.vhd Line: 10
+    Info (12023): Found entity 1: sum_1_tb File: C:/Users/Usuario/Documents/TallerDisenoDigital/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema2/sum_1_tb.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file sum_4.vhd
+    Info (12022): Found design unit 1: sum_4-adder File: C:/Users/Usuario/Documents/TallerDisenoDigital/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema2/sum_4.vhd Line: 16
+    Info (12023): Found entity 1: sum_4 File: C:/Users/Usuario/Documents/TallerDisenoDigital/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema2/sum_4.vhd Line: 6
+Info (12127): Elaborating entity "sum_4" for the top level hierarchy
+Info (12128): Elaborating entity "sum_1" for hierarchy "sum_1:sum_1_bit0" File: C:/Users/Usuario/Documents/TallerDisenoDigital/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema2/sum_4.vhd Line: 28
 Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 1 warning
     Info: Peak virtual memory: 4849 megabytes
-    Info: Processing ended: Fri Feb 16 14:10:13 2024
+    Info: Processing ended: Sun Feb 18 02:17:36 2024
     Info: Elapsed time: 00:00:10
     Info: Total CPU time (on all processors): 00:00:23
 

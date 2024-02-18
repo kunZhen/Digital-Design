@@ -1,17 +1,20 @@
+-- LIBRARY
 library IEEE;
 use IEEE.STD_LOGIC_1164.all;
 
-entity sum_1_tb is
-end sum_1_tb;
+-- ENTITY 
+entity sum_1_tb is -- no inputs or outputs
+end;
 
+-- ARQUITECTURE
 architecture testbench of sum_1_tb is
-    signal a, b, cin, s, cout: std_logic;
+    signal a, b, cin, s, cout: STD_LOGIC;
 
     -- Component declaration for the unit under test (UUT)
     component sum_1
         port (
-            a, b, cin: in std_logic;
-            s, cout: out std_logic
+            a, b, cin: in STD_LOGIC;
+            s, cout: out STD_LOGIC
         );
     end component;
 

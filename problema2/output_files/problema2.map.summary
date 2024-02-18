@@ -1,7 +1,7 @@
-Analysis & Elaboration Status : Successful - Fri Feb 16 14:10:13 2024
+Analysis & Elaboration Status : Successful - Sun Feb 18 02:17:36 2024
 Quartus Prime Version : 22.1std.0 Build 915 10/25/2022 SC Lite Edition
 Revision Name : problema2
-Top-level Entity Name : sum_1
+Top-level Entity Name : sum_4
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A until Partition Merge
 Total registers : N/A until Partition Merge

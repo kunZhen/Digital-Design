@@ -51,6 +51,7 @@ vlib rtl_work
 vmap work rtl_work
 
 vcom -93 -work work {C:/Users/Usuario/Documents/TallerDisenoDigital/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema2/sum_1.vhd}
+vcom -93 -work work {C:/Users/Usuario/Documents/TallerDisenoDigital/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema2/sum_4.vhd}
 
 vcom -93 -work work {C:/Users/Usuario/Documents/TallerDisenoDigital/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema2/sum_1_tb.vhd}
 
