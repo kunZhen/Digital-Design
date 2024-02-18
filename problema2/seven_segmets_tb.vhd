@@ -13,8 +13,9 @@ architecture testbench of seven_segmets_tb is
 		a, b: in STD_LOGIC_VECTOR(3 downto 0);
 		cin: in STD_LOGIC;
 		s: out STD_LOGIC_VECTOR(3 downto 0);
-		cout: out STD_LOGIC--;
-		--hex_out: out STD_LOGIC_VECTOR(6 downto 0)
+		cout: out STD_LOGIC;
+		hex_out: out STD_LOGIC_VECTOR(6 downto 0)--;
+		--hex_cout: out STD_LOGIC_VECTOR(6 downto 0)
 	);
 	end component;
 	
@@ -23,6 +24,9 @@ architecture testbench of seven_segmets_tb is
 	signal cin_tb: STD_LOGIC;
 	signal s_tb: STD_LOGIC_VECTOR(3 downto 0);
 	signal cout_tb: STD_LOGIC;
+	signal hex_out_tb: STD_LOGIC_VECTOR(6 downto 0);
+	--signal hex_cout_tb: STD_LOGIC_VECTOR(6 downto 0);
+	
 	
 begin
 
@@ -32,7 +36,9 @@ begin
 		b => b_tb,
 		cin => cin_tb,
 		s => s_tb,
-		cout => cout_tb
+		cout => cout_tb,
+		hex_out => hex_out_tb--,
+		--hex_cout => hex_cout_tb
 	);
 	
 	process begin

@@ -8,11 +8,18 @@ b[1] => sum_4:sum_4_bits.b[1]
 b[2] => sum_4:sum_4_bits.b[2]
 b[3] => sum_4:sum_4_bits.b[3]
 cin => sum_4:sum_4_bits.cin
-s[0] <= sum_4:sum_4_bits.s[0]
-s[1] <= sum_4:sum_4_bits.s[1]
-s[2] <= sum_4:sum_4_bits.s[2]
-s[3] <= sum_4:sum_4_bits.s[3]
-cout <= sum_4:sum_4_bits.cout
+s[0] << sum_4:sum_4_bits.s[0]
+s[1] << sum_4:sum_4_bits.s[1]
+s[2] << sum_4:sum_4_bits.s[2]
+s[3] << sum_4:sum_4_bits.s[3]
+cout << sum_4:sum_4_bits.cout
+hex_out[0] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+hex_out[1] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+hex_out[2] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+hex_out[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+hex_out[4] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+hex_out[5] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+hex_out[6] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |seven_segments|sum_4:sum_4_bits
