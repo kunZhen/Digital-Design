@@ -1,39 +1,50 @@
+`timescale 1ns/1ps
+
 module counter_tb;
 
-	 reg clk;
-    reg rst;
-    reg [5:0] num;
-    wire [5:0] q;
-    wire [6:0] seg1;
-    wire [6:0] seg2;
+  reg clk;
+  reg reset;
+  wire [5:0] q_6bits;
+  wire [3:0] q_4bits;
+  wire [1:0] q_2bits;
 
-    // Instanciar el módulo Contador
-    Contador contador_inst (
-        .clk(clk),
-        .rst(rst),
-        .num(num),
-        .q(q),
-        .seg1(seg1),
-        .seg2(seg2)
-    );
+  // Instanciar el módulo Counter con diferentes anchos
+  counter #(6) uut_6bits (
+    .clk(clk),
+    .reset(reset),
+    .q(q_6bits)
+  );
 
-    // Generar un clock
-    always #5 clk = ~clk;
+  counter #(4) uut_4bits (
+    .clk(clk),
+    .reset(reset),
+    .q(q_4bits)
+  );
 
-    initial begin
-        clk = 0;
-        rst = 0;
-        num = 6'b010011; // Valor inicial (13 en hexadecimal)
+  counter #(2) uut_2bits (
+    .clk(clk),
+    .reset(reset),
+    .q(q_2bits)
+  );
 
-        // Reset durante 20 unidades de tiempo
-        #20 rst = 1;
-        #20 rst = 0;
+  // Generar un clock
+  always #5 clk = ~clk;
 
-        // Simular el conteo durante 10 unidades de tiempo
-        repeat (10) begin
-            #10 num = num - 1;
-        end
-		  #10 $finish;
-    end
+  // Inicializar el testbench
+  initial begin
+    clk = 0;
+    reset = 1;
+
+    // Esperar 20 unidades de tiempo y luego desactivar el reset
+    #20 reset = 0;
+
+    // Simular durante 50 unidades de tiempo
+    #700 $finish; 
+  end
+
+  // Mostrar resultados
+  always @(posedge clk) begin
+    $display("Time=%0t, q_6bits=%b, q_4bits=%b, q_2bits=%b", $time, q_6bits, q_4bits, q_2bits);
+  end
 
 endmodule

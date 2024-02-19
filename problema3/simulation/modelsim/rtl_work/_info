@@ -10,28 +10,54 @@ z2
 cModel Technology
 Z0 dC:/Users/Usuario/Documents/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema3/simulation/modelsim
 vcounter
-DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-!s110 1708358622
+Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+Z2 !s110 1708377426
 !i10b 1
-!s100 ?nLiHM:4]j3gGmQfNfKlU2
-!s11b Dg1SIo80bB@j0V0VzS_@n1
-I@=zF^2[SENg;6=b7^aoa93
-VDg1SIo80bB@j0V0VzS_@n1
+!s100 AU[T74_:n=Ya:56k<TERi1
+Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IcziZln>[Dicmbz3[g0OeJ1
+Z4 VDg1SIo80bB@j0V0VzS_@n1
 S1
 R0
-w1708358425
+w1708377339
 8C:/Users/Usuario/Documents/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema3/counter.sv
 FC:/Users/Usuario/Documents/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema3/counter.sv
 !i122 0
-L0 1 24
-OV;L;2020.1;71
+L0 1 15
+Z5 OV;L;2020.1;71
 r1
 !s85 0
 31
-!s108 1708358622.000000
+Z6 !s108 1708377426.000000
 !s107 C:/Users/Usuario/Documents/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema3/counter.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Usuario/Documents/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema3|C:/Users/Usuario/Documents/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema3/counter.sv|
 !i113 1
-o-sv -work work
-!s92 -sv -work work +incdir+C:/Users/Usuario/Documents/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema3
-tCvgOpt 0
+Z7 o-sv -work work
+Z8 !s92 -sv -work work +incdir+C:/Users/Usuario/Documents/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema3
+Z9 tCvgOpt 0
+vcounter_tb
+R1
+R2
+!i10b 1
+!s100 MPf]XMaMJiYOXXZD3:b>F1
+R3
+IlNEV4R1A3g3QV<JZS[NA43
+R4
+S1
+R0
+w1708377372
+8C:/Users/Usuario/Documents/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema3/counter_tb.sv
+FC:/Users/Usuario/Documents/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema3/counter_tb.sv
+!i122 1
+L0 3 48
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/Usuario/Documents/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema3/counter_tb.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Usuario/Documents/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema3|C:/Users/Usuario/Documents/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema3/counter_tb.sv|
+!i113 1
+R7
+R8
+R9
