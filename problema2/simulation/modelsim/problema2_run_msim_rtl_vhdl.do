@@ -54,9 +54,9 @@ vcom -93 -work work {C:/Users/Usuario/Documents/TallerDisenoDigital/jVargas_kZhe
 vcom -93 -work work {C:/Users/Usuario/Documents/TallerDisenoDigital/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema2/sum_4.vhd}
 vcom -93 -work work {C:/Users/Usuario/Documents/TallerDisenoDigital/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema2/seven_segments.vhd}
 
-vcom -93 -work work {C:/Users/Usuario/Documents/TallerDisenoDigital/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema2/seven_segmets_tb.vhd}
+vcom -93 -work work {C:/Users/Usuario/Documents/TallerDisenoDigital/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema2/sum_4_tb.vhd}
 
-vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cyclonev -L cyclonev_hssi -L rtl_work -L work -voptargs="+acc"  seven_segmets_tb
+vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cyclonev -L cyclonev_hssi -L rtl_work -L work -voptargs="+acc"  sum_4_tb
 
 add wave *
 view structure
