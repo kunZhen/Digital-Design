@@ -1,5 +1,5 @@
 Analysis & Elaboration report for problema2
-Sun Feb 18 18:37:11 2024
+Sun Feb 18 22:17:48 2024
 Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
 
 
@@ -10,7 +10,8 @@ Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
   2. Analysis & Elaboration Summary
   3. Parallel Compilation
   4. Analysis & Elaboration Settings
-  5. Analysis & Elaboration Messages
+  5. Port Connectivity Checks: "sum_4:sum_4_bits"
+  6. Analysis & Elaboration Messages
 
 
 
@@ -37,7 +38,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------------------------------------------------+
 ; Analysis & Elaboration Summary                                                 ;
 +-------------------------------+------------------------------------------------+
-; Analysis & Elaboration Status ; Successful - Sun Feb 18 18:37:11 2024          ;
+; Analysis & Elaboration Status ; Successful - Sun Feb 18 22:17:48 2024          ;
 ; Quartus Prime Version         ; 22.1std.0 Build 915 10/25/2022 SC Lite Edition ;
 ; Revision Name                 ; problema2                                      ;
 ; Top-level Entity Name         ; seven_segments                                 ;
@@ -155,13 +156,22 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 
 
++----------------------------------------------+
+; Port Connectivity Checks: "sum_4:sum_4_bits" ;
++------+-------+----------+--------------------+
+; Port ; Type  ; Severity ; Details            ;
++------+-------+----------+--------------------+
+; cin  ; Input ; Info     ; Stuck at GND       ;
++------+-------+----------+--------------------+
+
+
 +---------------------------------+
 ; Analysis & Elaboration Messages ;
 +---------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Elaboration
     Info: Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
-    Info: Processing started: Sun Feb 18 18:37:01 2024
+    Info: Processing started: Sun Feb 18 22:17:38 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off problema2 -c problema2 --analysis_and_elaboration
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -188,8 +198,8 @@ Info (12128): Elaborating entity "sum_4" for hierarchy "sum_4:sum_4_bits" File: 
 Info (12128): Elaborating entity "sum_1" for hierarchy "sum_4:sum_4_bits|sum_1:sum_1_bit0" File: C:/Users/Usuario/Documents/TallerDisenoDigital/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema2/sum_4.vhd Line: 28
 Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 1 warning
     Info: Peak virtual memory: 4840 megabytes
-    Info: Processing ended: Sun Feb 18 18:37:11 2024
+    Info: Processing ended: Sun Feb 18 22:17:48 2024
     Info: Elapsed time: 00:00:10
-    Info: Total CPU time (on all processors): 00:00:25
+    Info: Total CPU time (on all processors): 00:00:22
 
 

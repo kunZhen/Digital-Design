@@ -6,7 +6,7 @@ use IEEE.STD_LOGIC_1164.all;
 entity seven_segments is 
 	port(
 		a, b: in STD_LOGIC_VECTOR(3 downto 0);
-		cin: in STD_LOGIC;
+		cin: in STD_LOGIC; 
 		s: buffer STD_LOGIC_VECTOR(3 downto 0);
 		cout: buffer STD_LOGIC;
 		hex_out: out STD_LOGIC_VECTOR(6 downto 0);
@@ -28,7 +28,7 @@ architecture seven_segments_display of seven_segments is
 	
 
 begin
-	sum_4_bits: sum_4 port map (a, b, cin, s, cout);
+	sum_4_bits: sum_4 port map (a, b, '0', s, cout);
 	
 	process(s, cout)
 	begin
