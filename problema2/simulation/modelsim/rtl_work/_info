@@ -23,9 +23,9 @@ ViE<aH:ce>^GaD7dR5PCWa2
 !s100 06K@23Ij46eXXk015Mm5G3
 Z6 OV;C;2020.1;71
 31
-Z7 !s110 1708301823
+Z7 !s110 1708303060
 !i10b 1
-Z8 !s108 1708301823.000000
+Z8 !s108 1708303060.000000
 Z9 !s90 -reportprogress|300|-93|-work|work|C:/Users/Usuario/Documents/TallerDisenoDigital/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema2/seven_segments.vhd|
 Z10 !s107 C:/Users/Usuario/Documents/TallerDisenoDigital/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema2/seven_segments.vhd|
 !i113 1
@@ -105,9 +105,9 @@ V_n5Mjj_j1<3Jz@3T=zj?U2
 !s100 <SZCOf>`oHFkK>V09cAh40
 R6
 31
-Z21 !s110 1708301822
+Z21 !s110 1708303059
 !i10b 1
-Z22 !s108 1708301822.000000
+Z22 !s108 1708303059.000000
 Z23 !s90 -reportprogress|300|-93|-work|work|C:/Users/Usuario/Documents/TallerDisenoDigital/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema2/sum_1.vhd|
 Z24 !s107 C:/Users/Usuario/Documents/TallerDisenoDigital/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema2/sum_1.vhd|
 !i113 1
@@ -146,7 +146,7 @@ VV:SBlB]cEkho`S6fnHN;i0
 !s100 :Phk?QEKegEKB@]PilbBm1
 R6
 31
-R7
+R21
 !i10b 1
 R22
 Z28 !s90 -reportprogress|300|-93|-work|work|C:/Users/Usuario/Documents/TallerDisenoDigital/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema2/sum_4.vhd|
@@ -165,7 +165,7 @@ VId3TE2BXM6TD^UD2g;<?]3
 !s100 7BAM5DHhddR9iI8Ild@f`1
 R6
 31
-R7
+R21
 !i10b 1
 R22
 R28
