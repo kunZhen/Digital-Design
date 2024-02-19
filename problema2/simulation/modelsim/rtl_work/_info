@@ -23,9 +23,9 @@ ViE<aH:ce>^GaD7dR5PCWa2
 !s100 06K@23Ij46eXXk015Mm5G3
 Z6 OV;C;2020.1;71
 31
-Z7 !s110 1708316292
+Z7 !s110 1708370201
 !i10b 1
-Z8 !s108 1708316292.000000
+Z8 !s108 1708370201.000000
 Z9 !s90 -reportprogress|300|-93|-work|work|C:/Users/Usuario/Documents/TallerDisenoDigital/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema2/seven_segments.vhd|
 Z10 !s107 C:/Users/Usuario/Documents/TallerDisenoDigital/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema2/seven_segments.vhd|
 !i113 1
@@ -64,10 +64,10 @@ V[ik6h0PT[Lb<6]kWRMP7o3
 !s100 SDKNiL_IFBNVF26Rn;mzk1
 R6
 31
-R7
+Z16 !s110 1708370202
 !i10b 1
 R8
-Z16 !s90 -reportprogress|300|-93|-work|work|C:/Users/Usuario/Documents/TallerDisenoDigital/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema2/seven_segmets_tb.vhd|
+Z17 !s90 -reportprogress|300|-93|-work|work|C:/Users/Usuario/Documents/TallerDisenoDigital/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema2/seven_segmets_tb.vhd|
 !s107 C:/Users/Usuario/Documents/TallerDisenoDigital/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema2/seven_segmets_tb.vhd|
 !i113 1
 R11
@@ -83,22 +83,22 @@ VTH^<:LPhKN6^JL<R@2U[90
 !s100 @Me0;d@94O<iD]8<hM5i50
 R6
 31
-R7
+R16
 !i10b 1
 R8
-R16
-Z17 !s107 C:/Users/Usuario/Documents/TallerDisenoDigital/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema2/seven_segmets_tb.vhd|
+R17
+Z18 !s107 C:/Users/Usuario/Documents/TallerDisenoDigital/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema2/seven_segmets_tb.vhd|
 !i113 1
 R11
 R12
 Esum_1
-Z18 w1708117325
+Z19 w1708117325
 R2
 R3
 !i122 0
 R0
-Z19 8C:/Users/Usuario/Documents/TallerDisenoDigital/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema2/sum_1.vhd
-Z20 FC:/Users/Usuario/Documents/TallerDisenoDigital/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema2/sum_1.vhd
+Z20 8C:/Users/Usuario/Documents/TallerDisenoDigital/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema2/sum_1.vhd
+Z21 FC:/Users/Usuario/Documents/TallerDisenoDigital/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema2/sum_1.vhd
 l0
 L6 1
 V_n5Mjj_j1<3Jz@3T=zj?U2
@@ -108,8 +108,8 @@ R6
 R7
 !i10b 1
 R8
-Z21 !s90 -reportprogress|300|-93|-work|work|C:/Users/Usuario/Documents/TallerDisenoDigital/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema2/sum_1.vhd|
-Z22 !s107 C:/Users/Usuario/Documents/TallerDisenoDigital/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema2/sum_1.vhd|
+Z22 !s90 -reportprogress|300|-93|-work|work|C:/Users/Usuario/Documents/TallerDisenoDigital/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema2/sum_1.vhd|
+Z23 !s107 C:/Users/Usuario/Documents/TallerDisenoDigital/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema2/sum_1.vhd|
 !i113 1
 R11
 R12
@@ -127,19 +127,19 @@ R6
 R7
 !i10b 1
 R8
-R21
 R22
+R23
 !i113 1
 R11
 R12
 Esum_4
-Z23 w1708316164
+Z24 w1708316164
 R2
 R3
 !i122 1
 R0
-Z24 8C:/Users/Usuario/Documents/TallerDisenoDigital/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema2/sum_4.vhd
-Z25 FC:/Users/Usuario/Documents/TallerDisenoDigital/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema2/sum_4.vhd
+Z25 8C:/Users/Usuario/Documents/TallerDisenoDigital/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema2/sum_4.vhd
+Z26 FC:/Users/Usuario/Documents/TallerDisenoDigital/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema2/sum_4.vhd
 l0
 L6 1
 VV:SBlB]cEkho`S6fnHN;i0
@@ -149,8 +149,8 @@ R6
 R7
 !i10b 1
 R8
-Z26 !s90 -reportprogress|300|-93|-work|work|C:/Users/Usuario/Documents/TallerDisenoDigital/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema2/sum_4.vhd|
-Z27 !s107 C:/Users/Usuario/Documents/TallerDisenoDigital/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema2/sum_4.vhd|
+Z27 !s90 -reportprogress|300|-93|-work|work|C:/Users/Usuario/Documents/TallerDisenoDigital/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema2/sum_4.vhd|
+Z28 !s107 C:/Users/Usuario/Documents/TallerDisenoDigital/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema2/sum_4.vhd|
 !i113 1
 R11
 R12
@@ -168,8 +168,8 @@ R6
 R7
 !i10b 1
 R8
-R26
 R27
+R28
 !i113 1
 R11
 R12

@@ -79,4 +79,27 @@ set_global_assignment -name EDA_TEST_BENCH_NAME seven_segmets_tb -section_id eda
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id seven_segmets_tb
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME seven_segmets_tb -section_id seven_segmets_tb
 set_global_assignment -name EDA_TEST_BENCH_FILE seven_segmets_tb.vhd -section_id seven_segmets_tb
+set_location_assignment PIN_AE26 -to hex_out[6]
+set_location_assignment PIN_AE27 -to hex_out[5]
+set_location_assignment PIN_AE28 -to hex_out[4]
+set_location_assignment PIN_AG27 -to hex_out[3]
+set_location_assignment PIN_AF28 -to hex_out[2]
+set_location_assignment PIN_AG28 -to hex_out[1]
+set_location_assignment PIN_AH28 -to hex_out[0]
+set_location_assignment PIN_AJ29 -to hex_cout[6]
+set_location_assignment PIN_AH29 -to hex_cout[5]
+set_location_assignment PIN_AH30 -to hex_cout[4]
+set_location_assignment PIN_AG30 -to hex_cout[3]
+set_location_assignment PIN_AF29 -to hex_cout[2]
+set_location_assignment PIN_AF30 -to hex_cout[1]
+set_location_assignment PIN_AD27 -to hex_cout[0]
+set_location_assignment PIN_AB12 -to a[0]
+set_location_assignment PIN_AC12 -to a[1]
+set_location_assignment PIN_AF9 -to a[2]
+set_location_assignment PIN_AF10 -to a[3]
+set_location_assignment PIN_AD11 -to b[0]
+set_location_assignment PIN_AD12 -to b[1]
+set_location_assignment PIN_AE11 -to b[2]
+set_location_assignment PIN_AC9 -to b[3]
+set_location_assignment PIN_AE12 -to cin
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
