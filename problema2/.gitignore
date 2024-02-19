@@ -1,0 +1,8 @@
+.vhd.bak
+.rpt
+.qsf
+.qws
+
+db/
+incremental_db/
+simulation/
