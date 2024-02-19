@@ -9,8 +9,8 @@ entity seven_segments is
 		cin: in STD_LOGIC;
 		s: buffer STD_LOGIC_VECTOR(3 downto 0);
 		cout: buffer STD_LOGIC;
-		hex_out: out STD_LOGIC_VECTOR(6 downto 0)--;
-		--hex_cout: out STD_LOGIC_VECTOR(6 downto 0)
+		hex_out: out STD_LOGIC_VECTOR(6 downto 0);
+		hex_cout: out STD_LOGIC_VECTOR(6 downto 0)
 		
 	);
 end;
@@ -26,51 +26,55 @@ architecture seven_segments_display of seven_segments is
 		);
 	end component;
 	
-	
 
 begin
 	sum_4_bits: sum_4 port map (a, b, cin, s, cout);
 	
-	process(s)
-	begin 
-		case s is
-            when "0000" =>
-                hex_out <= "0000001"; -- 0
-            when "0001" =>
-                hex_out <= "1001111"; -- 1
-            when "0010" =>
-                hex_out <= "0010010"; -- 2
-            when "0011" =>
-                hex_out <= "0000110"; -- 3
-            when "0100" =>
-                hex_out <= "1001100"; -- 4
-            when "0101" =>
-                hex_out <= "0100100"; -- 5
-            when "0110" =>
-                hex_out <= "0100000"; -- 6
-            when "0111" =>
-                hex_out <= "0001111"; -- 7
-            when "1000" =>
-                hex_out <= "0000000"; -- 8
-            when "1001" =>
-                hex_out <= "0000100"; -- 9
-            when "1010" =>
-                hex_out <= "0001000"; -- A
-            when "1011" =>
-                hex_out <= "1100000"; -- B
-            when "1100" =>
-                hex_out <= "0110001"; -- C
-            when "1101" =>
-                hex_out <= "1000010"; -- D
-            when "1110" =>
-                hex_out <= "0110000"; -- E
-            when "1111" =>
-                hex_out <= "0111000"; -- F
-            when others =>
-                hex_out <= "1111111"; -- Off
-        end case;
+	process(s, cout)
+	begin
+		if s = "0000" then
+			hex_out <= "0000001"; -- 0
+		elsif s = "0001" then
+			hex_out <= "1001111"; -- 1
+		elsif s = "0010" then
+			hex_out <= "0010010"; -- 2
+		elsif s = "0011" then
+			hex_out <= "0000110"; -- 3
+		elsif s = "0100" then
+			hex_out <= "1001100"; -- 4
+		elsif s = "0101" then
+			hex_out <= "0100100"; -- 5
+		elsif s = "0110" then
+			hex_out <= "0100000"; -- 6
+		elsif s = "0111" then
+			hex_out <= "0001111"; -- 7
+		elsif s = "1000" then
+			hex_out <= "0000000"; -- 8
+		elsif s = "1001" then
+			hex_out <= "0000100"; -- 9
+		elsif s = "1010" then
+			hex_out <= "0001000"; -- A
+		elsif s = "1011" then
+			hex_out <= "1100000"; -- B
+		elsif s = "1100" then
+			hex_out <= "0110001"; -- C
+		elsif s = "1101" then
+			hex_out <= "1000010"; -- D
+		elsif s = "1110" then
+			hex_out <= "0110000"; -- E
+		elsif s = "1111" then
+			hex_out <= "0111000"; -- F
+		else
+			hex_out <= "1111111"; -- off
+		end if;
+			
+		if cout = '0' then
+			hex_cout <= "0000001"; -- 0
+		else
+			hex_cout <= "1001111"; -- 1
+		end if;
 	
 	end process;
-
+	
 	
 end;

@@ -13,13 +13,20 @@ s[1] << sum_4:sum_4_bits.s[1]
 s[2] << sum_4:sum_4_bits.s[2]
 s[3] << sum_4:sum_4_bits.s[3]
 cout << sum_4:sum_4_bits.cout
-hex_out[0] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
-hex_out[1] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
-hex_out[2] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
-hex_out[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
-hex_out[4] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
-hex_out[5] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
-hex_out[6] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+hex_out[0] <= hex_out.DB_MAX_OUTPUT_PORT_TYPE
+hex_out[1] <= hex_out.DB_MAX_OUTPUT_PORT_TYPE
+hex_out[2] <= hex_out.DB_MAX_OUTPUT_PORT_TYPE
+hex_out[3] <= hex_out.DB_MAX_OUTPUT_PORT_TYPE
+hex_out[4] <= hex_out.DB_MAX_OUTPUT_PORT_TYPE
+hex_out[5] <= hex_out.DB_MAX_OUTPUT_PORT_TYPE
+hex_out[6] <= hex_out.DB_MAX_OUTPUT_PORT_TYPE
+hex_cout[0] <= <VCC>
+hex_cout[1] <= sum_4:sum_4_bits.cout
+hex_cout[2] <= sum_4:sum_4_bits.cout
+hex_cout[3] <= sum_4:sum_4_bits.cout
+hex_cout[4] <= <GND>
+hex_cout[5] <= <GND>
+hex_cout[6] <= sum_4:sum_4_bits.cout
 
 
 |seven_segments|sum_4:sum_4_bits
