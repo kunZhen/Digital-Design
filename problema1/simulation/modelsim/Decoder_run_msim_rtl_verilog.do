@@ -45,9 +45,10 @@ if {[file exists rtl_work]} {
 vlib rtl_work
 vmap work rtl_work
 
-vlog -sv -work work +incdir+C:/Users/jespinoz/Documents/TEC/Taller/Lab1 {C:/Users/jespinoz/Documents/TEC/Taller/Lab1/Decoder.sv}
+vlog -sv -work work +incdir+C:/Users/jespinoz/Documents/TEC/Taller/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema1 {C:/Users/jespinoz/Documents/TEC/Taller/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema1/Sevenseg.sv}
+vlog -sv -work work +incdir+C:/Users/jespinoz/Documents/TEC/Taller/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema1 {C:/Users/jespinoz/Documents/TEC/Taller/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema1/Decoder.sv}
 
-vlog -sv -work work +incdir+C:/Users/jespinoz/Documents/TEC/Taller/Lab1 {C:/Users/jespinoz/Documents/TEC/Taller/Lab1/Decoder_TB.sv}
+vlog -sv -work work +incdir+C:/Users/jespinoz/Documents/TEC/Taller/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema1 {C:/Users/jespinoz/Documents/TEC/Taller/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema1/Decoder_TB.sv}
 
 vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  Decoder_TB
 

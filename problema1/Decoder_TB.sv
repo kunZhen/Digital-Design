@@ -1,11 +1,13 @@
 module Decoder_TB();
 
 	logic [3:0] bcd_input;
-	logic [6:0] seven_segments; 
+   logic [6:0] seven_segments_units;
+   logic [6:0] seven_segments_tens;
 	
-	Decoder deco(
+	Sevenseg sevenseg(
 	.bcd_input(bcd_input),
-	.seven_segments(seven_segments)
+	.seven_segments_units(seven_segments_units),
+   .seven_segments_tens(seven_segments_tens)
 	);
 	
 	initial begin
@@ -26,6 +28,7 @@ module Decoder_TB();
 		bcd_input = 4'b1101; #20; //13
 		bcd_input = 4'b1110; #20; //14
 		bcd_input = 4'b1111; #20; //15
+
 	
 	end
 endmodule

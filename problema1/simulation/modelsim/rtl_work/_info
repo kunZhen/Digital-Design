@@ -8,58 +8,85 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 dC:/Users/jespinoz/Documents/TEC/Taller/Lab1/simulation/modelsim
+Z0 dC:/Users/jespinoz/Documents/TEC/Taller/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema1/simulation/modelsim
 vDecoder
 Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-Z2 !s110 1707943323
+Z2 !s110 1708380083
 !i10b 1
-!s100 3?M_zm58?_j838zmPI[1[3
+!s100 ]@WRekRB1nKh2:d3LV@:Y2
 Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
-IFHVd]fdH_cXIc_Y8;Y[8K3
+I]MhTfDT3I;dBjn0CB>llS3
 Z4 VDg1SIo80bB@j0V0VzS_@n1
 S1
 R0
-w1707943166
-8C:/Users/jespinoz/Documents/TEC/Taller/Lab1/Decoder.sv
-FC:/Users/jespinoz/Documents/TEC/Taller/Lab1/Decoder.sv
-!i122 0
-L0 2 29
+w1708378878
+8C:/Users/jespinoz/Documents/TEC/Taller/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema1/Decoder.sv
+FC:/Users/jespinoz/Documents/TEC/Taller/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema1/Decoder.sv
+!i122 1
+L0 1 27
 Z5 OV;L;2020.1;71
 r1
 !s85 0
 31
-!s108 1707943322.000000
-!s107 C:/Users/jespinoz/Documents/TEC/Taller/Lab1/Decoder.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/jespinoz/Documents/TEC/Taller/Lab1|C:/Users/jespinoz/Documents/TEC/Taller/Lab1/Decoder.sv|
+Z6 !s108 1708380083.000000
+!s107 C:/Users/jespinoz/Documents/TEC/Taller/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema1/Decoder.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/jespinoz/Documents/TEC/Taller/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema1|C:/Users/jespinoz/Documents/TEC/Taller/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema1/Decoder.sv|
 !i113 1
-Z6 o-sv -work work
-Z7 !s92 -sv -work work +incdir+C:/Users/jespinoz/Documents/TEC/Taller/Lab1
-Z8 tCvgOpt 0
+Z7 o-sv -work work
+Z8 !s92 -sv -work work +incdir+C:/Users/jespinoz/Documents/TEC/Taller/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema1
+Z9 tCvgOpt 0
 n@decoder
 vDecoder_TB
 R1
 R2
 !i10b 1
-!s100 4ZZ]IN=KZk:zgT8EjKb=o1
+!s100 1>C`@cX<3TVYYgB>Vn9X62
 R3
-IdKne2aSDm^JZ;:VWmNdcC1
+IZ:jeO[;CGmK>R3Gc7n<O02
 R4
 S1
 R0
-w1707942199
-8C:/Users/jespinoz/Documents/TEC/Taller/Lab1/Decoder_TB.sv
-FC:/Users/jespinoz/Documents/TEC/Taller/Lab1/Decoder_TB.sv
-!i122 1
-L0 1 55
+w1708379508
+8C:/Users/jespinoz/Documents/TEC/Taller/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema1/Decoder_TB.sv
+FC:/Users/jespinoz/Documents/TEC/Taller/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema1/Decoder_TB.sv
+!i122 2
+L0 1 34
 R5
 r1
 !s85 0
 31
-!s108 1707943323.000000
-!s107 C:/Users/jespinoz/Documents/TEC/Taller/Lab1/Decoder_TB.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/jespinoz/Documents/TEC/Taller/Lab1|C:/Users/jespinoz/Documents/TEC/Taller/Lab1/Decoder_TB.sv|
-!i113 1
 R6
+!s107 C:/Users/jespinoz/Documents/TEC/Taller/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema1/Decoder_TB.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/jespinoz/Documents/TEC/Taller/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema1|C:/Users/jespinoz/Documents/TEC/Taller/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema1/Decoder_TB.sv|
+!i113 1
 R7
 R8
+R9
 n@decoder_@t@b
+vSevenseg
+R1
+R2
+!i10b 1
+!s100 D5D;1QCKz`BKYA<G:dRJj2
+R3
+INLP?dWWRZi4_YLejTGW3M1
+R4
+S1
+R0
+w1708376791
+8C:/Users/jespinoz/Documents/TEC/Taller/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema1/Sevenseg.sv
+FC:/Users/jespinoz/Documents/TEC/Taller/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema1/Sevenseg.sv
+!i122 0
+L0 1 44
+R5
+r1
+!s85 0
+31
+!s108 1708380082.000000
+!s107 C:/Users/jespinoz/Documents/TEC/Taller/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema1/Sevenseg.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/jespinoz/Documents/TEC/Taller/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema1|C:/Users/jespinoz/Documents/TEC/Taller/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema1/Sevenseg.sv|
+!i113 1
+R7
+R8
+R9
+n@sevenseg

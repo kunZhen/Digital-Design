@@ -4,35 +4,63 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "bcd_output[0]",
+					"name" : "seven_segments_units[0]",
 					"strict" : false
 				},
 				{
-					"name" : "bcd_output[1]",
+					"name" : "seven_segments_units[1]",
 					"strict" : false
 				},
 				{
-					"name" : "bcd_output[2]",
+					"name" : "seven_segments_units[2]",
 					"strict" : false
 				},
 				{
-					"name" : "bcd_output[3]",
+					"name" : "seven_segments_units[3]",
 					"strict" : false
 				},
 				{
-					"name" : "binary_input[0]",
+					"name" : "seven_segments_units[4]",
 					"strict" : false
 				},
 				{
-					"name" : "binary_input[1]",
+					"name" : "seven_segments_units[5]",
 					"strict" : false
 				},
 				{
-					"name" : "binary_input[2]",
+					"name" : "seven_segments_units[6]",
 					"strict" : false
 				},
 				{
-					"name" : "binary_input[3]",
+					"name" : "seven_segments_tens[0]",
+					"strict" : false
+				},
+				{
+					"name" : "seven_segments_tens[3]",
+					"strict" : false
+				},
+				{
+					"name" : "seven_segments_tens[4]",
+					"strict" : false
+				},
+				{
+					"name" : "seven_segments_tens[5]",
+					"strict" : false
+				},
+				{
+					"name" : "bcd_input[0]",
+					"strict" : false
+				},
+				{
+					"name" : "bcd_input[1]",
+					"strict" : false
+				},
+				{
+					"name" : "bcd_input[2]",
+					"strict" : false
+				},
+				{
+					"name" : "bcd_input[3]",
 					"strict" : false
 				}
 			]

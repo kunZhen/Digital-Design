@@ -1,12 +1,58 @@
-|Decoder
-binary_input[0] => bcd_output[0].DATAIN
-binary_input[1] => bcd_output[1].DATAIN
-binary_input[2] => bcd_output[2].DATAIN
-binary_input[3] => bcd_output[3].DATAIN
-bcd_output[0] << binary_input[0].DB_MAX_OUTPUT_PORT_TYPE
-bcd_output[1] << binary_input[1].DB_MAX_OUTPUT_PORT_TYPE
-bcd_output[2] << binary_input[2].DB_MAX_OUTPUT_PORT_TYPE
-bcd_output[3] << binary_input[3].DB_MAX_OUTPUT_PORT_TYPE
-bcd_output[4] << <GND>
+|Sevenseg
+bcd_input[0] => bcd_output[0].IN1
+bcd_input[1] => Decoder0.IN2
+bcd_input[1] => Decoder1.IN2
+bcd_input[1] => Decoder2.IN2
+bcd_input[1] => Decoder3.IN2
+bcd_input[2] => Decoder0.IN1
+bcd_input[2] => Decoder1.IN1
+bcd_input[2] => Decoder2.IN1
+bcd_input[2] => Decoder3.IN1
+bcd_input[3] => Decoder0.IN0
+bcd_input[3] => Decoder1.IN0
+bcd_input[3] => Decoder2.IN0
+bcd_input[3] => Decoder3.IN0
+seven_segments_units[0] << Decoder:deco_units.seven_segments
+seven_segments_units[1] << Decoder:deco_units.seven_segments
+seven_segments_units[2] << Decoder:deco_units.seven_segments
+seven_segments_units[3] << Decoder:deco_units.seven_segments
+seven_segments_units[4] << Decoder:deco_units.seven_segments
+seven_segments_units[5] << Decoder:deco_units.seven_segments
+seven_segments_units[6] << Decoder:deco_units.seven_segments
+seven_segments_tens[0] << Decoder:deco_tens.seven_segments
+seven_segments_tens[1] << Decoder:deco_tens.seven_segments
+seven_segments_tens[2] << Decoder:deco_tens.seven_segments
+seven_segments_tens[3] << Decoder:deco_tens.seven_segments
+seven_segments_tens[4] << Decoder:deco_tens.seven_segments
+seven_segments_tens[5] << Decoder:deco_tens.seven_segments
+seven_segments_tens[6] << Decoder:deco_tens.seven_segments
+
+
+|Sevenseg|Decoder:deco_units
+bcd_input[0] => Decoder0.IN3
+bcd_input[1] => Decoder0.IN2
+bcd_input[2] => Decoder0.IN1
+bcd_input[3] => Decoder0.IN0
+seven_segments[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+seven_segments[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+seven_segments[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+seven_segments[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+seven_segments[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+seven_segments[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+seven_segments[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Sevenseg|Decoder:deco_tens
+bcd_input[0] => Decoder0.IN3
+bcd_input[1] => Decoder0.IN2
+bcd_input[2] => Decoder0.IN1
+bcd_input[3] => Decoder0.IN0
+seven_segments[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+seven_segments[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+seven_segments[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+seven_segments[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+seven_segments[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+seven_segments[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+seven_segments[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 

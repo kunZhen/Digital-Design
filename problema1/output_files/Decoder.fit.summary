@@ -1,13 +1,13 @@
-Fitter Status : Successful - Wed Feb 14 14:32:38 2024
+Fitter Status : Successful - Mon Feb 19 15:59:00 2024
 Quartus Prime Version : 22.1std.0 Build 915 10/25/2022 SC Lite Edition
 Revision Name : Decoder
-Top-level Entity Name : Decoder
+Top-level Entity Name : Sevenseg
 Family : Cyclone V
 Device : 5CSEMA5F31C6
 Timing Models : Final
-Logic utilization (in ALMs) : 1 / 32,070 ( < 1 % )
+Logic utilization (in ALMs) : 7 / 32,070 ( < 1 % )
 Total registers : 0
-Total pins : 9 / 457 ( 2 % )
+Total pins : 18 / 457 ( 4 % )
 Total virtual pins : 0
 Total block memory bits : 0 / 4,065,280 ( 0 % )
 Total RAM Blocks : 0 / 397 ( 0 % )
