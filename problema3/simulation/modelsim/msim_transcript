@@ -1,5 +1,5 @@
 # Reading pref.tcl
-# do problema3_run_msim_rtl_verilog.do
+# do Ejer3_run_msim_rtl_verilog.do
 # if ![file isdirectory verilog_libs] {
 # 	file mkdir verilog_libs
 # }
@@ -9,12 +9,12 @@
 # vmap altera_ver ./verilog_libs/altera_ver
 # Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
 # vmap altera_ver ./verilog_libs/altera_ver 
-# Copying C:/intelFPGA/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Copying D:/ModelSim/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
-# vlog -vlog01compat -work altera_ver {c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/altera_primitives.v}
+# vlog -vlog01compat -work altera_ver {d:/quartus/quartus/eda/sim_lib/altera_primitives.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 15:16:48 on Feb 19,2024
-# vlog -reportprogress 300 -vlog01compat -work altera_ver c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/altera_primitives.v 
+# Start time: 19:23:32 on Aug 22,2023
+# vlog -reportprogress 300 -vlog01compat -work altera_ver d:/quartus/quartus/eda/sim_lib/altera_primitives.v 
 # -- Compiling module global
 # -- Compiling module carry
 # -- Compiling module cascade
@@ -95,7 +95,7 @@
 # 	alt_iobuf_diff
 # 	alt_bidir_diff
 # 	alt_bidir_buf
-# End time: 15:16:49 on Feb 19,2024, Elapsed time: 0:00:01
+# End time: 19:23:32 on Aug 22,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vlib verilog_libs/lpm_ver
@@ -104,10 +104,10 @@
 # Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
 # vmap lpm_ver ./verilog_libs/lpm_ver 
 # Modifying modelsim.ini
-# vlog -vlog01compat -work lpm_ver {c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/220model.v}
+# vlog -vlog01compat -work lpm_ver {d:/quartus/quartus/eda/sim_lib/220model.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 15:16:49 on Feb 19,2024
-# vlog -reportprogress 300 -vlog01compat -work lpm_ver c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/220model.v 
+# Start time: 19:23:33 on Aug 22,2023
+# vlog -reportprogress 300 -vlog01compat -work lpm_ver d:/quartus/quartus/eda/sim_lib/220model.v 
 # -- Compiling module LPM_MEMORY_INITIALIZATION
 # -- Compiling module LPM_HINT_EVALUATION
 # -- Compiling module LPM_DEVICE_FAMILIES
@@ -170,7 +170,7 @@
 # 	lpm_inpad
 # 	lpm_outpad
 # 	lpm_bipad
-# End time: 15:16:50 on Feb 19,2024, Elapsed time: 0:00:01
+# End time: 19:23:33 on Aug 22,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vlib verilog_libs/sgate_ver
@@ -179,10 +179,10 @@
 # Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
 # vmap sgate_ver ./verilog_libs/sgate_ver 
 # Modifying modelsim.ini
-# vlog -vlog01compat -work sgate_ver {c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/sgate.v}
+# vlog -vlog01compat -work sgate_ver {d:/quartus/quartus/eda/sim_lib/sgate.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 15:16:50 on Feb 19,2024
-# vlog -reportprogress 300 -vlog01compat -work sgate_ver c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/sgate.v 
+# Start time: 19:23:33 on Aug 22,2023
+# vlog -reportprogress 300 -vlog01compat -work sgate_ver d:/quartus/quartus/eda/sim_lib/sgate.v 
 # -- Compiling module oper_add
 # -- Compiling module oper_addsub
 # -- Compiling module mux21
@@ -223,7 +223,7 @@
 # 	oper_decoder
 # 	oper_bus_mux
 # 	oper_latch
-# End time: 15:16:50 on Feb 19,2024, Elapsed time: 0:00:00
+# End time: 19:23:33 on Aug 22,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vlib verilog_libs/altera_mf_ver
@@ -232,10 +232,10 @@
 # Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
 # vmap altera_mf_ver ./verilog_libs/altera_mf_ver 
 # Modifying modelsim.ini
-# vlog -vlog01compat -work altera_mf_ver {c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/altera_mf.v}
+# vlog -vlog01compat -work altera_mf_ver {d:/quartus/quartus/eda/sim_lib/altera_mf.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 15:16:50 on Feb 19,2024
-# vlog -reportprogress 300 -vlog01compat -work altera_mf_ver c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/altera_mf.v 
+# Start time: 19:23:33 on Aug 22,2023
+# vlog -reportprogress 300 -vlog01compat -work altera_mf_ver d:/quartus/quartus/eda/sim_lib/altera_mf.v 
 # -- Compiling module lcell
 # -- Compiling module ALTERA_MF_MEMORY_INITIALIZATION
 # -- Compiling module ALTERA_MF_HINT_EVALUATION
@@ -364,7 +364,7 @@
 # 	alt_fault_injection
 # 	sld_virtual_jtag_basic
 # 	altsource_probe
-# End time: 15:16:51 on Feb 19,2024, Elapsed time: 0:00:01
+# End time: 19:23:34 on Aug 22,2023, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # 
 # vlib verilog_libs/altera_lnsim_ver
@@ -373,10 +373,10 @@
 # Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
 # vmap altera_lnsim_ver ./verilog_libs/altera_lnsim_ver 
 # Modifying modelsim.ini
-# vlog -sv -work altera_lnsim_ver {c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/altera_lnsim.sv}
+# vlog -sv -work altera_lnsim_ver {d:/quartus/quartus/eda/sim_lib/altera_lnsim.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 15:16:52 on Feb 19,2024
-# vlog -reportprogress 300 -sv -work altera_lnsim_ver c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/altera_lnsim.sv 
+# Start time: 19:23:35 on Aug 22,2023
+# vlog -reportprogress 300 -sv -work altera_lnsim_ver d:/quartus/quartus/eda/sim_lib/altera_lnsim.sv 
 # -- Compiling package altera_lnsim_functions
 # -- Compiling package altera_generic_pll_functions
 # -- Compiling module generic_pll
@@ -458,7 +458,7 @@
 # 	altera_iopll
 # 	fourteennm_altera_iopll
 # 	fourteennm_simple_iopll
-# End time: 15:16:52 on Feb 19,2024, Elapsed time: 0:00:00
+# End time: 19:23:35 on Aug 22,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vlib verilog_libs/cyclonev_ver
@@ -467,10 +467,10 @@
 # Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
 # vmap cyclonev_ver ./verilog_libs/cyclonev_ver 
 # Modifying modelsim.ini
-# vlog -vlog01compat -work cyclonev_ver {c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/mentor/cyclonev_atoms_ncrypt.v}
+# vlog -vlog01compat -work cyclonev_ver {d:/quartus/quartus/eda/sim_lib/mentor/cyclonev_atoms_ncrypt.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 15:16:53 on Feb 19,2024
-# vlog -reportprogress 300 -vlog01compat -work cyclonev_ver c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/mentor/cyclonev_atoms_ncrypt.v 
+# Start time: 19:23:35 on Aug 22,2023
+# vlog -reportprogress 300 -vlog01compat -work cyclonev_ver d:/quartus/quartus/eda/sim_lib/mentor/cyclonev_atoms_ncrypt.v 
 # ** Warning: (vlog-2083) <protected>(<protected>): Carriage return (0x0D) is not followed by a newline (0x0A).
 # ** Warning: (vlog-2083) <protected>(<protected>): Carriage return (0x0D) is not followed by a newline (0x0A).
 # ** Warning: (vlog-2083) <protected>(<protected>): Carriage return (0x0D) is not followed by a newline (0x0A).
@@ -483,20 +483,20 @@
 # ** Warning: (vlog-2083) <protected>(<protected>): Carriage return (0x0D) is not followed by a newline (0x0A).
 # 
 # Top level modules:
-# End time: 15:16:56 on Feb 19,2024, Elapsed time: 0:00:03
+# End time: 19:23:38 on Aug 22,2023, Elapsed time: 0:00:03
 # Errors: 0, Warnings: 10
-# vlog -vlog01compat -work cyclonev_ver {c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/mentor/cyclonev_hmi_atoms_ncrypt.v}
+# vlog -vlog01compat -work cyclonev_ver {d:/quartus/quartus/eda/sim_lib/mentor/cyclonev_hmi_atoms_ncrypt.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 15:16:56 on Feb 19,2024
-# vlog -reportprogress 300 -vlog01compat -work cyclonev_ver c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/mentor/cyclonev_hmi_atoms_ncrypt.v 
+# Start time: 19:23:38 on Aug 22,2023
+# vlog -reportprogress 300 -vlog01compat -work cyclonev_ver d:/quartus/quartus/eda/sim_lib/mentor/cyclonev_hmi_atoms_ncrypt.v 
 # 
 # Top level modules:
-# End time: 15:16:58 on Feb 19,2024, Elapsed time: 0:00:02
+# End time: 19:23:39 on Aug 22,2023, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
-# vlog -vlog01compat -work cyclonev_ver {c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/cyclonev_atoms.v}
+# vlog -vlog01compat -work cyclonev_ver {d:/quartus/quartus/eda/sim_lib/cyclonev_atoms.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 15:16:58 on Feb 19,2024
-# vlog -reportprogress 300 -vlog01compat -work cyclonev_ver c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/cyclonev_atoms.v 
+# Start time: 19:23:39 on Aug 22,2023
+# vlog -reportprogress 300 -vlog01compat -work cyclonev_ver d:/quartus/quartus/eda/sim_lib/cyclonev_atoms.v 
 # -- Compiling UDP CYCLONEV_PRIM_DFFE
 # -- Compiling UDP CYCLONEV_PRIM_DFFEAS
 # -- Compiling UDP CYCLONEV_PRIM_DFFEAS_HIGH
@@ -635,7 +635,7 @@
 # 	cyclonev_mem_phy
 # 	cyclonev_oscillator
 # 	cyclonev_hps_interface_fpga2sdram
-# End time: 15:16:59 on Feb 19,2024, Elapsed time: 0:00:01
+# End time: 19:23:40 on Aug 22,2023, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # 
 # vlib verilog_libs/cyclonev_hssi_ver
@@ -644,18 +644,18 @@
 # Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
 # vmap cyclonev_hssi_ver ./verilog_libs/cyclonev_hssi_ver 
 # Modifying modelsim.ini
-# vlog -vlog01compat -work cyclonev_hssi_ver {c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/mentor/cyclonev_hssi_atoms_ncrypt.v}
+# vlog -vlog01compat -work cyclonev_hssi_ver {d:/quartus/quartus/eda/sim_lib/mentor/cyclonev_hssi_atoms_ncrypt.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 15:16:59 on Feb 19,2024
-# vlog -reportprogress 300 -vlog01compat -work cyclonev_hssi_ver c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/mentor/cyclonev_hssi_atoms_ncrypt.v 
+# Start time: 19:23:40 on Aug 22,2023
+# vlog -reportprogress 300 -vlog01compat -work cyclonev_hssi_ver d:/quartus/quartus/eda/sim_lib/mentor/cyclonev_hssi_atoms_ncrypt.v 
 # 
 # Top level modules:
-# End time: 15:17:01 on Feb 19,2024, Elapsed time: 0:00:02
+# End time: 19:23:42 on Aug 22,2023, Elapsed time: 0:00:02
 # Errors: 0, Warnings: 0
-# vlog -vlog01compat -work cyclonev_hssi_ver {c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/cyclonev_hssi_atoms.v}
+# vlog -vlog01compat -work cyclonev_hssi_ver {d:/quartus/quartus/eda/sim_lib/cyclonev_hssi_atoms.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 15:17:01 on Feb 19,2024
-# vlog -reportprogress 300 -vlog01compat -work cyclonev_hssi_ver c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/cyclonev_hssi_atoms.v 
+# Start time: 19:23:42 on Aug 22,2023
+# vlog -reportprogress 300 -vlog01compat -work cyclonev_hssi_ver d:/quartus/quartus/eda/sim_lib/cyclonev_hssi_atoms.v 
 # -- Compiling module cyclonev_hssi_8g_pcs_aggregate
 # -- Compiling module cyclonev_hssi_8g_rx_pcs
 # -- Compiling module cyclonev_hssi_8g_tx_pcs
@@ -754,7 +754,7 @@
 # 	arriav_hssi_avmm_interface
 # 	arriav_hssi_pma_hi_pmaif
 # 	arriav_hssi_pma_hi_xcvrif
-# End time: 15:17:02 on Feb 19,2024, Elapsed time: 0:00:01
+# End time: 19:23:42 on Aug 22,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vlib verilog_libs/cyclonev_pcie_hip_ver
@@ -763,10 +763,10 @@
 # Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
 # vmap cyclonev_pcie_hip_ver ./verilog_libs/cyclonev_pcie_hip_ver 
 # Modifying modelsim.ini
-# vlog -vlog01compat -work cyclonev_pcie_hip_ver {c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/mentor/cyclonev_pcie_hip_atoms_ncrypt.v}
+# vlog -vlog01compat -work cyclonev_pcie_hip_ver {d:/quartus/quartus/eda/sim_lib/mentor/cyclonev_pcie_hip_atoms_ncrypt.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 15:17:02 on Feb 19,2024
-# vlog -reportprogress 300 -vlog01compat -work cyclonev_pcie_hip_ver c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/mentor/cyclonev_pcie_hip_atoms_ncrypt.v 
+# Start time: 19:23:43 on Aug 22,2023
+# vlog -reportprogress 300 -vlog01compat -work cyclonev_pcie_hip_ver d:/quartus/quartus/eda/sim_lib/mentor/cyclonev_pcie_hip_atoms_ncrypt.v 
 # ** Warning: (vlog-2083) <protected>(<protected>): Carriage return (0x0D) is not followed by a newline (0x0A).
 # ** Warning: (vlog-2083) <protected>(<protected>): Carriage return (0x0D) is not followed by a newline (0x0A).
 # ** Warning: (vlog-2083) <protected>(<protected>): Carriage return (0x0D) is not followed by a newline (0x0A).
@@ -775,18 +775,18 @@
 # ** Warning: (vlog-2083) <protected>(<protected>): Carriage return (0x0D) is not followed by a newline (0x0A).
 # 
 # Top level modules:
-# End time: 15:17:05 on Feb 19,2024, Elapsed time: 0:00:03
+# End time: 19:23:45 on Aug 22,2023, Elapsed time: 0:00:02
 # Errors: 0, Warnings: 6
-# vlog -vlog01compat -work cyclonev_pcie_hip_ver {c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/cyclonev_pcie_hip_atoms.v}
+# vlog -vlog01compat -work cyclonev_pcie_hip_ver {d:/quartus/quartus/eda/sim_lib/cyclonev_pcie_hip_atoms.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 15:17:05 on Feb 19,2024
-# vlog -reportprogress 300 -vlog01compat -work cyclonev_pcie_hip_ver c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/cyclonev_pcie_hip_atoms.v 
+# Start time: 19:23:45 on Aug 22,2023
+# vlog -reportprogress 300 -vlog01compat -work cyclonev_pcie_hip_ver d:/quartus/quartus/eda/sim_lib/cyclonev_pcie_hip_atoms.v 
 # -- Compiling module cyclonev_hd_altpe2_hip_top
 # -- Compiling module arriav_hd_altpe2_hip_top
 # 
 # Top level modules:
 # 	cyclonev_hd_altpe2_hip_top
-# End time: 15:17:06 on Feb 19,2024, Elapsed time: 0:00:01
+# End time: 19:23:45 on Aug 22,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # if {[file exists rtl_work]} {
@@ -798,116 +798,51 @@
 # vmap work rtl_work 
 # Modifying modelsim.ini
 # 
-# vlog -sv -work work +incdir+C:/Users/Usuario/Documents/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema3 {C:/Users/Usuario/Documents/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema3/counter.sv}
+# vlog -sv -work work +incdir+C:/Users/erick/Documents/TEC/2023-IISemestre/TallerDigitales/Laboratorios/2/ebarrantes_digital_design_lab_2023/Ejercicio3 {C:/Users/erick/Documents/TEC/2023-IISemestre/TallerDigitales/Laboratorios/2/ebarrantes_digital_design_lab_2023/Ejercicio3/regressiveCounter.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 15:17:06 on Feb 19,2024
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Usuario/Documents/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema3" C:/Users/Usuario/Documents/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema3/counter.sv 
-# -- Compiling module counter
+# Start time: 19:23:46 on Aug 22,2023
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/erick/Documents/TEC/2023-IISemestre/TallerDigitales/Laboratorios/2/ebarrantes_digital_design_lab_2023/Ejercicio3" C:/Users/erick/Documents/TEC/2023-IISemestre/TallerDigitales/Laboratorios/2/ebarrantes_digital_design_lab_2023/Ejercicio3/regressiveCounter.sv 
+# -- Compiling module regressiveCounter
+# -- Compiling module regressiveCounterLogic
+# -- Compiling module binaryToBCD
+# -- Compiling module sevenSegmentsDeco
 # 
 # Top level modules:
-# 	counter
-# End time: 15:17:06 on Feb 19,2024, Elapsed time: 0:00:00
+# 	regressiveCounter
+# End time: 19:23:46 on Aug 22,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
-# vlog -sv -work work +incdir+C:/Users/Usuario/Documents/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema3 {C:/Users/Usuario/Documents/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema3/counter_tb.sv}
+# vlog -sv -work work +incdir+C:/Users/erick/Documents/TEC/2023-IISemestre/TallerDigitales/Laboratorios/2/ebarrantes_digital_design_lab_2023/Ejercicio3 {C:/Users/erick/Documents/TEC/2023-IISemestre/TallerDigitales/Laboratorios/2/ebarrantes_digital_design_lab_2023/Ejercicio3/regressiveCounter7Segments_tb.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 15:17:06 on Feb 19,2024
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Usuario/Documents/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema3" C:/Users/Usuario/Documents/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema3/counter_tb.sv 
-# -- Compiling module counter_tb
+# Start time: 19:23:46 on Aug 22,2023
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/erick/Documents/TEC/2023-IISemestre/TallerDigitales/Laboratorios/2/ebarrantes_digital_design_lab_2023/Ejercicio3" C:/Users/erick/Documents/TEC/2023-IISemestre/TallerDigitales/Laboratorios/2/ebarrantes_digital_design_lab_2023/Ejercicio3/regressiveCounter7Segments_tb.sv 
+# -- Compiling module regressiveCounter7Segments_tb
 # 
 # Top level modules:
-# 	counter_tb
-# End time: 15:17:06 on Feb 19,2024, Elapsed time: 0:00:00
+# 	regressiveCounter7Segments_tb
+# End time: 19:23:46 on Aug 22,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  counter_tb
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" counter_tb 
-# Start time: 15:17:06 on Feb 19,2024
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  regressiveCounter7Segments_tb
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" regressiveCounter7Segments_tb 
+# Start time: 19:23:46 on Aug 22,2023
 # Loading sv_std.std
-# Loading work.counter_tb
-# Loading work.counter
+# Loading work.regressiveCounter7Segments_tb
+# Loading work.regressiveCounter
+# Loading work.regressiveCounterLogic
+# Loading work.binaryToBCD
+# Loading work.sevenSegmentsDeco
 # 
 # add wave *
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: erick  Hostname: LAPTOP-3IVF3MT3  ProcessID: 7348
+#           Attempting to use alternate WLF file "./wlftaqi9iq".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftaqi9iq
 # view structure
 # .main_pane.structure.interior.cs.body.struct
 # view signals
 # .main_pane.objects.interior.cs.body.tree
 # run -all
-# Time=5000, q_6bits=000000, q_4bits=0000, q_2bits=00
-# Time=15000, q_6bits=000000, q_4bits=0000, q_2bits=00
-# Time=25000, q_6bits=000000, q_4bits=0000, q_2bits=00
-# Time=35000, q_6bits=000001, q_4bits=0001, q_2bits=01
-# Time=45000, q_6bits=000010, q_4bits=0010, q_2bits=10
-# Time=55000, q_6bits=000011, q_4bits=0011, q_2bits=11
-# Time=65000, q_6bits=000100, q_4bits=0100, q_2bits=00
-# Time=75000, q_6bits=000101, q_4bits=0101, q_2bits=01
-# Time=85000, q_6bits=000110, q_4bits=0110, q_2bits=10
-# Time=95000, q_6bits=000111, q_4bits=0111, q_2bits=11
-# Time=105000, q_6bits=001000, q_4bits=1000, q_2bits=00
-# Time=115000, q_6bits=001001, q_4bits=1001, q_2bits=01
-# Time=125000, q_6bits=001010, q_4bits=1010, q_2bits=10
-# Time=135000, q_6bits=001011, q_4bits=1011, q_2bits=11
-# Time=145000, q_6bits=001100, q_4bits=1100, q_2bits=00
-# Time=155000, q_6bits=001101, q_4bits=1101, q_2bits=01
-# Time=165000, q_6bits=001110, q_4bits=1110, q_2bits=10
-# Time=175000, q_6bits=001111, q_4bits=1111, q_2bits=11
-# Time=185000, q_6bits=010000, q_4bits=0000, q_2bits=00
-# Time=195000, q_6bits=010001, q_4bits=0001, q_2bits=01
-# Time=205000, q_6bits=010010, q_4bits=0010, q_2bits=10
-# Time=215000, q_6bits=010011, q_4bits=0011, q_2bits=11
-# Time=225000, q_6bits=010100, q_4bits=0100, q_2bits=00
-# Time=235000, q_6bits=010101, q_4bits=0101, q_2bits=01
-# Time=245000, q_6bits=010110, q_4bits=0110, q_2bits=10
-# Time=255000, q_6bits=010111, q_4bits=0111, q_2bits=11
-# Time=265000, q_6bits=011000, q_4bits=1000, q_2bits=00
-# Time=275000, q_6bits=011001, q_4bits=1001, q_2bits=01
-# Time=285000, q_6bits=011010, q_4bits=1010, q_2bits=10
-# Time=295000, q_6bits=011011, q_4bits=1011, q_2bits=11
-# Time=305000, q_6bits=011100, q_4bits=1100, q_2bits=00
-# Time=315000, q_6bits=011101, q_4bits=1101, q_2bits=01
-# Time=325000, q_6bits=011110, q_4bits=1110, q_2bits=10
-# Time=335000, q_6bits=011111, q_4bits=1111, q_2bits=11
-# Time=345000, q_6bits=100000, q_4bits=0000, q_2bits=00
-# Time=355000, q_6bits=100001, q_4bits=0001, q_2bits=01
-# Time=365000, q_6bits=100010, q_4bits=0010, q_2bits=10
-# Time=375000, q_6bits=100011, q_4bits=0011, q_2bits=11
-# Time=385000, q_6bits=100100, q_4bits=0100, q_2bits=00
-# Time=395000, q_6bits=100101, q_4bits=0101, q_2bits=01
-# Time=405000, q_6bits=100110, q_4bits=0110, q_2bits=10
-# Time=415000, q_6bits=100111, q_4bits=0111, q_2bits=11
-# Time=425000, q_6bits=101000, q_4bits=1000, q_2bits=00
-# Time=435000, q_6bits=101001, q_4bits=1001, q_2bits=01
-# Time=445000, q_6bits=101010, q_4bits=1010, q_2bits=10
-# Time=455000, q_6bits=101011, q_4bits=1011, q_2bits=11
-# Time=465000, q_6bits=101100, q_4bits=1100, q_2bits=00
-# Time=475000, q_6bits=101101, q_4bits=1101, q_2bits=01
-# Time=485000, q_6bits=101110, q_4bits=1110, q_2bits=10
-# Time=495000, q_6bits=101111, q_4bits=1111, q_2bits=11
-# Time=505000, q_6bits=110000, q_4bits=0000, q_2bits=00
-# Time=515000, q_6bits=110001, q_4bits=0001, q_2bits=01
-# Time=525000, q_6bits=110010, q_4bits=0010, q_2bits=10
-# Time=535000, q_6bits=110011, q_4bits=0011, q_2bits=11
-# Time=545000, q_6bits=110100, q_4bits=0100, q_2bits=00
-# Time=555000, q_6bits=110101, q_4bits=0101, q_2bits=01
-# Time=565000, q_6bits=110110, q_4bits=0110, q_2bits=10
-# Time=575000, q_6bits=110111, q_4bits=0111, q_2bits=11
-# Time=585000, q_6bits=111000, q_4bits=1000, q_2bits=00
-# Time=595000, q_6bits=111001, q_4bits=1001, q_2bits=01
-# Time=605000, q_6bits=111010, q_4bits=1010, q_2bits=10
-# Time=615000, q_6bits=111011, q_4bits=1011, q_2bits=11
-# Time=625000, q_6bits=111100, q_4bits=1100, q_2bits=00
-# Time=635000, q_6bits=111101, q_4bits=1101, q_2bits=01
-# Time=645000, q_6bits=111110, q_4bits=1110, q_2bits=10
-# Time=655000, q_6bits=111111, q_4bits=1111, q_2bits=11
-# Time=665000, q_6bits=000000, q_4bits=0000, q_2bits=00
-# Time=675000, q_6bits=000001, q_4bits=0001, q_2bits=01
-# Time=685000, q_6bits=000010, q_4bits=0010, q_2bits=10
-# Time=695000, q_6bits=000011, q_4bits=0011, q_2bits=11
-# Time=705000, q_6bits=000100, q_4bits=0100, q_2bits=00
-# Time=715000, q_6bits=000101, q_4bits=0101, q_2bits=01
-# ** Note: $finish    : C:/Users/Usuario/Documents/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema3/counter_tb.sv(42)
-#    Time: 720 ns  Iteration: 0  Instance: /counter_tb
-# 1
-# Break in Module counter_tb at C:/Users/Usuario/Documents/jVargas_kZheng_jEspinoza_digital_design_lab_2024/problema3/counter_tb.sv line 42
-# End time: 15:17:53 on Feb 19,2024, Elapsed time: 0:00:47
-# Errors: 0, Warnings: 0
+# End time: 19:24:47 on Aug 22,2023, Elapsed time: 0:01:01
+# Errors: 0, Warnings: 2

@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at regressiveCounter.sv(6): always construct contains both blocking and non-blocking assignments File: C:/Users/erick/Documents/TEC/2023-IISemestre/TallerDigitales/Laboratorios/2/ebarrantes_digital_design_lab_2023/Ejercicio3/regressiveCounter.sv Line: 6
