@@ -1,0 +1,7 @@
+-- LIBRARY
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+
+-- ENTITY 
+entity sum_4_tb is -- no inputs or outputs
+end;
