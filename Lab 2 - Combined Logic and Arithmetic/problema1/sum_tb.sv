@@ -4,7 +4,7 @@ module sum_tb();
 	logic cin_tb, cout_tb;
 	
 	// instantiate devide under test
-	sum dut(a_tb, b_tb, cin_tb, s_tb, cout_tb);
+	sum #(4) dut(a_tb, b_tb, cin_tb, s_tb, cout_tb);
 	
 	//apply inputs one at a time
 	
