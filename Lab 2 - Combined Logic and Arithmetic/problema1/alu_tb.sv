@@ -19,7 +19,7 @@ module alu_tb #(parameter N = 4) ();
 	
 	initial begin
 	a_tb = 4'b1000;
-	b_tb = 4'b1000;
+	b_tb = 4'b0000;
 	op_tb = 3'b111; // 0 : 000
 	op_sum_tb = 0;
 	op_subt_tb = 0;
@@ -31,7 +31,7 @@ module alu_tb #(parameter N = 4) ();
 	op_subt_tb = 0;
 	#10ns;
 	a_tb = 4'b1010;
-	b_tb = 4'b1010;
+	b_tb = 4'b0010;
 	op_tb = 3'b101; // 2 : 010
 	op_sum_tb = 0;
 	op_subt_tb = 0;
@@ -73,6 +73,12 @@ module alu_tb #(parameter N = 4) ();
 	op_tb = 3'b111; 
 	op_sum_tb = 1; // sum
 	op_subt_tb = 0;
+	#10ns;
+	a_tb = 4'b1111;
+	b_tb = 4'b1000;
+	op_tb = 3'b111; 
+	op_sum_tb = 1; // sum
+	op_subt_tb = 1;
 	#10ns;
 	a_tb = 4'b1111;
 	b_tb = 4'b1111;
