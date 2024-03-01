@@ -1,8 +1,8 @@
 module alu_tb #(parameter N = 4) ();
 
-	logic [N-1:0] a_tb, b_tb, result_tb;
+	logic [N-1:0] a_tb, b_tb, result_tb, sumResult, subResult;
 	logic [2:0] op_tb;
-	logic op_sum_tb, op_subt_tb, carrying_tb;
+	logic op_sum_tb, op_subt_tb, carryingSum_tb, carryingSub_tb;
 	
 	// instantiate devide under test
 	alu #(N) dut(a_tb, 
@@ -10,8 +10,8 @@ module alu_tb #(parameter N = 4) ();
 					op_tb, 
 					op_sum_tb, 
 					op_subt_tb, 
-					result_tb, 
-					carrying_tb);
+					result_tb, sumResult, subResult,
+					carryingSum_tb, carryingSub_tb);
 	
 	// apply inputs one at a time
 	// low logic level = pressed
