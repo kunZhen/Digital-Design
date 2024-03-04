@@ -28,6 +28,24 @@ module subt_tb #(parameter N = 4) ();
 	cin = 1;
 	#10ns;
 	
+	// case: a > b
+	a = 4'b1000;
+	b = 4'b1001;
+	cin = 1;
+	#10ns;
+	a = 4'b0000;
+	b = 4'b1111;
+	cin = 1;
+	#10ns;
+	a = 4'b1001;
+	b = 4'b1011;
+	cin = 1;
+	#10ns;
+	a = 4'b1000;
+	b = 4'b1011;
+	cin = 1;
+	#10ns;
+	
 	
 	
 	end
