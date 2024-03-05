@@ -107,13 +107,19 @@ set_global_assignment -name SYSTEMVERILOG_FILE BitwiseMultiplier_TB.sv
 set_global_assignment -name EDA_TEST_BENCH_NAME BitwiseMultiplier_TB -section_id eda_simulation
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id BitwiseMultiplier_TB
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME BitwiseMultiplier_TB -section_id BitwiseMultiplier_TB
+set_global_assignment -name SYSTEMVERILOG_FILE divid.sv
+set_global_assignment -name SYSTEMVERILOG_FILE divid_tb.sv
+set_global_assignment -name EDA_TEST_BENCH_NAME divid_tb -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id divid_tb
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME divid_tb -section_id divid_tb
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
 set_global_assignment -name EDA_TEST_BENCH_FILE sum_tb.sv -section_id sum_tb
 set_global_assignment -name EDA_TEST_BENCH_FILE sum_1_tb.sv -section_id sum_1_tb
 set_global_assignment -name EDA_TEST_BENCH_FILE sum_tb_2.sv -section_id sum_tb_2
 set_global_assignment -name EDA_TEST_BENCH_FILE alu_tb.sv -section_id alu_tb
 set_global_assignment -name EDA_TEST_BENCH_FILE subt_tb.sv -section_id subt_tb
 set_global_assignment -name EDA_TEST_BENCH_FILE BitwiseMultiplier_TB.sv -section_id BitwiseMultiplier_TB
+set_global_assignment -name EDA_TEST_BENCH_FILE divid_tb.sv -section_id divid_tb
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

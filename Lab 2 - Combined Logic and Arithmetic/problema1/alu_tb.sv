@@ -1,6 +1,7 @@
 module alu_tb #(parameter N = 4) ();
 
-	logic [N-1:0] a_tb, b_tb, result_tb, sumResult, subResult;
+	logic [N-1:0] a_tb, b_tb, result_tb, sumResult, subResult, diviResult;
+	logic [(N*2)-1:0] multiResult;
 	logic [2:0] op_tb;
 	logic op_sum_tb, op_subt_tb, carryingSum_tb, carryingSub_tb;
 	
@@ -10,7 +11,7 @@ module alu_tb #(parameter N = 4) ();
 					op_tb, 
 					op_sum_tb, 
 					op_subt_tb, 
-					result_tb, sumResult, subResult,
+					result_tb, sumResult, subResult, diviResult, multiResult,
 					carryingSum_tb, carryingSub_tb);
 	
 	// apply inputs one at a time

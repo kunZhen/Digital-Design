@@ -3,7 +3,8 @@ module alu #(parameter N = 4)
 				input logic[N-1:0] a, b, 
 				input logic [2:0] op,
 				input logic op_sum, op_subt,
-				output logic[N-1:0] result, sumResult, subResult,
+				output logic[N-1:0] result, sumResult, subResult, diviResult,
+				output logic [(N*2)-1:0] multiResult,
 				output logic carryingSum, carryingSubt
 				);
 	
@@ -14,6 +15,9 @@ module alu #(parameter N = 4)
 	
 	sum #(N) adder(a, b, 0, sumResult, carryingSum);
 	subt #(N) subtract(a, b, 1, subResult, carryingSubt);
+	BitwiseMultiplier #(N) multiplier(a, b, multiResult);
+	divid #(N) divi(a, b, diviResult);
+	
 	
 	// multiplexer
 	assign result = sumSubt ? (op_sum ? sumResult : subResult)

@@ -25,7 +25,7 @@ module subt #(parameter N = 4)
 	comparator #(N) comp(a, b, a_mayor_b, a_menor_b);
 	
 	always_comb begin
-    if (a_mayor_b) begin
+    if (a_menor_b) begin
         for (int i = 0; i < N; i = i + 1) begin
 				a_number[i] = a[i];
             b_number[i] = ~b[i];
