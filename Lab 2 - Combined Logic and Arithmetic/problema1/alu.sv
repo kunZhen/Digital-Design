@@ -3,6 +3,7 @@ module alu #(parameter N = 4)
 				input logic[N-1:0] a, b, 
 				input logic [2:0] op,
 				input logic op_sum, op_subt,
+				output logic[6:0] units_7segments,
 				output logic[N-1:0] 	result, sumResult, 
 											subResult, diviResult, 
 											moduResult, andResult,
@@ -25,6 +26,7 @@ module alu #(parameter N = 4)
 	BitwiseMultiplier #(N) multiplier(a, b, multiResult);
 	
 	
+	
 	// instantiating logic operations
 	and_N_bits #(N) and_N(a, b, andResult);
 	or_N_bits #(N) or_N(a, b, orResult);
@@ -34,16 +36,16 @@ module alu #(parameter N = 4)
 	
 	// multiplexer
 	assign result = sumSubt ? (op_sum ? sumResult : subResult)
-									: ( op[2] 	? ( op[1] 	? ( op[0] 	? (4'b1110)   		// 000
-																					: (diviResult) )		// 001
+									: ( op[2] 	? ( op[1] 	? ( op[0] 	? (shift_left_result)   		// 000
+																					: (shift_right_result) )		// 001
 																	: ( op[0] 	? (4'b1100) 		// 010
 																					: (4'b0011) ) )   // 011
 													: ( op[1] 	? ( op[0] 	? (4'b1100) 		// 100
-																					: (4'b0011) )		// 101
-																	: ( op[0] 	? (4'b1100) 		// 110
-																					: (4'b0011) ) ) );// 111
+																					: (xorResult) )		// 101
+																	: ( op[0] 	? (orResult) 		// 110
+																					: (andResult) ) ) );// 111
 	
-
+	decoder decod(result, units_7segments);
 				
 
 endmodule
