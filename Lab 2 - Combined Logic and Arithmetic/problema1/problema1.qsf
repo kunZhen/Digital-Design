@@ -127,6 +127,11 @@ set_global_assignment -name SYSTEMVERILOG_FILE or_N_tb.sv
 set_global_assignment -name EDA_TEST_BENCH_NAME or_N_tb -section_id eda_simulation
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id or_N_tb
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME or_N_tb -section_id or_N_tb
+set_global_assignment -name SYSTEMVERILOG_FILE xor_N_bits.sv
+set_global_assignment -name SYSTEMVERILOG_FILE xor_N_tb.sv
+set_global_assignment -name EDA_TEST_BENCH_NAME xor_N_tb -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id xor_N_tb
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME xor_N_tb -section_id xor_N_tb
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
@@ -140,4 +145,5 @@ set_global_assignment -name EDA_TEST_BENCH_FILE divid_tb.sv -section_id divid_tb
 set_global_assignment -name EDA_TEST_BENCH_FILE modu_tb.sv -section_id modu_tb
 set_global_assignment -name EDA_TEST_BENCH_FILE and_N_tb.sv -section_id and_N_tb
 set_global_assignment -name EDA_TEST_BENCH_FILE or_N_tb.sv -section_id or_N_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE xor_N_tb.sv -section_id xor_N_tb
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
