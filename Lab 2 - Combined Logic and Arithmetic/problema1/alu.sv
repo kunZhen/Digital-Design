@@ -7,7 +7,7 @@ module alu #(parameter N = 4)
 											subResult, diviResult, 
 											moduResult, andResult,
 											orResult, xorResult,
-											shift_left_result,
+											shift_left_result, shift_right_result,
 				output logic [(N*2)-1:0] multiResult,
 				output logic carryingSum, carryingSubt
 				);
@@ -30,6 +30,7 @@ module alu #(parameter N = 4)
 	or_N_bits #(N) or_N(a, b, orResult);
 	xor_N_bits #(N) xor_N(a, b, xorResult);
 	shift_left #(N) left_shift(a, shift_left_result);
+	shift_right #(N) right_shift(a, shift_right_result);
 	
 	// multiplexer
 	assign result = sumSubt ? (op_sum ? sumResult : subResult)
