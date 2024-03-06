@@ -10,7 +10,8 @@ module alu #(parameter N = 4)
 											orResult, xorResult,
 											shift_left_result, shift_right_result,
 				output logic [(N*2)-1:0] multiResult,
-				output logic carryingSum, carryingSubt
+				output logic carryingSum, carryingSubt,
+				output logic flagNeg, flagZero, flagCarry, flagOver
 				);
 	
 	
@@ -20,7 +21,7 @@ module alu #(parameter N = 4)
 	
 	//instantiating arithmetic operations
 	sum #(N) adder(a, b, 0, sumResult, carryingSum);
-	subt #(N) subtract(a, b, 1, subResult, carryingSubt);
+	subt #(N) subtract(a, b, 1, subResult, carryingSubt, flagNeg);
 	divid #(N) divi(a, b, diviResult);
 	modu #(N) mod(a, b, moduResult);
 	BitwiseMultiplier #(N) multiplier(a, b, multiResult);
@@ -44,6 +45,11 @@ module alu #(parameter N = 4)
 																					: (xorResult) )		// 101
 																	: ( op[0] 	? (orResult) 		// 110
 																					: (andResult) ) ) );// 111
+	always_comb
+		if (result === '0)
+			flagZero = 1;
+		else 
+			flagZero = 0;
 	
 	// turns the binary result into hexadecimal to show in 7 segments
 	decoder decod(result, units_7segments);

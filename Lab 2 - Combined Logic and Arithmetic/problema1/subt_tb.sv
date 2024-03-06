@@ -1,14 +1,15 @@
 module subt_tb #(parameter N = 4) ();
 
 	logic [N-1:0] a, b, subtract;
-	logic cin, cout;
+	logic cin, cout, neg;
 	
 	subt #(N) dut(
 						a, 
 						b, 
 						cin,
 						subtract,
-						cout
+						cout,
+						neg
 						);
 	initial begin
 	a = 4'b1000;

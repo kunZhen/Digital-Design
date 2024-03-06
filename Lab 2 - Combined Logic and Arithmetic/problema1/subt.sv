@@ -3,7 +3,7 @@ module subt #(parameter N = 4)
 				input logic[N-1:0] a, b,
 				input logic cin,
 				output logic[N-1:0] subtract,
-				output logic cout
+				output logic cout, neg
 				);
 		
 	// Declaración de los cables internos de acarreo
@@ -30,11 +30,13 @@ module subt #(parameter N = 4)
 				a_number[i] = ~a[i];
             b_number[i] = b[i];
         end
+		  neg = 1;
     end else begin
         for (int i = 0; i < N; i = i + 1) begin
             a_number[i] = a[i];
 				b_number[i] = ~b[i];
         end
+		  neg = 0;
     end
 end
 	 
