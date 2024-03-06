@@ -3,7 +3,8 @@ module alu_tb #(parameter N = 4) ();
 	logic [N-1:0] a_tb, b_tb, 	result_tb, sumResult, 
 										subResult, diviResult, 
 										moduResult, andResult, 
-										orResult, xorResult;
+										orResult, xorResult, 
+										shift_left_result;
 	logic [(N*2)-1:0] multiResult;
 	logic [2:0] op_tb;
 	logic op_sum_tb, op_subt_tb, carryingSum_tb, carryingSub_tb;
@@ -18,6 +19,7 @@ module alu_tb #(parameter N = 4) ();
 					subResult, diviResult, 
 					moduResult, andResult, 
 					orResult, xorResult,
+					shift_left_result,
 					multiResult,
 					carryingSum_tb, carryingSub_tb);
 	
