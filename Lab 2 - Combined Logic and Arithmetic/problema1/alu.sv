@@ -3,7 +3,7 @@ module alu #(parameter N = 4)
 				input logic[N-1:0] a, b, 
 				input logic [2:0] op,
 				input logic op_sum, op_subt,
-				output logic[6:0] units_7segments,
+				output logic[6:0] units_7segments, tens_7segments,
 				output logic[N-1:0] 	result, sumResult, 
 											subResult, diviResult, 
 											moduResult, andResult,
@@ -45,6 +45,7 @@ module alu #(parameter N = 4)
 																	: ( op[0] 	? (orResult) 		// 110
 																					: (andResult) ) ) );// 111
 	
+	// turns the binary result into hexadecimal to show in 7 segments
 	decoder decod(result, units_7segments);
 				
 

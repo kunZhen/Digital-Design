@@ -8,8 +8,6 @@ module divid #(parameter N = 4) (
 	
 	assign a_mayor_b = (a > b);
 	assign a_menor_b = (a < b);
-	
-	//comparator #(N) comp(a, b, a_mayor_b, a_menor_b);
 
 	always_comb 
 		if (a_menor_b | (b === '0) ) 

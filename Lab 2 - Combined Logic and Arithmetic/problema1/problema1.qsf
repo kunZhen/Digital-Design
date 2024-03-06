@@ -142,6 +142,14 @@ set_global_assignment -name SYSTEMVERILOG_FILE shift_right_tb.sv
 set_global_assignment -name EDA_TEST_BENCH_NAME shift_right_tb -section_id eda_simulation
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id shift_right_tb
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME shift_right_tb -section_id shift_right_tb
+set_global_assignment -name SYSTEMVERILOG_FILE decoder.sv
+set_location_assignment PIN_AH28 -to units_7segments[6]
+set_location_assignment PIN_AG28 -to units_7segments[5]
+set_location_assignment PIN_AF28 -to units_7segments[4]
+set_location_assignment PIN_AG27 -to units_7segments[3]
+set_location_assignment PIN_AE28 -to units_7segments[2]
+set_location_assignment PIN_AE27 -to units_7segments[1]
+set_location_assignment PIN_AE26 -to units_7segments[0]
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
@@ -158,12 +166,4 @@ set_global_assignment -name EDA_TEST_BENCH_FILE or_N_tb.sv -section_id or_N_tb
 set_global_assignment -name EDA_TEST_BENCH_FILE xor_N_tb.sv -section_id xor_N_tb
 set_global_assignment -name EDA_TEST_BENCH_FILE shift_left_tb.sv -section_id shift_left_tb
 set_global_assignment -name EDA_TEST_BENCH_FILE shift_right_tb.sv -section_id shift_right_tb
-set_global_assignment -name SYSTEMVERILOG_FILE decoder.sv
-set_location_assignment PIN_AH28 -to units_7segments[6]
-set_location_assignment PIN_AG28 -to units_7segments[5]
-set_location_assignment PIN_AF28 -to units_7segments[4]
-set_location_assignment PIN_AG27 -to units_7segments[3]
-set_location_assignment PIN_AE28 -to units_7segments[2]
-set_location_assignment PIN_AE27 -to units_7segments[1]
-set_location_assignment PIN_AE26 -to units_7segments[0]
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

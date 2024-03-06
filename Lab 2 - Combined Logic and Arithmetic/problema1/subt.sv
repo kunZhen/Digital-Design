@@ -20,31 +20,23 @@ module subt #(parameter N = 4)
 	logic a_mayor_b;
 	logic a_menor_b;
 	
-	
-	
-	comparator #(N) comp(a, b, a_mayor_b, a_menor_b);
+	assign a_mayor_b = (a > b);
+	assign a_menor_b = (a < b);
+	//comparator #(N) comp(a, b, a_mayor_b, a_menor_b);
 	
 	always_comb begin
     if (a_menor_b) begin
         for (int i = 0; i < N; i = i + 1) begin
-				a_number[i] = a[i];
-            b_number[i] = ~b[i];
+				a_number[i] = ~a[i];
+            b_number[i] = b[i];
         end
     end else begin
         for (int i = 0; i < N; i = i + 1) begin
-            a_number[i] = ~a[i];
-				b_number[i] = b[i];
+            a_number[i] = a[i];
+				b_number[i] = ~b[i];
         end
     end
 end
-
-	
-	/*
-	always_comb begin
-        for (int i = 0; i < N; i = i + 1) begin
-            not_number[i] = ~number_convert[i];
-        end
-    end*/
 	 
 	 genvar i;
     generate
