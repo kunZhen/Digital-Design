@@ -6,6 +6,7 @@ module alu #(parameter N = 4)
 				output logic[N-1:0] 	result, sumResult, 
 											subResult, diviResult, 
 											moduResult, andResult,
+											orResult,
 				output logic [(N*2)-1:0] multiResult,
 				output logic carryingSum, carryingSubt
 				);
@@ -25,6 +26,7 @@ module alu #(parameter N = 4)
 	
 	// instantiating logic operations
 	and_N_bits #(N) and_N(a, b, andResult);
+	or_N_bits #(N) or_N(a, b, orResult);
 	
 	// multiplexer
 	assign result = sumSubt ? (op_sum ? sumResult : subResult)
