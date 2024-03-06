@@ -39,7 +39,7 @@
 
 set_global_assignment -name FAMILY "Cyclone V"
 set_global_assignment -name DEVICE 5CSEMA5F31C6
-set_global_assignment -name TOP_LEVEL_ENTITY problema1
+set_global_assignment -name TOP_LEVEL_ENTITY alu
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 22.1STD.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "13:19:19  FEBRUARY 23, 2024"
 set_global_assignment -name LAST_QUARTUS_VERSION "22.1std.0 Lite Edition"
@@ -52,3 +52,123 @@ set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_symbol
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_signal_integrity
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_boundary_scan
+set_global_assignment -name SYSTEMVERILOG_FILE sum.sv
+set_global_assignment -name SYSTEMVERILOG_FILE alu.sv
+set_global_assignment -name SYSTEMVERILOG_FILE sum_tb.sv
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name EDA_TEST_BENCH_ENABLE_STATUS TEST_BENCH_MODE -section_id eda_simulation
+set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH alu_tb -section_id eda_simulation
+set_global_assignment -name EDA_TEST_BENCH_NAME sum_tb -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id sum_tb
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME sum_tb -section_id sum_tb
+set_global_assignment -name SYSTEMVERILOG_FILE sum_1.sv
+set_global_assignment -name SYSTEMVERILOG_FILE sum_1_tb.sv
+set_global_assignment -name EDA_TEST_BENCH_NAME sum_1_tb -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id sum_1_tb
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME sum_1_tb -section_id sum_1_tb
+set_global_assignment -name SYSTEMVERILOG_FILE sum_tb_2.sv
+set_global_assignment -name EDA_TEST_BENCH_NAME sum_tb_2 -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id sum_tb_2
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME sum_tb_2 -section_id sum_tb_2
+set_global_assignment -name SYSTEMVERILOG_FILE alu_tb.sv
+set_global_assignment -name EDA_TEST_BENCH_NAME alu_tb -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id alu_tb
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME alu_tb -section_id alu_tb
+set_location_assignment PIN_AD11 -to b[0]
+set_location_assignment PIN_AD12 -to b[1]
+set_location_assignment PIN_AE11 -to b[2]
+set_location_assignment PIN_AC9 -to b[3]
+set_location_assignment PIN_AB12 -to a[0]
+set_location_assignment PIN_AC12 -to a[1]
+set_location_assignment PIN_AF9 -to a[2]
+set_location_assignment PIN_AF10 -to a[3]
+set_global_assignment -name SYSTEMVERILOG_FILE subt.sv
+set_global_assignment -name SYSTEMVERILOG_FILE subt_tb.sv
+set_global_assignment -name EDA_TEST_BENCH_NAME subt_tb -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id subt_tb
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME subt_tb -section_id subt_tb
+set_location_assignment PIN_AE12 -to op_sum
+set_location_assignment PIN_AD10 -to op_subt
+set_location_assignment PIN_Y16 -to op[2]
+set_location_assignment PIN_W15 -to op[1]
+set_location_assignment PIN_AA15 -to op[0]
+set_global_assignment -name SYSTEMVERILOG_FILE comparator.sv
+set_global_assignment -name SYSTEMVERILOG_FILE BitwiseMultiplier.sv
+set_global_assignment -name SYSTEMVERILOG_FILE BitwiseMultiplier_TB.sv
+set_global_assignment -name EDA_TEST_BENCH_NAME BitwiseMultiplier_TB -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id BitwiseMultiplier_TB
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME BitwiseMultiplier_TB -section_id BitwiseMultiplier_TB
+set_global_assignment -name SYSTEMVERILOG_FILE divid.sv
+set_global_assignment -name SYSTEMVERILOG_FILE divid_tb.sv
+set_global_assignment -name EDA_TEST_BENCH_NAME divid_tb -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id divid_tb
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME divid_tb -section_id divid_tb
+set_global_assignment -name SYSTEMVERILOG_FILE modu.sv
+set_global_assignment -name SYSTEMVERILOG_FILE modu_tb.sv
+set_global_assignment -name EDA_TEST_BENCH_NAME modu_tb -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id modu_tb
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME modu_tb -section_id modu_tb
+set_global_assignment -name SYSTEMVERILOG_FILE and_N_bits.sv
+set_global_assignment -name SYSTEMVERILOG_FILE and_N_tb.sv
+set_global_assignment -name EDA_TEST_BENCH_NAME and_N_tb -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id and_N_tb
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME and_N_tb -section_id and_N_tb
+set_global_assignment -name SYSTEMVERILOG_FILE or_N_bits.sv
+set_global_assignment -name SYSTEMVERILOG_FILE or_N_tb.sv
+set_global_assignment -name EDA_TEST_BENCH_NAME or_N_tb -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id or_N_tb
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME or_N_tb -section_id or_N_tb
+set_global_assignment -name SYSTEMVERILOG_FILE xor_N_bits.sv
+set_global_assignment -name SYSTEMVERILOG_FILE xor_N_tb.sv
+set_global_assignment -name EDA_TEST_BENCH_NAME xor_N_tb -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id xor_N_tb
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME xor_N_tb -section_id xor_N_tb
+set_global_assignment -name SYSTEMVERILOG_FILE shift_left.sv
+set_global_assignment -name SYSTEMVERILOG_FILE shift_left_tb.sv
+set_global_assignment -name EDA_TEST_BENCH_NAME shift_left_tb -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id shift_left_tb
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME shift_left_tb -section_id shift_left_tb
+set_global_assignment -name SYSTEMVERILOG_FILE shift_right.sv
+set_global_assignment -name SYSTEMVERILOG_FILE shift_right_tb.sv
+set_global_assignment -name EDA_TEST_BENCH_NAME shift_right_tb -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id shift_right_tb
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME shift_right_tb -section_id shift_right_tb
+set_global_assignment -name SYSTEMVERILOG_FILE decoder.sv
+set_location_assignment PIN_AH28 -to units_7segments[6]
+set_location_assignment PIN_AG28 -to units_7segments[5]
+set_location_assignment PIN_AF28 -to units_7segments[4]
+set_location_assignment PIN_AG27 -to units_7segments[3]
+set_location_assignment PIN_AE28 -to units_7segments[2]
+set_location_assignment PIN_AE27 -to units_7segments[1]
+set_location_assignment PIN_AE26 -to units_7segments[0]
+set_location_assignment PIN_V16 -to flagNeg
+set_location_assignment PIN_V17 -to flagCarry
+set_location_assignment PIN_W16 -to flagZero
+set_location_assignment PIN_V18 -to flagOver
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name EDA_TEST_BENCH_FILE sum_tb.sv -section_id sum_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE sum_1_tb.sv -section_id sum_1_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE sum_tb_2.sv -section_id sum_tb_2
+set_global_assignment -name EDA_TEST_BENCH_FILE alu_tb.sv -section_id alu_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE subt_tb.sv -section_id subt_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE BitwiseMultiplier_TB.sv -section_id BitwiseMultiplier_TB
+set_global_assignment -name EDA_TEST_BENCH_FILE divid_tb.sv -section_id divid_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE modu_tb.sv -section_id modu_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE and_N_tb.sv -section_id and_N_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE or_N_tb.sv -section_id or_N_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE xor_N_tb.sv -section_id xor_N_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE shift_left_tb.sv -section_id shift_left_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE shift_right_tb.sv -section_id shift_right_tb
+set_location_assignment PIN_AJ29 -to tens_7segments[0]
+set_location_assignment PIN_AH29 -to tens_7segments[1]
+set_location_assignment PIN_AH30 -to tens_7segments[2]
+set_location_assignment PIN_AG30 -to tens_7segments[3]
+set_location_assignment PIN_AF29 -to tens_7segments[4]
+set_location_assignment PIN_AF30 -to tens_7segments[5]
+set_location_assignment PIN_AD27 -to tens_7segments[6]
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
