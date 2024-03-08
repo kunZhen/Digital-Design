@@ -1,0 +1,309 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "a[0]",
+					"strict" : false
+				},
+				{
+					"name" : "a[1]",
+					"strict" : false
+				},
+				{
+					"name" : "a[2]",
+					"strict" : false
+				},
+				{
+					"name" : "a[3]",
+					"strict" : false
+				},
+				{
+					"name" : "a[4]",
+					"strict" : false
+				},
+				{
+					"name" : "a[5]",
+					"strict" : false
+				},
+				{
+					"name" : "a[6]",
+					"strict" : false
+				},
+				{
+					"name" : "b[0]",
+					"strict" : false
+				},
+				{
+					"name" : "b[1]",
+					"strict" : false
+				},
+				{
+					"name" : "b[2]",
+					"strict" : false
+				},
+				{
+					"name" : "b[3]",
+					"strict" : false
+				},
+				{
+					"name" : "b[4]",
+					"strict" : false
+				},
+				{
+					"name" : "b[5]",
+					"strict" : false
+				},
+				{
+					"name" : "b[6]",
+					"strict" : false
+				},
+				{
+					"name" : "c[0]",
+					"strict" : false
+				},
+				{
+					"name" : "c[1]",
+					"strict" : false
+				},
+				{
+					"name" : "c[2]",
+					"strict" : false
+				},
+				{
+					"name" : "c[3]",
+					"strict" : false
+				},
+				{
+					"name" : "d[0]",
+					"strict" : false
+				},
+				{
+					"name" : "d[1]",
+					"strict" : false
+				},
+				{
+					"name" : "d[2]",
+					"strict" : false
+				},
+				{
+					"name" : "d[3]",
+					"strict" : false
+				},
+				{
+					"name" : "e[0]",
+					"strict" : false
+				},
+				{
+					"name" : "e[1]",
+					"strict" : false
+				},
+				{
+					"name" : "e[2]",
+					"strict" : false
+				},
+				{
+					"name" : "e[3]",
+					"strict" : false
+				},
+				{
+					"name" : "f[0]",
+					"strict" : false
+				},
+				{
+					"name" : "f[1]",
+					"strict" : false
+				},
+				{
+					"name" : "f[2]",
+					"strict" : false
+				},
+				{
+					"name" : "f[3]",
+					"strict" : false
+				},
+				{
+					"name" : "g[0]",
+					"strict" : false
+				},
+				{
+					"name" : "g[1]",
+					"strict" : false
+				},
+				{
+					"name" : "g[2]",
+					"strict" : false
+				},
+				{
+					"name" : "g[3]",
+					"strict" : false
+				},
+				{
+					"name" : "h[0]",
+					"strict" : false
+				},
+				{
+					"name" : "h[1]",
+					"strict" : false
+				},
+				{
+					"name" : "h[2]",
+					"strict" : false
+				},
+				{
+					"name" : "h[3]",
+					"strict" : false
+				},
+				{
+					"name" : "i[0]",
+					"strict" : false
+				},
+				{
+					"name" : "i[1]",
+					"strict" : false
+				},
+				{
+					"name" : "i[2]",
+					"strict" : false
+				},
+				{
+					"name" : "i[3]",
+					"strict" : false
+				},
+				{
+					"name" : "j[0]",
+					"strict" : false
+				},
+				{
+					"name" : "j[1]",
+					"strict" : false
+				},
+				{
+					"name" : "j[2]",
+					"strict" : false
+				},
+				{
+					"name" : "j[3]",
+					"strict" : false
+				},
+				{
+					"name" : "l[0]",
+					"strict" : false
+				},
+				{
+					"name" : "m[0]",
+					"strict" : false
+				},
+				{
+					"name" : "m[1]",
+					"strict" : false
+				},
+				{
+					"name" : "m[2]",
+					"strict" : false
+				},
+				{
+					"name" : "m[3]",
+					"strict" : false
+				},
+				{
+					"name" : "m[4]",
+					"strict" : false
+				},
+				{
+					"name" : "m[5]",
+					"strict" : false
+				},
+				{
+					"name" : "m[6]",
+					"strict" : false
+				},
+				{
+					"name" : "m[7]",
+					"strict" : false
+				},
+				{
+					"name" : "n",
+					"strict" : false
+				},
+				{
+					"name" : "o",
+					"strict" : false
+				},
+				{
+					"name" : "q",
+					"strict" : false
+				},
+				{
+					"name" : "r",
+					"strict" : false
+				},
+				{
+					"name" : "s",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
+					"strict" : false
+				},
+				{
+					"name" : "a_n[0]",
+					"strict" : false
+				},
+				{
+					"name" : "b_n[0]",
+					"strict" : false
+				},
+				{
+					"name" : "op_n[1]",
+					"strict" : false
+				},
+				{
+					"name" : "op_n[0]",
+					"strict" : false
+				},
+				{
+					"name" : "b_n[1]",
+					"strict" : false
+				},
+				{
+					"name" : "b_n[3]",
+					"strict" : false
+				},
+				{
+					"name" : "b_n[2]",
+					"strict" : false
+				},
+				{
+					"name" : "op_n[2]",
+					"strict" : false
+				},
+				{
+					"name" : "op_sum_n[0]",
+					"strict" : false
+				},
+				{
+					"name" : "op_rest_n[0]",
+					"strict" : false
+				},
+				{
+					"name" : "a_n[1]",
+					"strict" : false
+				},
+				{
+					"name" : "a_n[3]",
+					"strict" : false
+				},
+				{
+					"name" : "a_n[2]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

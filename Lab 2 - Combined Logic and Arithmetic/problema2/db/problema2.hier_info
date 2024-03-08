@@ -1,0 +1,1053 @@
+|AlteraTimer
+a_n[0] => a_n[0].IN1
+a_n[1] => a_n[1].IN1
+a_n[2] => a_n[2].IN1
+a_n[3] => a_n[3].IN1
+b_n[0] => b_n[0].IN1
+b_n[1] => b_n[1].IN1
+b_n[2] => b_n[2].IN1
+b_n[3] => b_n[3].IN1
+op_n[0] => op_n[0].IN1
+op_n[1] => op_n[1].IN1
+op_n[2] => op_n[2].IN1
+op_n[3] => op_n[3].IN1
+op_sum_n[0] => op_sum_n[0].IN1
+op_sum_n[1] => op_sum_n[1].IN1
+op_sum_n[2] => op_sum_n[2].IN1
+op_sum_n[3] => op_sum_n[3].IN1
+op_rest_n[0] => op_rest_n[0].IN1
+op_rest_n[1] => op_rest_n[1].IN1
+op_rest_n[2] => op_rest_n[2].IN1
+op_rest_n[3] => op_rest_n[3].IN1
+clk => clk.IN2
+reset => reset.IN2
+a[0] <= FlipFlop2:ff2_inst.Output_units_7segmentsff2
+a[1] <= FlipFlop2:ff2_inst.Output_units_7segmentsff2
+a[2] <= FlipFlop2:ff2_inst.Output_units_7segmentsff2
+a[3] <= FlipFlop2:ff2_inst.Output_units_7segmentsff2
+a[4] <= FlipFlop2:ff2_inst.Output_units_7segmentsff2
+a[5] <= FlipFlop2:ff2_inst.Output_units_7segmentsff2
+a[6] <= FlipFlop2:ff2_inst.Output_units_7segmentsff2
+b[0] <= FlipFlop2:ff2_inst.Output_tens_7segmentsff2
+b[1] <= FlipFlop2:ff2_inst.Output_tens_7segmentsff2
+b[2] <= FlipFlop2:ff2_inst.Output_tens_7segmentsff2
+b[3] <= FlipFlop2:ff2_inst.Output_tens_7segmentsff2
+b[4] <= FlipFlop2:ff2_inst.Output_tens_7segmentsff2
+b[5] <= FlipFlop2:ff2_inst.Output_tens_7segmentsff2
+b[6] <= FlipFlop2:ff2_inst.Output_tens_7segmentsff2
+c[0] <= FlipFlop2:ff2_inst.Output_resultff2
+c[1] <= FlipFlop2:ff2_inst.Output_resultff2
+c[2] <= FlipFlop2:ff2_inst.Output_resultff2
+c[3] <= FlipFlop2:ff2_inst.Output_resultff2
+d[0] <= FlipFlop2:ff2_inst.Output_sumResultff2
+d[1] <= FlipFlop2:ff2_inst.Output_sumResultff2
+d[2] <= FlipFlop2:ff2_inst.Output_sumResultff2
+d[3] <= FlipFlop2:ff2_inst.Output_sumResultff2
+e[0] <= FlipFlop2:ff2_inst.Output_subResultff2
+e[1] <= FlipFlop2:ff2_inst.Output_subResultff2
+e[2] <= FlipFlop2:ff2_inst.Output_subResultff2
+e[3] <= FlipFlop2:ff2_inst.Output_subResultff2
+f[0] <= FlipFlop2:ff2_inst.Output_diviResultff2
+f[1] <= FlipFlop2:ff2_inst.Output_diviResultff2
+f[2] <= FlipFlop2:ff2_inst.Output_diviResultff2
+f[3] <= FlipFlop2:ff2_inst.Output_diviResultff2
+g[0] <= FlipFlop2:ff2_inst.Output_moduResultff2
+g[1] <= FlipFlop2:ff2_inst.Output_moduResultff2
+g[2] <= FlipFlop2:ff2_inst.Output_moduResultff2
+g[3] <= FlipFlop2:ff2_inst.Output_moduResultff2
+h[0] <= FlipFlop2:ff2_inst.Output_andResultff2
+h[1] <= FlipFlop2:ff2_inst.Output_andResultff2
+h[2] <= FlipFlop2:ff2_inst.Output_andResultff2
+h[3] <= FlipFlop2:ff2_inst.Output_andResultff2
+i[0] <= FlipFlop2:ff2_inst.Output_orResultff2
+i[1] <= FlipFlop2:ff2_inst.Output_orResultff2
+i[2] <= FlipFlop2:ff2_inst.Output_orResultff2
+i[3] <= FlipFlop2:ff2_inst.Output_orResultff2
+j[0] <= FlipFlop2:ff2_inst.Output_xorResultff2
+j[1] <= FlipFlop2:ff2_inst.Output_xorResultff2
+j[2] <= FlipFlop2:ff2_inst.Output_xorResultff2
+j[3] <= FlipFlop2:ff2_inst.Output_xorResultff2
+k[0] <= FlipFlop2:ff2_inst.Output_shift_left_resultff2
+k[1] <= FlipFlop2:ff2_inst.Output_shift_left_resultff2
+k[2] <= FlipFlop2:ff2_inst.Output_shift_left_resultff2
+k[3] <= FlipFlop2:ff2_inst.Output_shift_left_resultff2
+l[0] <= FlipFlop2:ff2_inst.Output_shift_right_resultff2
+l[1] <= FlipFlop2:ff2_inst.Output_shift_right_resultff2
+l[2] <= FlipFlop2:ff2_inst.Output_shift_right_resultff2
+l[3] <= FlipFlop2:ff2_inst.Output_shift_right_resultff2
+m[0] <= FlipFlop2:ff2_inst.Output_multiResultff2
+m[1] <= FlipFlop2:ff2_inst.Output_multiResultff2
+m[2] <= FlipFlop2:ff2_inst.Output_multiResultff2
+m[3] <= FlipFlop2:ff2_inst.Output_multiResultff2
+m[4] <= FlipFlop2:ff2_inst.Output_multiResultff2
+m[5] <= FlipFlop2:ff2_inst.Output_multiResultff2
+m[6] <= FlipFlop2:ff2_inst.Output_multiResultff2
+m[7] <= FlipFlop2:ff2_inst.Output_multiResultff2
+n <= FlipFlop2:ff2_inst.Output_carryingSumff2
+o <= FlipFlop2:ff2_inst.Output_carryingSubtff2
+q <= FlipFlop2:ff2_inst.Output_flagNegff2
+r <= FlipFlop2:ff2_inst.Output_flagZeroff2
+s <= FlipFlop2:ff2_inst.Output_flagCarryff2
+
+
+|AlteraTimer|FlipFlop1:ff1_inst
+clk => Output_op_restff1~reg0.CLK
+clk => Output_op_sumff1~reg0.CLK
+clk => Output_opff1[0]~reg0.CLK
+clk => Output_opff1[1]~reg0.CLK
+clk => Output_opff1[2]~reg0.CLK
+clk => Output_bff1[0]~reg0.CLK
+clk => Output_bff1[1]~reg0.CLK
+clk => Output_bff1[2]~reg0.CLK
+clk => Output_bff1[3]~reg0.CLK
+clk => Output_aff1[0]~reg0.CLK
+clk => Output_aff1[1]~reg0.CLK
+clk => Output_aff1[2]~reg0.CLK
+clk => Output_aff1[3]~reg0.CLK
+reset => Output_op_restff1~reg0.ACLR
+reset => Output_op_sumff1~reg0.ACLR
+reset => Output_opff1[0]~reg0.ACLR
+reset => Output_opff1[1]~reg0.ACLR
+reset => Output_opff1[2]~reg0.ACLR
+reset => Output_bff1[0]~reg0.ACLR
+reset => Output_bff1[1]~reg0.ACLR
+reset => Output_bff1[2]~reg0.ACLR
+reset => Output_bff1[3]~reg0.ACLR
+reset => Output_aff1[0]~reg0.ACLR
+reset => Output_aff1[1]~reg0.ACLR
+reset => Output_aff1[2]~reg0.ACLR
+reset => Output_aff1[3]~reg0.ACLR
+aff1[0] => Output_aff1[0]~reg0.DATAIN
+aff1[1] => Output_aff1[1]~reg0.DATAIN
+aff1[2] => Output_aff1[2]~reg0.DATAIN
+aff1[3] => Output_aff1[3]~reg0.DATAIN
+bff1[0] => Output_bff1[0]~reg0.DATAIN
+bff1[1] => Output_bff1[1]~reg0.DATAIN
+bff1[2] => Output_bff1[2]~reg0.DATAIN
+bff1[3] => Output_bff1[3]~reg0.DATAIN
+opff1[0] => Output_opff1[0]~reg0.DATAIN
+opff1[1] => Output_opff1[1]~reg0.DATAIN
+opff1[2] => Output_opff1[2]~reg0.DATAIN
+op_sumff1 => Output_op_sumff1~reg0.DATAIN
+op_restff1 => Output_op_restff1~reg0.DATAIN
+Output_aff1[0] <= Output_aff1[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output_aff1[1] <= Output_aff1[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output_aff1[2] <= Output_aff1[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output_aff1[3] <= Output_aff1[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output_bff1[0] <= Output_bff1[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output_bff1[1] <= Output_bff1[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output_bff1[2] <= Output_bff1[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output_bff1[3] <= Output_bff1[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output_opff1[0] <= Output_opff1[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output_opff1[1] <= Output_opff1[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output_opff1[2] <= Output_opff1[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output_op_sumff1 <= Output_op_sumff1~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output_op_restff1 <= Output_op_restff1~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|AlteraTimer|alu:alu_inst
+a[0] => a[0].IN10
+a[1] => a[1].IN10
+a[2] => a[2].IN10
+a[3] => a[3].IN10
+b[0] => b[0].IN8
+b[1] => b[1].IN8
+b[2] => b[2].IN8
+b[3] => b[3].IN8
+op[0] => result.OUTPUTSELECT
+op[0] => result.OUTPUTSELECT
+op[0] => result.OUTPUTSELECT
+op[0] => result.OUTPUTSELECT
+op[0] => result.OUTPUTSELECT
+op[0] => result.OUTPUTSELECT
+op[0] => result.OUTPUTSELECT
+op[0] => result.OUTPUTSELECT
+op[0] => result.OUTPUTSELECT
+op[0] => result.OUTPUTSELECT
+op[0] => result.OUTPUTSELECT
+op[0] => result.OUTPUTSELECT
+op[0] => result.OUTPUTSELECT
+op[0] => result.OUTPUTSELECT
+op[0] => result.OUTPUTSELECT
+op[0] => result.OUTPUTSELECT
+op[0] => Equal0.IN2
+op[0] => Equal1.IN1
+op[0] => Equal3.IN1
+op[1] => result.OUTPUTSELECT
+op[1] => result.OUTPUTSELECT
+op[1] => result.OUTPUTSELECT
+op[1] => result.OUTPUTSELECT
+op[1] => result.OUTPUTSELECT
+op[1] => result.OUTPUTSELECT
+op[1] => result.OUTPUTSELECT
+op[1] => result.OUTPUTSELECT
+op[1] => Equal0.IN1
+op[1] => Equal1.IN0
+op[1] => Equal3.IN2
+op[2] => result.OUTPUTSELECT
+op[2] => result.OUTPUTSELECT
+op[2] => result.OUTPUTSELECT
+op[2] => result.OUTPUTSELECT
+op[2] => Equal0.IN0
+op[2] => Equal1.IN2
+op[2] => Equal3.IN0
+op_sum => sumSubt.IN0
+op_sum => result.OUTPUTSELECT
+op_sum => result.OUTPUTSELECT
+op_sum => result.OUTPUTSELECT
+op_sum => result.OUTPUTSELECT
+op_sum => always2.IN1
+op_sum => always3.IN1
+op_subt => sumSubt.IN1
+op_subt => flagNeg.OUTPUTSELECT
+units_7segments[0] <= decoder:decodUnits.port1
+units_7segments[1] <= decoder:decodUnits.port1
+units_7segments[2] <= decoder:decodUnits.port1
+units_7segments[3] <= decoder:decodUnits.port1
+units_7segments[4] <= decoder:decodUnits.port1
+units_7segments[5] <= decoder:decodUnits.port1
+units_7segments[6] <= decoder:decodUnits.port1
+tens_7segments[0] <= tens_7segments.DB_MAX_OUTPUT_PORT_TYPE
+tens_7segments[1] <= tens_7segments.DB_MAX_OUTPUT_PORT_TYPE
+tens_7segments[2] <= tens_7segments.DB_MAX_OUTPUT_PORT_TYPE
+tens_7segments[3] <= tens_7segments.DB_MAX_OUTPUT_PORT_TYPE
+tens_7segments[4] <= tens_7segments.DB_MAX_OUTPUT_PORT_TYPE
+tens_7segments[5] <= tens_7segments.DB_MAX_OUTPUT_PORT_TYPE
+tens_7segments[6] <= tens_7segments.DB_MAX_OUTPUT_PORT_TYPE
+result[0] <= result[0].DB_MAX_OUTPUT_PORT_TYPE
+result[1] <= result[1].DB_MAX_OUTPUT_PORT_TYPE
+result[2] <= result[2].DB_MAX_OUTPUT_PORT_TYPE
+result[3] <= result[3].DB_MAX_OUTPUT_PORT_TYPE
+sumResult[0] <= sum:adder.port3
+sumResult[1] <= sum:adder.port3
+sumResult[2] <= sum:adder.port3
+sumResult[3] <= sum:adder.port3
+subResult[0] <= subt:subtract.port3
+subResult[1] <= subt:subtract.port3
+subResult[2] <= subt:subtract.port3
+subResult[3] <= subt:subtract.port3
+diviResult[0] <= divid:divi.port2
+diviResult[1] <= divid:divi.port2
+diviResult[2] <= divid:divi.port2
+diviResult[3] <= divid:divi.port2
+moduResult[0] <= modu:mod.port2
+moduResult[1] <= modu:mod.port2
+moduResult[2] <= modu:mod.port2
+moduResult[3] <= modu:mod.port2
+andResult[0] <= and_N_bits:and_N.port2
+andResult[1] <= and_N_bits:and_N.port2
+andResult[2] <= and_N_bits:and_N.port2
+andResult[3] <= and_N_bits:and_N.port2
+orResult[0] <= or_N_bits:or_N.port2
+orResult[1] <= or_N_bits:or_N.port2
+orResult[2] <= or_N_bits:or_N.port2
+orResult[3] <= or_N_bits:or_N.port2
+xorResult[0] <= xor_N_bits:xor_N.port2
+xorResult[1] <= xor_N_bits:xor_N.port2
+xorResult[2] <= xor_N_bits:xor_N.port2
+xorResult[3] <= xor_N_bits:xor_N.port2
+shift_left_result[0] <= shift_left:left_shift.port1
+shift_left_result[1] <= shift_left:left_shift.port1
+shift_left_result[2] <= shift_left:left_shift.port1
+shift_left_result[3] <= shift_left:left_shift.port1
+shift_right_result[0] <= shift_right:right_shift.port1
+shift_right_result[1] <= shift_right:right_shift.port1
+shift_right_result[2] <= shift_right:right_shift.port1
+shift_right_result[3] <= shift_right:right_shift.port1
+multiResult[0] <= BitwiseMultiplier:multiplier1.port2
+multiResult[1] <= BitwiseMultiplier:multiplier1.port2
+multiResult[2] <= BitwiseMultiplier:multiplier1.port2
+multiResult[3] <= BitwiseMultiplier:multiplier1.port2
+multiResult[4] <= tensMultiplier[0].DB_MAX_OUTPUT_PORT_TYPE
+multiResult[5] <= tensMultiplier[1].DB_MAX_OUTPUT_PORT_TYPE
+multiResult[6] <= tensMultiplier[2].DB_MAX_OUTPUT_PORT_TYPE
+multiResult[7] <= tensMultiplier[3].DB_MAX_OUTPUT_PORT_TYPE
+carryingSum <= sum:adder.port4
+carryingSubt <= subt:subtract.port4
+flagNeg <= flagNeg.DB_MAX_OUTPUT_PORT_TYPE
+flagZero <= flagZero.DB_MAX_OUTPUT_PORT_TYPE
+flagCarry <= always2.DB_MAX_OUTPUT_PORT_TYPE
+flagOver <= flagOver.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|AlteraTimer|alu:alu_inst|sum:adder
+a[0] => a[0].IN1
+a[1] => a[1].IN1
+a[2] => a[2].IN1
+a[3] => a[3].IN1
+b[0] => b[0].IN1
+b[1] => b[1].IN1
+b[2] => b[2].IN1
+b[3] => b[3].IN1
+cin => carry[0].IN1
+s[0] <= sum_1:adder_instances[0].adder_instance.s
+s[1] <= sum_1:adder_instances[1].adder_instance.s
+s[2] <= sum_1:adder_instances[2].adder_instance.s
+s[3] <= sum_1:adder_instances[3].adder_instance.s
+cout <= sum_1:adder_instances[3].adder_instance.cout
+
+
+|AlteraTimer|alu:alu_inst|sum:adder|sum_1:adder_instances[0].adder_instance
+a => p.IN0
+a => g.IN0
+b => p.IN1
+b => g.IN1
+cin => s.IN1
+cin => cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|AlteraTimer|alu:alu_inst|sum:adder|sum_1:adder_instances[1].adder_instance
+a => p.IN0
+a => g.IN0
+b => p.IN1
+b => g.IN1
+cin => s.IN1
+cin => cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|AlteraTimer|alu:alu_inst|sum:adder|sum_1:adder_instances[2].adder_instance
+a => p.IN0
+a => g.IN0
+b => p.IN1
+b => g.IN1
+cin => s.IN1
+cin => cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|AlteraTimer|alu:alu_inst|sum:adder|sum_1:adder_instances[3].adder_instance
+a => p.IN0
+a => g.IN0
+b => p.IN1
+b => g.IN1
+cin => s.IN1
+cin => cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|AlteraTimer|alu:alu_inst|subt:subtract
+a[0] => LessThan0.IN4
+a[0] => a_number.DATAA
+a[0] => a_number.DATAB
+a[1] => LessThan0.IN3
+a[1] => a_number.DATAA
+a[1] => a_number.DATAB
+a[2] => LessThan0.IN2
+a[2] => a_number.DATAA
+a[2] => a_number.DATAB
+a[3] => LessThan0.IN1
+a[3] => a_number.DATAA
+a[3] => a_number.DATAB
+b[0] => LessThan0.IN8
+b[0] => b_number.DATAB
+b[0] => b_number.DATAA
+b[1] => LessThan0.IN7
+b[1] => b_number.DATAB
+b[1] => b_number.DATAA
+b[2] => LessThan0.IN6
+b[2] => b_number.DATAB
+b[2] => b_number.DATAA
+b[3] => LessThan0.IN5
+b[3] => b_number.DATAB
+b[3] => b_number.DATAA
+cin => carry[0].IN1
+subtract[0] <= sum_1:subt_instances[0].adder_instance.s
+subtract[1] <= sum_1:subt_instances[1].adder_instance.s
+subtract[2] <= sum_1:subt_instances[2].adder_instance.s
+subtract[3] <= sum_1:subt_instances[3].adder_instance.s
+cout <= sum_1:subt_instances[3].adder_instance.cout
+neg <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|AlteraTimer|alu:alu_inst|subt:subtract|sum_1:subt_instances[0].adder_instance
+a => p.IN0
+a => g.IN0
+b => p.IN1
+b => g.IN1
+cin => s.IN1
+cin => cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|AlteraTimer|alu:alu_inst|subt:subtract|sum_1:subt_instances[1].adder_instance
+a => p.IN0
+a => g.IN0
+b => p.IN1
+b => g.IN1
+cin => s.IN1
+cin => cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|AlteraTimer|alu:alu_inst|subt:subtract|sum_1:subt_instances[2].adder_instance
+a => p.IN0
+a => g.IN0
+b => p.IN1
+b => g.IN1
+cin => s.IN1
+cin => cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|AlteraTimer|alu:alu_inst|subt:subtract|sum_1:subt_instances[3].adder_instance
+a => p.IN0
+a => g.IN0
+b => p.IN1
+b => g.IN1
+cin => s.IN1
+cin => cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|AlteraTimer|alu:alu_inst|divid:divi
+a[0] => LessThan0.IN4
+a[0] => Div0.IN3
+a[1] => LessThan0.IN3
+a[1] => Div0.IN2
+a[2] => LessThan0.IN2
+a[2] => Div0.IN1
+a[3] => LessThan0.IN1
+a[3] => Div0.IN0
+b[0] => LessThan0.IN8
+b[0] => Div0.IN7
+b[0] => Equal0.IN3
+b[1] => LessThan0.IN7
+b[1] => Div0.IN6
+b[1] => Equal0.IN2
+b[2] => LessThan0.IN6
+b[2] => Div0.IN5
+b[2] => Equal0.IN1
+b[3] => LessThan0.IN5
+b[3] => Div0.IN4
+b[3] => Equal0.IN0
+dividResult[0] <= dividResult.DB_MAX_OUTPUT_PORT_TYPE
+dividResult[1] <= dividResult.DB_MAX_OUTPUT_PORT_TYPE
+dividResult[2] <= dividResult.DB_MAX_OUTPUT_PORT_TYPE
+dividResult[3] <= dividResult.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|AlteraTimer|alu:alu_inst|modu:mod
+a[0] => Mod0.IN3
+a[1] => Mod0.IN2
+a[2] => Mod0.IN1
+a[3] => Mod0.IN0
+b[0] => Mod0.IN7
+b[0] => Equal0.IN3
+b[1] => Mod0.IN6
+b[1] => Equal0.IN2
+b[2] => Mod0.IN5
+b[2] => Equal0.IN1
+b[3] => Mod0.IN4
+b[3] => Equal0.IN0
+moduResult[0] <= moduResult.DB_MAX_OUTPUT_PORT_TYPE
+moduResult[1] <= moduResult.DB_MAX_OUTPUT_PORT_TYPE
+moduResult[2] <= moduResult.DB_MAX_OUTPUT_PORT_TYPE
+moduResult[3] <= moduResult.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|AlteraTimer|alu:alu_inst|BitwiseMultiplier:multiplier1
+A[0] => ta.IN0
+A[0] => ta.IN0
+A[0] => ta.IN0
+A[0] => M.IN0
+A[1] => tb.IN0
+A[1] => tb.IN0
+A[1] => tb.IN0
+A[1] => tb.IN0
+A[2] => tb.IN0
+A[2] => tb.IN0
+A[2] => tb.IN0
+A[2] => tb.IN0
+A[3] => tb.IN0
+A[3] => tb.IN0
+A[3] => tb.IN0
+A[3] => tb.IN0
+B[0] => tb.IN1
+B[0] => M.IN1
+B[0] => tb.IN1
+B[0] => tb.IN1
+B[1] => ta.IN1
+B[1] => tb.IN1
+B[1] => tb.IN1
+B[1] => tb.IN1
+B[2] => ta.IN1
+B[2] => tb.IN1
+B[2] => tb.IN1
+B[2] => tb.IN1
+B[3] => ta.IN1
+B[3] => tb.IN1
+B[3] => tb.IN1
+B[3] => tb.IN1
+M[0] <= M.DB_MAX_OUTPUT_PORT_TYPE
+M[1] <= sum:fa[0].fa.s
+M[2] <= sum:fa[1].fa.s
+M[3] <= sum:fa[2].fa.s
+M[4] <= sum:fa[2].fa.s
+M[5] <= sum:fa[2].fa.s
+M[6] <= sum:fa[2].fa.s
+M[7] <= sum:fa[2].fa.cout
+
+
+|AlteraTimer|alu:alu_inst|BitwiseMultiplier:multiplier1|sum:fa[0].fa
+a[0] => a[0].IN1
+a[1] => a[1].IN1
+a[2] => a[2].IN1
+a[3] => a[3].IN1
+b[0] => b[0].IN1
+b[1] => b[1].IN1
+b[2] => b[2].IN1
+b[3] => b[3].IN1
+cin => carry[0].IN1
+s[0] <= sum_1:adder_instances[0].adder_instance.s
+s[1] <= sum_1:adder_instances[1].adder_instance.s
+s[2] <= sum_1:adder_instances[2].adder_instance.s
+s[3] <= sum_1:adder_instances[3].adder_instance.s
+cout <= sum_1:adder_instances[3].adder_instance.cout
+
+
+|AlteraTimer|alu:alu_inst|BitwiseMultiplier:multiplier1|sum:fa[0].fa|sum_1:adder_instances[0].adder_instance
+a => p.IN0
+a => g.IN0
+b => p.IN1
+b => g.IN1
+cin => s.IN1
+cin => cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|AlteraTimer|alu:alu_inst|BitwiseMultiplier:multiplier1|sum:fa[0].fa|sum_1:adder_instances[1].adder_instance
+a => p.IN0
+a => g.IN0
+b => p.IN1
+b => g.IN1
+cin => s.IN1
+cin => cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|AlteraTimer|alu:alu_inst|BitwiseMultiplier:multiplier1|sum:fa[0].fa|sum_1:adder_instances[2].adder_instance
+a => p.IN0
+a => g.IN0
+b => p.IN1
+b => g.IN1
+cin => s.IN1
+cin => cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|AlteraTimer|alu:alu_inst|BitwiseMultiplier:multiplier1|sum:fa[0].fa|sum_1:adder_instances[3].adder_instance
+a => p.IN0
+a => g.IN0
+b => p.IN1
+b => g.IN1
+cin => s.IN1
+cin => cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|AlteraTimer|alu:alu_inst|BitwiseMultiplier:multiplier1|sum:fa[1].fa
+a[0] => a[0].IN1
+a[1] => a[1].IN1
+a[2] => a[2].IN1
+a[3] => a[3].IN1
+b[0] => b[0].IN1
+b[1] => b[1].IN1
+b[2] => b[2].IN1
+b[3] => b[3].IN1
+cin => carry[0].IN1
+s[0] <= sum_1:adder_instances[0].adder_instance.s
+s[1] <= sum_1:adder_instances[1].adder_instance.s
+s[2] <= sum_1:adder_instances[2].adder_instance.s
+s[3] <= sum_1:adder_instances[3].adder_instance.s
+cout <= sum_1:adder_instances[3].adder_instance.cout
+
+
+|AlteraTimer|alu:alu_inst|BitwiseMultiplier:multiplier1|sum:fa[1].fa|sum_1:adder_instances[0].adder_instance
+a => p.IN0
+a => g.IN0
+b => p.IN1
+b => g.IN1
+cin => s.IN1
+cin => cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|AlteraTimer|alu:alu_inst|BitwiseMultiplier:multiplier1|sum:fa[1].fa|sum_1:adder_instances[1].adder_instance
+a => p.IN0
+a => g.IN0
+b => p.IN1
+b => g.IN1
+cin => s.IN1
+cin => cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|AlteraTimer|alu:alu_inst|BitwiseMultiplier:multiplier1|sum:fa[1].fa|sum_1:adder_instances[2].adder_instance
+a => p.IN0
+a => g.IN0
+b => p.IN1
+b => g.IN1
+cin => s.IN1
+cin => cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|AlteraTimer|alu:alu_inst|BitwiseMultiplier:multiplier1|sum:fa[1].fa|sum_1:adder_instances[3].adder_instance
+a => p.IN0
+a => g.IN0
+b => p.IN1
+b => g.IN1
+cin => s.IN1
+cin => cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|AlteraTimer|alu:alu_inst|BitwiseMultiplier:multiplier1|sum:fa[2].fa
+a[0] => a[0].IN1
+a[1] => a[1].IN1
+a[2] => a[2].IN1
+a[3] => a[3].IN1
+b[0] => b[0].IN1
+b[1] => b[1].IN1
+b[2] => b[2].IN1
+b[3] => b[3].IN1
+cin => carry[0].IN1
+s[0] <= sum_1:adder_instances[0].adder_instance.s
+s[1] <= sum_1:adder_instances[1].adder_instance.s
+s[2] <= sum_1:adder_instances[2].adder_instance.s
+s[3] <= sum_1:adder_instances[3].adder_instance.s
+cout <= sum_1:adder_instances[3].adder_instance.cout
+
+
+|AlteraTimer|alu:alu_inst|BitwiseMultiplier:multiplier1|sum:fa[2].fa|sum_1:adder_instances[0].adder_instance
+a => p.IN0
+a => g.IN0
+b => p.IN1
+b => g.IN1
+cin => s.IN1
+cin => cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|AlteraTimer|alu:alu_inst|BitwiseMultiplier:multiplier1|sum:fa[2].fa|sum_1:adder_instances[1].adder_instance
+a => p.IN0
+a => g.IN0
+b => p.IN1
+b => g.IN1
+cin => s.IN1
+cin => cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|AlteraTimer|alu:alu_inst|BitwiseMultiplier:multiplier1|sum:fa[2].fa|sum_1:adder_instances[2].adder_instance
+a => p.IN0
+a => g.IN0
+b => p.IN1
+b => g.IN1
+cin => s.IN1
+cin => cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|AlteraTimer|alu:alu_inst|BitwiseMultiplier:multiplier1|sum:fa[2].fa|sum_1:adder_instances[3].adder_instance
+a => p.IN0
+a => g.IN0
+b => p.IN1
+b => g.IN1
+cin => s.IN1
+cin => cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|AlteraTimer|alu:alu_inst|and_N_bits:and_N
+a[0] => andResult.IN0
+a[1] => andResult.IN0
+a[2] => andResult.IN0
+a[3] => andResult.IN0
+b[0] => andResult.IN1
+b[1] => andResult.IN1
+b[2] => andResult.IN1
+b[3] => andResult.IN1
+andResult[0] <= andResult.DB_MAX_OUTPUT_PORT_TYPE
+andResult[1] <= andResult.DB_MAX_OUTPUT_PORT_TYPE
+andResult[2] <= andResult.DB_MAX_OUTPUT_PORT_TYPE
+andResult[3] <= andResult.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|AlteraTimer|alu:alu_inst|or_N_bits:or_N
+a[0] => orResult.IN0
+a[1] => orResult.IN0
+a[2] => orResult.IN0
+a[3] => orResult.IN0
+b[0] => orResult.IN1
+b[1] => orResult.IN1
+b[2] => orResult.IN1
+b[3] => orResult.IN1
+orResult[0] <= orResult.DB_MAX_OUTPUT_PORT_TYPE
+orResult[1] <= orResult.DB_MAX_OUTPUT_PORT_TYPE
+orResult[2] <= orResult.DB_MAX_OUTPUT_PORT_TYPE
+orResult[3] <= orResult.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|AlteraTimer|alu:alu_inst|xor_N_bits:xor_N
+a[0] => xorResult.IN0
+a[1] => xorResult.IN0
+a[2] => xorResult.IN0
+a[3] => xorResult.IN0
+b[0] => xorResult.IN1
+b[1] => xorResult.IN1
+b[2] => xorResult.IN1
+b[3] => xorResult.IN1
+xorResult[0] <= xorResult.DB_MAX_OUTPUT_PORT_TYPE
+xorResult[1] <= xorResult.DB_MAX_OUTPUT_PORT_TYPE
+xorResult[2] <= xorResult.DB_MAX_OUTPUT_PORT_TYPE
+xorResult[3] <= xorResult.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|AlteraTimer|alu:alu_inst|shift_left:left_shift
+a[0] => shift_left_result[1].DATAIN
+a[1] => shift_left_result[2].DATAIN
+a[2] => shift_left_result[3].DATAIN
+a[3] => ~NO_FANOUT~
+shift_left_result[0] <= <GND>
+shift_left_result[1] <= a[0].DB_MAX_OUTPUT_PORT_TYPE
+shift_left_result[2] <= a[1].DB_MAX_OUTPUT_PORT_TYPE
+shift_left_result[3] <= a[2].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|AlteraTimer|alu:alu_inst|shift_right:right_shift
+a[0] => ~NO_FANOUT~
+a[1] => shift_right_result[0].DATAIN
+a[2] => shift_right_result[1].DATAIN
+a[3] => shift_right_result[2].DATAIN
+shift_right_result[0] <= a[1].DB_MAX_OUTPUT_PORT_TYPE
+shift_right_result[1] <= a[2].DB_MAX_OUTPUT_PORT_TYPE
+shift_right_result[2] <= a[3].DB_MAX_OUTPUT_PORT_TYPE
+shift_right_result[3] <= <GND>
+
+
+|AlteraTimer|alu:alu_inst|decoder:decodUnits
+bcd_input[0] => Decoder0.IN3
+bcd_input[1] => Decoder0.IN2
+bcd_input[2] => Decoder0.IN1
+bcd_input[3] => Decoder0.IN0
+seven_segments[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+seven_segments[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+seven_segments[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+seven_segments[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+seven_segments[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+seven_segments[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+seven_segments[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|AlteraTimer|alu:alu_inst|decoder:decodTens
+bcd_input[0] => Decoder0.IN3
+bcd_input[1] => Decoder0.IN2
+bcd_input[2] => Decoder0.IN1
+bcd_input[3] => Decoder0.IN0
+seven_segments[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+seven_segments[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+seven_segments[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+seven_segments[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+seven_segments[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+seven_segments[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+seven_segments[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|AlteraTimer|FlipFlop2:ff2_inst
+clk => Output_flagOverff2~reg0.CLK
+clk => Output_flagCarryff2~reg0.CLK
+clk => Output_flagZeroff2~reg0.CLK
+clk => Output_flagNegff2~reg0.CLK
+clk => Output_carryingSubtff2~reg0.CLK
+clk => Output_carryingSumff2~reg0.CLK
+clk => Output_multiResultff2[0]~reg0.CLK
+clk => Output_multiResultff2[1]~reg0.CLK
+clk => Output_multiResultff2[2]~reg0.CLK
+clk => Output_multiResultff2[3]~reg0.CLK
+clk => Output_multiResultff2[4]~reg0.CLK
+clk => Output_multiResultff2[5]~reg0.CLK
+clk => Output_multiResultff2[6]~reg0.CLK
+clk => Output_multiResultff2[7]~reg0.CLK
+clk => Output_shift_right_resultff2[0]~reg0.CLK
+clk => Output_shift_right_resultff2[1]~reg0.CLK
+clk => Output_shift_right_resultff2[2]~reg0.CLK
+clk => Output_shift_right_resultff2[3]~reg0.CLK
+clk => Output_shift_left_resultff2[0]~reg0.CLK
+clk => Output_shift_left_resultff2[1]~reg0.CLK
+clk => Output_shift_left_resultff2[2]~reg0.CLK
+clk => Output_shift_left_resultff2[3]~reg0.CLK
+clk => Output_xorResultff2[0]~reg0.CLK
+clk => Output_xorResultff2[1]~reg0.CLK
+clk => Output_xorResultff2[2]~reg0.CLK
+clk => Output_xorResultff2[3]~reg0.CLK
+clk => Output_orResultff2[0]~reg0.CLK
+clk => Output_orResultff2[1]~reg0.CLK
+clk => Output_orResultff2[2]~reg0.CLK
+clk => Output_orResultff2[3]~reg0.CLK
+clk => Output_andResultff2[0]~reg0.CLK
+clk => Output_andResultff2[1]~reg0.CLK
+clk => Output_andResultff2[2]~reg0.CLK
+clk => Output_andResultff2[3]~reg0.CLK
+clk => Output_moduResultff2[0]~reg0.CLK
+clk => Output_moduResultff2[1]~reg0.CLK
+clk => Output_moduResultff2[2]~reg0.CLK
+clk => Output_moduResultff2[3]~reg0.CLK
+clk => Output_diviResultff2[0]~reg0.CLK
+clk => Output_diviResultff2[1]~reg0.CLK
+clk => Output_diviResultff2[2]~reg0.CLK
+clk => Output_diviResultff2[3]~reg0.CLK
+clk => Output_subResultff2[0]~reg0.CLK
+clk => Output_subResultff2[1]~reg0.CLK
+clk => Output_subResultff2[2]~reg0.CLK
+clk => Output_subResultff2[3]~reg0.CLK
+clk => Output_sumResultff2[0]~reg0.CLK
+clk => Output_sumResultff2[1]~reg0.CLK
+clk => Output_sumResultff2[2]~reg0.CLK
+clk => Output_sumResultff2[3]~reg0.CLK
+clk => Output_resultff2[0]~reg0.CLK
+clk => Output_resultff2[1]~reg0.CLK
+clk => Output_resultff2[2]~reg0.CLK
+clk => Output_resultff2[3]~reg0.CLK
+clk => Output_tens_7segmentsff2[0]~reg0.CLK
+clk => Output_tens_7segmentsff2[1]~reg0.CLK
+clk => Output_tens_7segmentsff2[2]~reg0.CLK
+clk => Output_tens_7segmentsff2[3]~reg0.CLK
+clk => Output_tens_7segmentsff2[4]~reg0.CLK
+clk => Output_tens_7segmentsff2[5]~reg0.CLK
+clk => Output_tens_7segmentsff2[6]~reg0.CLK
+clk => Output_units_7segmentsff2[0]~reg0.CLK
+clk => Output_units_7segmentsff2[1]~reg0.CLK
+clk => Output_units_7segmentsff2[2]~reg0.CLK
+clk => Output_units_7segmentsff2[3]~reg0.CLK
+clk => Output_units_7segmentsff2[4]~reg0.CLK
+clk => Output_units_7segmentsff2[5]~reg0.CLK
+clk => Output_units_7segmentsff2[6]~reg0.CLK
+reset => Output_flagOverff2~reg0.ACLR
+reset => Output_flagCarryff2~reg0.ACLR
+reset => Output_flagZeroff2~reg0.ACLR
+reset => Output_flagNegff2~reg0.ACLR
+reset => Output_carryingSubtff2~reg0.ACLR
+reset => Output_carryingSumff2~reg0.ACLR
+reset => Output_multiResultff2[0]~reg0.ACLR
+reset => Output_multiResultff2[1]~reg0.ACLR
+reset => Output_multiResultff2[2]~reg0.ACLR
+reset => Output_multiResultff2[3]~reg0.ACLR
+reset => Output_multiResultff2[4]~reg0.ACLR
+reset => Output_multiResultff2[5]~reg0.ACLR
+reset => Output_multiResultff2[6]~reg0.ACLR
+reset => Output_multiResultff2[7]~reg0.ACLR
+reset => Output_shift_right_resultff2[0]~reg0.ACLR
+reset => Output_shift_right_resultff2[1]~reg0.ACLR
+reset => Output_shift_right_resultff2[2]~reg0.ACLR
+reset => Output_shift_right_resultff2[3]~reg0.ACLR
+reset => Output_shift_left_resultff2[0]~reg0.ACLR
+reset => Output_shift_left_resultff2[1]~reg0.ACLR
+reset => Output_shift_left_resultff2[2]~reg0.ACLR
+reset => Output_shift_left_resultff2[3]~reg0.ACLR
+reset => Output_xorResultff2[0]~reg0.ACLR
+reset => Output_xorResultff2[1]~reg0.ACLR
+reset => Output_xorResultff2[2]~reg0.ACLR
+reset => Output_xorResultff2[3]~reg0.ACLR
+reset => Output_orResultff2[0]~reg0.ACLR
+reset => Output_orResultff2[1]~reg0.ACLR
+reset => Output_orResultff2[2]~reg0.ACLR
+reset => Output_orResultff2[3]~reg0.ACLR
+reset => Output_andResultff2[0]~reg0.ACLR
+reset => Output_andResultff2[1]~reg0.ACLR
+reset => Output_andResultff2[2]~reg0.ACLR
+reset => Output_andResultff2[3]~reg0.ACLR
+reset => Output_moduResultff2[0]~reg0.ACLR
+reset => Output_moduResultff2[1]~reg0.ACLR
+reset => Output_moduResultff2[2]~reg0.ACLR
+reset => Output_moduResultff2[3]~reg0.ACLR
+reset => Output_diviResultff2[0]~reg0.ACLR
+reset => Output_diviResultff2[1]~reg0.ACLR
+reset => Output_diviResultff2[2]~reg0.ACLR
+reset => Output_diviResultff2[3]~reg0.ACLR
+reset => Output_subResultff2[0]~reg0.ACLR
+reset => Output_subResultff2[1]~reg0.ACLR
+reset => Output_subResultff2[2]~reg0.ACLR
+reset => Output_subResultff2[3]~reg0.ACLR
+reset => Output_sumResultff2[0]~reg0.ACLR
+reset => Output_sumResultff2[1]~reg0.ACLR
+reset => Output_sumResultff2[2]~reg0.ACLR
+reset => Output_sumResultff2[3]~reg0.ACLR
+reset => Output_resultff2[0]~reg0.ACLR
+reset => Output_resultff2[1]~reg0.ACLR
+reset => Output_resultff2[2]~reg0.ACLR
+reset => Output_resultff2[3]~reg0.ACLR
+reset => Output_tens_7segmentsff2[0]~reg0.ACLR
+reset => Output_tens_7segmentsff2[1]~reg0.ACLR
+reset => Output_tens_7segmentsff2[2]~reg0.ACLR
+reset => Output_tens_7segmentsff2[3]~reg0.ACLR
+reset => Output_tens_7segmentsff2[4]~reg0.ACLR
+reset => Output_tens_7segmentsff2[5]~reg0.ACLR
+reset => Output_tens_7segmentsff2[6]~reg0.ACLR
+reset => Output_units_7segmentsff2[0]~reg0.ACLR
+reset => Output_units_7segmentsff2[1]~reg0.ACLR
+reset => Output_units_7segmentsff2[2]~reg0.ACLR
+reset => Output_units_7segmentsff2[3]~reg0.ACLR
+reset => Output_units_7segmentsff2[4]~reg0.ACLR
+reset => Output_units_7segmentsff2[5]~reg0.ACLR
+reset => Output_units_7segmentsff2[6]~reg0.ACLR
+units_7segmentsff2[0] => Output_units_7segmentsff2[0]~reg0.DATAIN
+units_7segmentsff2[1] => Output_units_7segmentsff2[1]~reg0.DATAIN
+units_7segmentsff2[2] => Output_units_7segmentsff2[2]~reg0.DATAIN
+units_7segmentsff2[3] => Output_units_7segmentsff2[3]~reg0.DATAIN
+units_7segmentsff2[4] => Output_units_7segmentsff2[4]~reg0.DATAIN
+units_7segmentsff2[5] => Output_units_7segmentsff2[5]~reg0.DATAIN
+units_7segmentsff2[6] => Output_units_7segmentsff2[6]~reg0.DATAIN
+tens_7segmentsff2[0] => Output_tens_7segmentsff2[0]~reg0.DATAIN
+tens_7segmentsff2[1] => Output_tens_7segmentsff2[1]~reg0.DATAIN
+tens_7segmentsff2[2] => Output_tens_7segmentsff2[2]~reg0.DATAIN
+tens_7segmentsff2[3] => Output_tens_7segmentsff2[3]~reg0.DATAIN
+tens_7segmentsff2[4] => Output_tens_7segmentsff2[4]~reg0.DATAIN
+tens_7segmentsff2[5] => Output_tens_7segmentsff2[5]~reg0.DATAIN
+tens_7segmentsff2[6] => Output_tens_7segmentsff2[6]~reg0.DATAIN
+resultff2[0] => Output_resultff2[0]~reg0.DATAIN
+resultff2[1] => Output_resultff2[1]~reg0.DATAIN
+resultff2[2] => Output_resultff2[2]~reg0.DATAIN
+resultff2[3] => Output_resultff2[3]~reg0.DATAIN
+sumResultff2[0] => Output_sumResultff2[0]~reg0.DATAIN
+sumResultff2[1] => Output_sumResultff2[1]~reg0.DATAIN
+sumResultff2[2] => Output_sumResultff2[2]~reg0.DATAIN
+sumResultff2[3] => Output_sumResultff2[3]~reg0.DATAIN
+subResultff2[0] => Output_subResultff2[0]~reg0.DATAIN
+subResultff2[1] => Output_subResultff2[1]~reg0.DATAIN
+subResultff2[2] => Output_subResultff2[2]~reg0.DATAIN
+subResultff2[3] => Output_subResultff2[3]~reg0.DATAIN
+diviResultff2[0] => Output_diviResultff2[0]~reg0.DATAIN
+diviResultff2[1] => Output_diviResultff2[1]~reg0.DATAIN
+diviResultff2[2] => Output_diviResultff2[2]~reg0.DATAIN
+diviResultff2[3] => Output_diviResultff2[3]~reg0.DATAIN
+moduResultff2[0] => Output_moduResultff2[0]~reg0.DATAIN
+moduResultff2[1] => Output_moduResultff2[1]~reg0.DATAIN
+moduResultff2[2] => Output_moduResultff2[2]~reg0.DATAIN
+moduResultff2[3] => Output_moduResultff2[3]~reg0.DATAIN
+andResultff2[0] => Output_andResultff2[0]~reg0.DATAIN
+andResultff2[1] => Output_andResultff2[1]~reg0.DATAIN
+andResultff2[2] => Output_andResultff2[2]~reg0.DATAIN
+andResultff2[3] => Output_andResultff2[3]~reg0.DATAIN
+orResultff2[0] => Output_orResultff2[0]~reg0.DATAIN
+orResultff2[1] => Output_orResultff2[1]~reg0.DATAIN
+orResultff2[2] => Output_orResultff2[2]~reg0.DATAIN
+orResultff2[3] => Output_orResultff2[3]~reg0.DATAIN
+xorResultff2[0] => Output_xorResultff2[0]~reg0.DATAIN
+xorResultff2[1] => Output_xorResultff2[1]~reg0.DATAIN
+xorResultff2[2] => Output_xorResultff2[2]~reg0.DATAIN
+xorResultff2[3] => Output_xorResultff2[3]~reg0.DATAIN
+shift_left_resultff2[0] => Output_shift_left_resultff2[0]~reg0.DATAIN
+shift_left_resultff2[1] => Output_shift_left_resultff2[1]~reg0.DATAIN
+shift_left_resultff2[2] => Output_shift_left_resultff2[2]~reg0.DATAIN
+shift_left_resultff2[3] => Output_shift_left_resultff2[3]~reg0.DATAIN
+shift_right_resultff2[0] => Output_shift_right_resultff2[0]~reg0.DATAIN
+shift_right_resultff2[1] => Output_shift_right_resultff2[1]~reg0.DATAIN
+shift_right_resultff2[2] => Output_shift_right_resultff2[2]~reg0.DATAIN
+shift_right_resultff2[3] => Output_shift_right_resultff2[3]~reg0.DATAIN
+multiResultff2[0] => Output_multiResultff2[0]~reg0.DATAIN
+multiResultff2[1] => Output_multiResultff2[1]~reg0.DATAIN
+multiResultff2[2] => Output_multiResultff2[2]~reg0.DATAIN
+multiResultff2[3] => Output_multiResultff2[3]~reg0.DATAIN
+multiResultff2[4] => Output_multiResultff2[4]~reg0.DATAIN
+multiResultff2[5] => Output_multiResultff2[5]~reg0.DATAIN
+multiResultff2[6] => Output_multiResultff2[6]~reg0.DATAIN
+multiResultff2[7] => Output_multiResultff2[7]~reg0.DATAIN
+carryingSumff2 => Output_carryingSumff2~reg0.DATAIN
+carryingSubtff2 => Output_carryingSubtff2~reg0.DATAIN
+flagNegff2 => Output_flagNegff2~reg0.DATAIN
+flagZeroff2 => Output_flagZeroff2~reg0.DATAIN
+flagCarryff2 => Output_flagCarryff2~reg0.DATAIN
+flagOverff2 => Output_flagOverff2~reg0.DATAIN
+Output_units_7segmentsff2[0] <= Output_units_7segmentsff2[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output_units_7segmentsff2[1] <= Output_units_7segmentsff2[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output_units_7segmentsff2[2] <= Output_units_7segmentsff2[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output_units_7segmentsff2[3] <= Output_units_7segmentsff2[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output_units_7segmentsff2[4] <= Output_units_7segmentsff2[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output_units_7segmentsff2[5] <= Output_units_7segmentsff2[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output_units_7segmentsff2[6] <= Output_units_7segmentsff2[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output_tens_7segmentsff2[0] <= Output_tens_7segmentsff2[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output_tens_7segmentsff2[1] <= Output_tens_7segmentsff2[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output_tens_7segmentsff2[2] <= Output_tens_7segmentsff2[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output_tens_7segmentsff2[3] <= Output_tens_7segmentsff2[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output_tens_7segmentsff2[4] <= Output_tens_7segmentsff2[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output_tens_7segmentsff2[5] <= Output_tens_7segmentsff2[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output_tens_7segmentsff2[6] <= Output_tens_7segmentsff2[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output_resultff2[0] <= Output_resultff2[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output_resultff2[1] <= Output_resultff2[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output_resultff2[2] <= Output_resultff2[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output_resultff2[3] <= Output_resultff2[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output_sumResultff2[0] <= Output_sumResultff2[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output_sumResultff2[1] <= Output_sumResultff2[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output_sumResultff2[2] <= Output_sumResultff2[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output_sumResultff2[3] <= Output_sumResultff2[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output_subResultff2[0] <= Output_subResultff2[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output_subResultff2[1] <= Output_subResultff2[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output_subResultff2[2] <= Output_subResultff2[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output_subResultff2[3] <= Output_subResultff2[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output_diviResultff2[0] <= Output_diviResultff2[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output_diviResultff2[1] <= Output_diviResultff2[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output_diviResultff2[2] <= Output_diviResultff2[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output_diviResultff2[3] <= Output_diviResultff2[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output_moduResultff2[0] <= Output_moduResultff2[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output_moduResultff2[1] <= Output_moduResultff2[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output_moduResultff2[2] <= Output_moduResultff2[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output_moduResultff2[3] <= Output_moduResultff2[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output_andResultff2[0] <= Output_andResultff2[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output_andResultff2[1] <= Output_andResultff2[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output_andResultff2[2] <= Output_andResultff2[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output_andResultff2[3] <= Output_andResultff2[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output_orResultff2[0] <= Output_orResultff2[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output_orResultff2[1] <= Output_orResultff2[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output_orResultff2[2] <= Output_orResultff2[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output_orResultff2[3] <= Output_orResultff2[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output_xorResultff2[0] <= Output_xorResultff2[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output_xorResultff2[1] <= Output_xorResultff2[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output_xorResultff2[2] <= Output_xorResultff2[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output_xorResultff2[3] <= Output_xorResultff2[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output_shift_left_resultff2[0] <= Output_shift_left_resultff2[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output_shift_left_resultff2[1] <= Output_shift_left_resultff2[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output_shift_left_resultff2[2] <= Output_shift_left_resultff2[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output_shift_left_resultff2[3] <= Output_shift_left_resultff2[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output_shift_right_resultff2[0] <= Output_shift_right_resultff2[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output_shift_right_resultff2[1] <= Output_shift_right_resultff2[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output_shift_right_resultff2[2] <= Output_shift_right_resultff2[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output_shift_right_resultff2[3] <= Output_shift_right_resultff2[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output_multiResultff2[0] <= Output_multiResultff2[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output_multiResultff2[1] <= Output_multiResultff2[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output_multiResultff2[2] <= Output_multiResultff2[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output_multiResultff2[3] <= Output_multiResultff2[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output_multiResultff2[4] <= Output_multiResultff2[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output_multiResultff2[5] <= Output_multiResultff2[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output_multiResultff2[6] <= Output_multiResultff2[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output_multiResultff2[7] <= Output_multiResultff2[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output_carryingSumff2 <= Output_carryingSumff2~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output_carryingSubtff2 <= Output_carryingSubtff2~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output_flagNegff2 <= Output_flagNegff2~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output_flagZeroff2 <= Output_flagZeroff2~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output_flagCarryff2 <= Output_flagCarryff2~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output_flagOverff2 <= Output_flagOverff2~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
