@@ -1,0 +1,177 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "next_x[0]",
+					"strict" : false
+				},
+				{
+					"name" : "next_x[1]",
+					"strict" : false
+				},
+				{
+					"name" : "next_x[2]",
+					"strict" : false
+				},
+				{
+					"name" : "next_x[3]",
+					"strict" : false
+				},
+				{
+					"name" : "next_x[4]",
+					"strict" : false
+				},
+				{
+					"name" : "next_x[5]",
+					"strict" : false
+				},
+				{
+					"name" : "next_x[6]",
+					"strict" : false
+				},
+				{
+					"name" : "next_x[7]",
+					"strict" : false
+				},
+				{
+					"name" : "next_x[8]",
+					"strict" : false
+				},
+				{
+					"name" : "next_x[9]",
+					"strict" : false
+				},
+				{
+					"name" : "next_y[0]",
+					"strict" : false
+				},
+				{
+					"name" : "next_y[1]",
+					"strict" : false
+				},
+				{
+					"name" : "next_y[2]",
+					"strict" : false
+				},
+				{
+					"name" : "next_y[3]",
+					"strict" : false
+				},
+				{
+					"name" : "next_y[4]",
+					"strict" : false
+				},
+				{
+					"name" : "next_y[5]",
+					"strict" : false
+				},
+				{
+					"name" : "next_y[6]",
+					"strict" : false
+				},
+				{
+					"name" : "next_y[7]",
+					"strict" : false
+				},
+				{
+					"name" : "next_y[8]",
+					"strict" : false
+				},
+				{
+					"name" : "next_y[9]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_HS",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_VS",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_R[5]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_R[6]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_R[7]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_G[5]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_G[6]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_G[7]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_B[6]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_B[7]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_CLK",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_BLANK_N",
+					"strict" : false
+				},
+				{
+					"name" : "vga_pll",
+					"strict" : false
+				},
+				{
+					"name" : "vga_reset",
+					"strict" : false
+				},
+				{
+					"name" : "pixel_color[5]",
+					"strict" : false
+				},
+				{
+					"name" : "pixel_color[6]",
+					"strict" : false
+				},
+				{
+					"name" : "pixel_color[7]",
+					"strict" : false
+				},
+				{
+					"name" : "pixel_color[2]",
+					"strict" : false
+				},
+				{
+					"name" : "pixel_color[3]",
+					"strict" : false
+				},
+				{
+					"name" : "pixel_color[4]",
+					"strict" : false
+				},
+				{
+					"name" : "pixel_color[0]",
+					"strict" : false
+				},
+				{
+					"name" : "pixel_color[1]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
