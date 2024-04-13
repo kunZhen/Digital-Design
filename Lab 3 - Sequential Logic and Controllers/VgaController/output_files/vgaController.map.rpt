@@ -1,5 +1,5 @@
 Analysis & Synthesis report for vgaController
-Wed Apr 10 13:33:53 2024
+Sat Apr 13 13:39:21 2024
 Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
 
 
@@ -13,14 +13,22 @@ Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Parameter Settings for User Entity Instance: vgaController:vgaCont
- 10. Parameter Settings for User Entity Instance: videoGen:vgavideoGen
- 11. Parameter Settings for Inferred Entity Instance: videoGen:vgavideoGen|lpm_divide:Div0
- 12. Parameter Settings for Inferred Entity Instance: videoGen:vgavideoGen|lpm_divide:Div1
- 13. Post-Synthesis Netlist Statistics for Top Partition
- 14. Elapsed Time Per Partition
- 15. Analysis & Synthesis Messages
+  8. Analysis & Synthesis DSP Block Usage Summary
+  9. State Machine - |Battleship|FSM:fsm|state_reg
+ 10. Registers Removed During Synthesis
+ 11. General Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Parameter Settings for User Entity Instance: vga_clock:clkdiv
+ 14. Parameter Settings for User Entity Instance: vga:vga|vgaController:vgaCont
+ 15. Parameter Settings for User Entity Instance: vga:vga|videoGen:vgavideoGen
+ 16. Parameter Settings for Inferred Entity Instance: vga:vga|videoGen:vgavideoGen|lpm_divide:Div0
+ 17. Parameter Settings for Inferred Entity Instance: vga:vga|videoGen:vgavideoGen|lpm_divide:Div1
+ 18. Port Connectivity Checks: "updateIndex:updateIJ"
+ 19. Port Connectivity Checks: "FSM:fsm"
+ 20. Post-Synthesis Netlist Statistics for Top Partition
+ 21. Elapsed Time Per Partition
+ 22. Analysis & Synthesis Messages
+ 23. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -47,17 +55,17 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +---------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed Apr 10 13:33:53 2024          ;
+; Analysis & Synthesis Status     ; Successful - Sat Apr 13 13:39:21 2024          ;
 ; Quartus Prime Version           ; 22.1std.0 Build 915 10/25/2022 SC Lite Edition ;
 ; Revision Name                   ; vgaController                                  ;
-; Top-level Entity Name           ; vga                                            ;
+; Top-level Entity Name           ; Battleship                                     ;
 ; Family                          ; Cyclone V                                      ;
 ; Logic utilization (in ALMs)     ; N/A                                            ;
-; Total registers                 ; 21                                             ;
-; Total pins                      ; 30                                             ;
+; Total registers                 ; 63                                             ;
+; Total pins                      ; 37                                             ;
 ; Total virtual pins              ; 0                                              ;
 ; Total block memory bits         ; 0                                              ;
-; Total DSP Blocks                ; 0                                              ;
+; Total DSP Blocks                ; 2                                              ;
 ; Total HSSI RX PCSs              ; 0                                              ;
 ; Total HSSI PMA RX Deserializers ; 0                                              ;
 ; Total HSSI TX PCSs              ; 0                                              ;
@@ -73,7 +81,7 @@ https://fpgasoftware.intel.com/eula.
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
-; Top-level entity name                                                           ; vga                ; vgaController      ;
+; Top-level entity name                                                           ; Battleship         ; vgaController      ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
@@ -171,71 +179,123 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                                                                      ;
-+----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                                                                                  ; Library ;
-+----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
-; vga.sv                           ; yes             ; User SystemVerilog HDL File  ; C:/Users/Usuario/Documents/jVargas_kZheng_jEspinoza_digital_design_lab_2024/Lab 3 - Sequential Logic and Controllers/VgaController/vga.sv                     ;         ;
-; vgaController.sv                 ; yes             ; User SystemVerilog HDL File  ; C:/Users/Usuario/Documents/jVargas_kZheng_jEspinoza_digital_design_lab_2024/Lab 3 - Sequential Logic and Controllers/VgaController/vgaController.sv           ;         ;
-; videoGen.sv                      ; yes             ; User SystemVerilog HDL File  ; C:/Users/Usuario/Documents/jVargas_kZheng_jEspinoza_digital_design_lab_2024/Lab 3 - Sequential Logic and Controllers/VgaController/videoGen.sv                ;         ;
-; pll.sv                           ; yes             ; User SystemVerilog HDL File  ; C:/Users/Usuario/Documents/jVargas_kZheng_jEspinoza_digital_design_lab_2024/Lab 3 - Sequential Logic and Controllers/VgaController/pll.sv                     ;         ;
-; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/lpm_divide.tdf                                                                                      ;         ;
-; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/abs_divider.inc                                                                                     ;         ;
-; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/sign_div_unsign.inc                                                                                 ;         ;
-; aglobal221.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/aglobal221.inc                                                                                      ;         ;
-; db/lpm_divide_kbm.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/Usuario/Documents/jVargas_kZheng_jEspinoza_digital_design_lab_2024/Lab 3 - Sequential Logic and Controllers/VgaController/db/lpm_divide_kbm.tdf      ;         ;
-; db/sign_div_unsign_qlh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/Usuario/Documents/jVargas_kZheng_jEspinoza_digital_design_lab_2024/Lab 3 - Sequential Logic and Controllers/VgaController/db/sign_div_unsign_qlh.tdf ;         ;
-; db/alt_u_div_qve.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/Usuario/Documents/jVargas_kZheng_jEspinoza_digital_design_lab_2024/Lab 3 - Sequential Logic and Controllers/VgaController/db/alt_u_div_qve.tdf       ;         ;
-+----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                                                                         ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                                                                                                     ; Library ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; vga_clock.sv                     ; yes             ; User SystemVerilog HDL File  ; C:/Users/jespinoz/Documents/TEC/Taller/backup/jVargas_kZheng_jEspinoza_digital_design_lab_2024/Lab 3 - Sequential Logic and Controllers/VgaController/vga_clock.sv               ;         ;
+; updateIndex.sv                   ; yes             ; User SystemVerilog HDL File  ; C:/Users/jespinoz/Documents/TEC/Taller/backup/jVargas_kZheng_jEspinoza_digital_design_lab_2024/Lab 3 - Sequential Logic and Controllers/VgaController/updateIndex.sv             ;         ;
+; FSM.sv                           ; yes             ; User SystemVerilog HDL File  ; C:/Users/jespinoz/Documents/TEC/Taller/backup/jVargas_kZheng_jEspinoza_digital_design_lab_2024/Lab 3 - Sequential Logic and Controllers/VgaController/FSM.sv                     ;         ;
+; controls.sv                      ; yes             ; User SystemVerilog HDL File  ; C:/Users/jespinoz/Documents/TEC/Taller/backup/jVargas_kZheng_jEspinoza_digital_design_lab_2024/Lab 3 - Sequential Logic and Controllers/VgaController/controls.sv                ;         ;
+; Battleship.sv                    ; yes             ; User SystemVerilog HDL File  ; C:/Users/jespinoz/Documents/TEC/Taller/backup/jVargas_kZheng_jEspinoza_digital_design_lab_2024/Lab 3 - Sequential Logic and Controllers/VgaController/Battleship.sv              ;         ;
+; vga.sv                           ; yes             ; User SystemVerilog HDL File  ; C:/Users/jespinoz/Documents/TEC/Taller/backup/jVargas_kZheng_jEspinoza_digital_design_lab_2024/Lab 3 - Sequential Logic and Controllers/VgaController/vga.sv                     ;         ;
+; vgaController.sv                 ; yes             ; User SystemVerilog HDL File  ; C:/Users/jespinoz/Documents/TEC/Taller/backup/jVargas_kZheng_jEspinoza_digital_design_lab_2024/Lab 3 - Sequential Logic and Controllers/VgaController/vgaController.sv           ;         ;
+; videoGen.sv                      ; yes             ; User SystemVerilog HDL File  ; C:/Users/jespinoz/Documents/TEC/Taller/backup/jVargas_kZheng_jEspinoza_digital_design_lab_2024/Lab 3 - Sequential Logic and Controllers/VgaController/videoGen.sv                ;         ;
+; pll.sv                           ; yes             ; User SystemVerilog HDL File  ; C:/Users/jespinoz/Documents/TEC/Taller/backup/jVargas_kZheng_jEspinoza_digital_design_lab_2024/Lab 3 - Sequential Logic and Controllers/VgaController/pll.sv                     ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/lpm_divide.tdf                                                                                                         ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/abs_divider.inc                                                                                                        ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/sign_div_unsign.inc                                                                                                    ;         ;
+; aglobal221.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/aglobal221.inc                                                                                                         ;         ;
+; db/lpm_divide_jbm.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/jespinoz/Documents/TEC/Taller/backup/jVargas_kZheng_jEspinoza_digital_design_lab_2024/Lab 3 - Sequential Logic and Controllers/VgaController/db/lpm_divide_jbm.tdf      ;         ;
+; db/sign_div_unsign_plh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/jespinoz/Documents/TEC/Taller/backup/jVargas_kZheng_jEspinoza_digital_design_lab_2024/Lab 3 - Sequential Logic and Controllers/VgaController/db/sign_div_unsign_plh.tdf ;         ;
+; db/alt_u_div_ove.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/jespinoz/Documents/TEC/Taller/backup/jVargas_kZheng_jEspinoza_digital_design_lab_2024/Lab 3 - Sequential Logic and Controllers/VgaController/db/alt_u_div_ove.tdf       ;         ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
 
 
-+-----------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                     ;
-+---------------------------------------------+-------------------+
-; Resource                                    ; Usage             ;
-+---------------------------------------------+-------------------+
-; Estimate of Logic utilization (ALMs needed) ; 288               ;
-;                                             ;                   ;
-; Combinational ALUT usage for logic          ; 547               ;
-;     -- 7 input functions                    ; 0                 ;
-;     -- 6 input functions                    ; 29                ;
-;     -- 5 input functions                    ; 35                ;
-;     -- 4 input functions                    ; 55                ;
-;     -- <=3 input functions                  ; 428               ;
-;                                             ;                   ;
-; Dedicated logic registers                   ; 21                ;
-;                                             ;                   ;
-; I/O pins                                    ; 30                ;
-;                                             ;                   ;
-; Total DSP Blocks                            ; 0                 ;
-;                                             ;                   ;
-; Maximum fan-out node                        ; pll:vgapll|toggle ;
-; Maximum fan-out                             ; 22                ;
-; Total fan-out                               ; 1643              ;
-; Average fan-out                             ; 2.62              ;
-+---------------------------------------------+-------------------+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimate of Logic utilization (ALMs needed) ; 167       ;
+;                                             ;           ;
+; Combinational ALUT usage for logic          ; 318       ;
+;     -- 7 input functions                    ; 1         ;
+;     -- 6 input functions                    ; 15        ;
+;     -- 5 input functions                    ; 31        ;
+;     -- 4 input functions                    ; 35        ;
+;     -- <=3 input functions                  ; 236       ;
+;                                             ;           ;
+; Dedicated logic registers                   ; 63        ;
+;                                             ;           ;
+; I/O pins                                    ; 37        ;
+;                                             ;           ;
+; Total DSP Blocks                            ; 2         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 31        ;
+; Total fan-out                               ; 1218      ;
+; Average fan-out                             ; 2.67      ;
++---------------------------------------------+-----------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                 ;
-+-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                       ; Entity Name         ; Library Name ;
-+-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; |vga                                      ; 547 (0)             ; 21 (0)                    ; 0                 ; 0          ; 30   ; 0            ; |vga                                                                                                                      ; vga                 ; work         ;
-;    |pll:vgapll|                           ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |vga|pll:vgapll                                                                                                           ; pll                 ; work         ;
-;    |vgaController:vgaCont|                ; 29 (29)             ; 20 (20)                   ; 0                 ; 0          ; 0    ; 0            ; |vga|vgaController:vgaCont                                                                                                ; vgaController       ; work         ;
-;    |videoGen:vgavideoGen|                 ; 517 (261)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |vga|videoGen:vgavideoGen                                                                                                 ; videoGen            ; work         ;
-;       |lpm_divide:Div0|                   ; 128 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |vga|videoGen:vgavideoGen|lpm_divide:Div0                                                                                 ; lpm_divide          ; work         ;
-;          |lpm_divide_kbm:auto_generated|  ; 128 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |vga|videoGen:vgavideoGen|lpm_divide:Div0|lpm_divide_kbm:auto_generated                                                   ; lpm_divide_kbm      ; work         ;
-;             |sign_div_unsign_qlh:divider| ; 128 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |vga|videoGen:vgavideoGen|lpm_divide:Div0|lpm_divide_kbm:auto_generated|sign_div_unsign_qlh:divider                       ; sign_div_unsign_qlh ; work         ;
-;                |alt_u_div_qve:divider|    ; 128 (128)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |vga|videoGen:vgavideoGen|lpm_divide:Div0|lpm_divide_kbm:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_qve:divider ; alt_u_div_qve       ; work         ;
-;       |lpm_divide:Div1|                   ; 128 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |vga|videoGen:vgavideoGen|lpm_divide:Div1                                                                                 ; lpm_divide          ; work         ;
-;          |lpm_divide_kbm:auto_generated|  ; 128 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |vga|videoGen:vgavideoGen|lpm_divide:Div1|lpm_divide_kbm:auto_generated                                                   ; lpm_divide_kbm      ; work         ;
-;             |sign_div_unsign_qlh:divider| ; 128 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |vga|videoGen:vgavideoGen|lpm_divide:Div1|lpm_divide_kbm:auto_generated|sign_div_unsign_qlh:divider                       ; sign_div_unsign_qlh ; work         ;
-;                |alt_u_div_qve:divider|    ; 128 (128)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |vga|videoGen:vgavideoGen|lpm_divide:Div1|lpm_divide_kbm:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_qve:divider ; alt_u_div_qve       ; work         ;
-+-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                   ;
++----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                      ; Entity Name         ; Library Name ;
++----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; |Battleship                                  ; 318 (0)             ; 63 (0)                    ; 0                 ; 2          ; 37   ; 0            ; |Battleship                                                                                                                              ; Battleship          ; work         ;
+;    |FSM:fsm|                                 ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |Battleship|FSM:fsm                                                                                                                      ; FSM                 ; work         ;
+;    |controls:movement_controls|              ; 10 (10)             ; 6 (6)                     ; 0                 ; 0          ; 0    ; 0            ; |Battleship|controls:movement_controls                                                                                                   ; controls            ; work         ;
+;    |updateIndex:updateIJ|                    ; 7 (7)               ; 6 (6)                     ; 0                 ; 0          ; 0    ; 0            ; |Battleship|updateIndex:updateIJ                                                                                                         ; updateIndex         ; work         ;
+;    |vga:vga|                                 ; 260 (0)             ; 21 (0)                    ; 0                 ; 2          ; 0    ; 0            ; |Battleship|vga:vga                                                                                                                      ; vga                 ; work         ;
+;       |pll:vgapll|                           ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |Battleship|vga:vga|pll:vgapll                                                                                                           ; pll                 ; work         ;
+;       |vgaController:vgaCont|                ; 29 (29)             ; 20 (20)                   ; 0                 ; 0          ; 0    ; 0            ; |Battleship|vga:vga|vgaController:vgaCont                                                                                                ; vgaController       ; work         ;
+;       |videoGen:vgavideoGen|                 ; 230 (62)            ; 0 (0)                     ; 0                 ; 2          ; 0    ; 0            ; |Battleship|vga:vga|videoGen:vgavideoGen                                                                                                 ; videoGen            ; work         ;
+;          |lpm_divide:Div0|                   ; 84 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Battleship|vga:vga|videoGen:vgavideoGen|lpm_divide:Div0                                                                                 ; lpm_divide          ; work         ;
+;             |lpm_divide_jbm:auto_generated|  ; 84 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Battleship|vga:vga|videoGen:vgavideoGen|lpm_divide:Div0|lpm_divide_jbm:auto_generated                                                   ; lpm_divide_jbm      ; work         ;
+;                |sign_div_unsign_plh:divider| ; 84 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Battleship|vga:vga|videoGen:vgavideoGen|lpm_divide:Div0|lpm_divide_jbm:auto_generated|sign_div_unsign_plh:divider                       ; sign_div_unsign_plh ; work         ;
+;                   |alt_u_div_ove:divider|    ; 84 (84)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Battleship|vga:vga|videoGen:vgavideoGen|lpm_divide:Div0|lpm_divide_jbm:auto_generated|sign_div_unsign_plh:divider|alt_u_div_ove:divider ; alt_u_div_ove       ; work         ;
+;          |lpm_divide:Div1|                   ; 84 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Battleship|vga:vga|videoGen:vgavideoGen|lpm_divide:Div1                                                                                 ; lpm_divide          ; work         ;
+;             |lpm_divide_jbm:auto_generated|  ; 84 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Battleship|vga:vga|videoGen:vgavideoGen|lpm_divide:Div1|lpm_divide_jbm:auto_generated                                                   ; lpm_divide_jbm      ; work         ;
+;                |sign_div_unsign_plh:divider| ; 84 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Battleship|vga:vga|videoGen:vgavideoGen|lpm_divide:Div1|lpm_divide_jbm:auto_generated|sign_div_unsign_plh:divider                       ; sign_div_unsign_plh ; work         ;
+;                   |alt_u_div_ove:divider|    ; 84 (84)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Battleship|vga:vga|videoGen:vgavideoGen|lpm_divide:Div1|lpm_divide_jbm:auto_generated|sign_div_unsign_plh:divider|alt_u_div_ove:divider ; alt_u_div_ove       ; work         ;
+;    |vga_clock:clkdiv|                        ; 40 (40)             ; 29 (29)                   ; 0                 ; 0          ; 0    ; 0            ; |Battleship|vga_clock:clkdiv                                                                                                             ; vga_clock           ; work         ;
++----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------+
+; Analysis & Synthesis DSP Block Usage Summary  ;
++---------------------------------+-------------+
+; Statistic                       ; Number Used ;
++---------------------------------+-------------+
+; Two Independent 18x18           ; 2           ;
+; Total number of DSP blocks      ; 2           ;
+;                                 ;             ;
+; Fixed Point Unsigned Multiplier ; 2           ;
+; Fixed Point Dedicated Pre-Adder ; 2           ;
++---------------------------------+-------------+
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |Battleship|FSM:fsm|state_reg                                                                              ;
++-----------------------+-------------------+-------------------+-----------------------+-----------------+------------------+
+; Name                  ; state_reg.VICTORY ; state_reg.PC_TURN ; state_reg.PLAYER_TURN ; state_reg.START ; state_reg.DEFEAT ;
++-----------------------+-------------------+-------------------+-----------------------+-----------------+------------------+
+; state_reg.START       ; 0                 ; 0                 ; 0                     ; 0               ; 0                ;
+; state_reg.PLAYER_TURN ; 0                 ; 0                 ; 1                     ; 1               ; 0                ;
+; state_reg.PC_TURN     ; 0                 ; 1                 ; 0                     ; 1               ; 0                ;
+; state_reg.VICTORY     ; 1                 ; 0                 ; 0                     ; 1               ; 0                ;
+; state_reg.DEFEAT      ; 0                 ; 0                 ; 0                     ; 1               ; 1                ;
++-----------------------+-------------------+-------------------+-----------------------+-----------------+------------------+
+
+
++--------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                             ;
++---------------------------------------+----------------------------------------+
+; Register name                         ; Reason for Removal                     ;
++---------------------------------------+----------------------------------------+
+; FSM:fsm|state_reg~4                   ; Lost fanout                            ;
+; FSM:fsm|state_reg~5                   ; Lost fanout                            ;
+; FSM:fsm|state_reg.VICTORY             ; Merged with FSM:fsm|state_reg.DEFEAT   ;
+; FSM:fsm|state_reg.PC_TURN             ; Lost fanout                            ;
+; FSM:fsm|state_reg.START               ; Lost fanout                            ;
+; FSM:fsm|state_reg.DEFEAT              ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 6 ;                                        ;
++---------------------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -243,91 +303,136 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 21    ;
-; Number of registers using Synchronous Clear  ; 20    ;
+; Total registers                              ; 63    ;
+; Number of registers using Synchronous Clear  ; 48    ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Clear ; 7     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 10    ;
+; Number of registers using Clock Enable       ; 21    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+--------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: vgaController:vgaCont ;
-+----------------+------------+--------------------------------------+
-; Parameter Name ; Value      ; Type                                 ;
-+----------------+------------+--------------------------------------+
-; HACTIVE        ; 1010000000 ; Unsigned Binary                      ;
-; HFP            ; 0000010000 ; Unsigned Binary                      ;
-; HSYN           ; 0001100000 ; Unsigned Binary                      ;
-; HBP            ; 0000110000 ; Unsigned Binary                      ;
-; HMAX           ; 1100100000 ; Unsigned Binary                      ;
-; VBP            ; 0000100001 ; Unsigned Binary                      ;
-; VACTIVE        ; 0111100000 ; Unsigned Binary                      ;
-; VFP            ; 0000001010 ; Unsigned Binary                      ;
-; VSYN           ; 0000000010 ; Unsigned Binary                      ;
-; VMAX           ; 1000001101 ; Unsigned Binary                      ;
-+----------------+------------+--------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |Battleship|updateIndex:updateIJ|i_actual[0]     ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |Battleship|controls:movement_controls|j_next[1] ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |Battleship|controls:movement_controls|i_next[2] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: vga_clock:clkdiv   ;
++----------------+------------------------------+-----------------+
+; Parameter Name ; Value                        ; Type            ;
++----------------+------------------------------+-----------------+
+; DIVISOR        ; 0000010011000100101101000000 ; Unsigned Binary ;
++----------------+------------------------------+-----------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: videoGen:vgavideoGen ;
-+----------------+------------+-------------------------------------+
-; Parameter Name ; Value      ; Type                                ;
-+----------------+------------+-------------------------------------+
-; size           ; 0000111000 ; Unsigned Binary                     ;
-; frame          ; 0000000100 ; Unsigned Binary                     ;
-; size_secondary ; 0000011100 ; Unsigned Binary                     ;
-+----------------+------------+-------------------------------------+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: vga:vga|vgaController:vgaCont ;
++----------------+------------+----------------------------------------------+
+; Parameter Name ; Value      ; Type                                         ;
++----------------+------------+----------------------------------------------+
+; HACTIVE        ; 1010000000 ; Unsigned Binary                              ;
+; HFP            ; 0000010000 ; Unsigned Binary                              ;
+; HSYN           ; 0001100000 ; Unsigned Binary                              ;
+; HBP            ; 0000110000 ; Unsigned Binary                              ;
+; HMAX           ; 1100100000 ; Unsigned Binary                              ;
+; VBP            ; 0000100001 ; Unsigned Binary                              ;
+; VACTIVE        ; 0111100000 ; Unsigned Binary                              ;
+; VFP            ; 0000001010 ; Unsigned Binary                              ;
+; VSYN           ; 0000000010 ; Unsigned Binary                              ;
+; VMAX           ; 1000001101 ; Unsigned Binary                              ;
++----------------+------------+----------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+---------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: videoGen:vgavideoGen|lpm_divide:Div0 ;
-+------------------------+----------------+---------------------------------------------+
-; Parameter Name         ; Value          ; Type                                        ;
-+------------------------+----------------+---------------------------------------------+
-; LPM_WIDTHN             ; 32             ; Untyped                                     ;
-; LPM_WIDTHD             ; 6              ; Untyped                                     ;
-; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                     ;
-; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                     ;
-; LPM_PIPELINE           ; 0              ; Untyped                                     ;
-; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                     ;
-; MAXIMIZE_SPEED         ; 5              ; Untyped                                     ;
-; CBXI_PARAMETER         ; lpm_divide_kbm ; Untyped                                     ;
-; CARRY_CHAIN            ; MANUAL         ; Untyped                                     ;
-; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                     ;
-; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                  ;
-; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                ;
-; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                ;
-; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                              ;
-+------------------------+----------------+---------------------------------------------+
++---------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: vga:vga|videoGen:vgavideoGen ;
++----------------+-------+--------------------------------------------------+
+; Parameter Name ; Value ; Type                                             ;
++----------------+-------+--------------------------------------------------+
+; VGA_WIDTH      ; 640   ; Signed Integer                                   ;
+; VGA_HEIGHT     ; 480   ; Signed Integer                                   ;
+; BOARD_SIZE     ; 5     ; Signed Integer                                   ;
++----------------+-------+--------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+---------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: videoGen:vgavideoGen|lpm_divide:Div1 ;
-+------------------------+----------------+---------------------------------------------+
-; Parameter Name         ; Value          ; Type                                        ;
-+------------------------+----------------+---------------------------------------------+
-; LPM_WIDTHN             ; 32             ; Untyped                                     ;
-; LPM_WIDTHD             ; 6              ; Untyped                                     ;
-; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                     ;
-; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                     ;
-; LPM_PIPELINE           ; 0              ; Untyped                                     ;
-; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                     ;
-; MAXIMIZE_SPEED         ; 5              ; Untyped                                     ;
-; CBXI_PARAMETER         ; lpm_divide_kbm ; Untyped                                     ;
-; CARRY_CHAIN            ; MANUAL         ; Untyped                                     ;
-; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                     ;
-; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                  ;
-; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                ;
-; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                ;
-; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                              ;
-+------------------------+----------------+---------------------------------------------+
++-----------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: vga:vga|videoGen:vgavideoGen|lpm_divide:Div0 ;
++------------------------+----------------+-----------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                ;
++------------------------+----------------+-----------------------------------------------------+
+; LPM_WIDTHN             ; 10             ; Untyped                                             ;
+; LPM_WIDTHD             ; 9              ; Untyped                                             ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                             ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                             ;
+; LPM_PIPELINE           ; 0              ; Untyped                                             ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                             ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                             ;
+; CBXI_PARAMETER         ; lpm_divide_jbm ; Untyped                                             ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                             ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                             ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                          ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                        ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                        ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                      ;
++------------------------+----------------+-----------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: vga:vga|videoGen:vgavideoGen|lpm_divide:Div1 ;
++------------------------+----------------+-----------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                ;
++------------------------+----------------+-----------------------------------------------------+
+; LPM_WIDTHN             ; 10             ; Untyped                                             ;
+; LPM_WIDTHD             ; 9              ; Untyped                                             ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                             ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                             ;
+; LPM_PIPELINE           ; 0              ; Untyped                                             ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                             ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                             ;
+; CBXI_PARAMETER         ; lpm_divide_jbm ; Untyped                                             ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                             ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                             ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                          ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                        ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                        ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                      ;
++------------------------+----------------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "updateIndex:updateIJ"                                                                                                                      ;
++------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                     ;
++------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+; clk  ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (3 bits) it drives.  Extra input bit(s) "clk[2..1]" will be connected to GND. ;
+; rst  ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (3 bits) it drives.  Extra input bit(s) "rst[2..1]" will be connected to GND. ;
++------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "FSM:fsm"                                                                                    ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port         ; Type   ; Severity ; Details                                                                             ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; boats_placed ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; player_ships ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; pc_ships     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; pc_turn      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; is_victory   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; is_defeat    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -335,33 +440,37 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 21                          ;
+; arriav_ff             ; 63                          ;
+;     CLR               ; 2                           ;
+;     ENA               ; 6                           ;
+;     ENA CLR           ; 5                           ;
 ;     ENA SCLR          ; 10                          ;
-;     SCLR              ; 10                          ;
-;     plain             ; 1                           ;
-; arriav_lcell_comb     ; 549                         ;
-;     arith             ; 279                         ;
-;         0 data inputs ; 36                          ;
-;         1 data inputs ; 145                         ;
-;         2 data inputs ; 8                           ;
-;         3 data inputs ; 62                          ;
-;         4 data inputs ; 28                          ;
-;     normal            ; 194                         ;
-;         0 data inputs ; 1                           ;
+;     SCLR              ; 38                          ;
+;     plain             ; 2                           ;
+; arriav_lcell_comb     ; 319                         ;
+;     arith             ; 164                         ;
+;         0 data inputs ; 16                          ;
+;         1 data inputs ; 84                          ;
+;         2 data inputs ; 10                          ;
+;         3 data inputs ; 34                          ;
+;         4 data inputs ; 20                          ;
+;     extend            ; 1                           ;
+;         7 data inputs ; 1                           ;
+;     normal            ; 140                         ;
 ;         1 data inputs ; 2                           ;
-;         2 data inputs ; 67                          ;
-;         3 data inputs ; 33                          ;
-;         4 data inputs ; 27                          ;
-;         5 data inputs ; 35                          ;
-;         6 data inputs ; 29                          ;
-;     shared            ; 76                          ;
-;         0 data inputs ; 41                          ;
-;         1 data inputs ; 23                          ;
-;         2 data inputs ; 12                          ;
-; boundary_port         ; 30                          ;
+;         2 data inputs ; 57                          ;
+;         3 data inputs ; 20                          ;
+;         4 data inputs ; 15                          ;
+;         5 data inputs ; 31                          ;
+;         6 data inputs ; 15                          ;
+;     shared            ; 14                          ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 12                          ;
+; arriav_mac            ; 2                           ;
+; boundary_port         ; 37                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 23.70                       ;
-; Average LUT depth     ; 18.65                       ;
+; Max LUT depth         ; 11.50                       ;
+; Average LUT depth     ; 7.24                        ;
 +-----------------------+-----------------------------+
 
 
@@ -370,7 +479,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:02     ;
 +----------------+--------------+
 
 
@@ -380,58 +489,92 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
-    Info: Processing started: Wed Apr 10 13:33:37 2024
+    Info: Processing started: Sat Apr 13 13:39:04 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off vgaController -c vgaController
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file vga_clock.sv
+    Info (12023): Found entity 1: vga_clock File: C:/Users/jespinoz/Documents/TEC/Taller/backup/jVargas_kZheng_jEspinoza_digital_design_lab_2024/Lab 3 - Sequential Logic and Controllers/VgaController/vga_clock.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file updateindex.sv
+    Info (12023): Found entity 1: updateIndex File: C:/Users/jespinoz/Documents/TEC/Taller/backup/jVargas_kZheng_jEspinoza_digital_design_lab_2024/Lab 3 - Sequential Logic and Controllers/VgaController/updateIndex.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file fsm.sv
+    Info (12023): Found entity 1: FSM File: C:/Users/jespinoz/Documents/TEC/Taller/backup/jVargas_kZheng_jEspinoza_digital_design_lab_2024/Lab 3 - Sequential Logic and Controllers/VgaController/FSM.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file controls.sv
+    Info (12023): Found entity 1: controls File: C:/Users/jespinoz/Documents/TEC/Taller/backup/jVargas_kZheng_jEspinoza_digital_design_lab_2024/Lab 3 - Sequential Logic and Controllers/VgaController/controls.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file battleship.sv
+    Info (12023): Found entity 1: Battleship File: C:/Users/jespinoz/Documents/TEC/Taller/backup/jVargas_kZheng_jEspinoza_digital_design_lab_2024/Lab 3 - Sequential Logic and Controllers/VgaController/Battleship.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file vga.sv
-    Info (12023): Found entity 1: vga File: C:/Users/Usuario/Documents/jVargas_kZheng_jEspinoza_digital_design_lab_2024/Lab 3 - Sequential Logic and Controllers/VgaController/vga.sv Line: 1
+    Info (12023): Found entity 1: vga File: C:/Users/jespinoz/Documents/TEC/Taller/backup/jVargas_kZheng_jEspinoza_digital_design_lab_2024/Lab 3 - Sequential Logic and Controllers/VgaController/vga.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file vgacontroller.sv
-    Info (12023): Found entity 1: vgaController File: C:/Users/Usuario/Documents/jVargas_kZheng_jEspinoza_digital_design_lab_2024/Lab 3 - Sequential Logic and Controllers/VgaController/vgaController.sv Line: 1
+    Info (12023): Found entity 1: vgaController File: C:/Users/jespinoz/Documents/TEC/Taller/backup/jVargas_kZheng_jEspinoza_digital_design_lab_2024/Lab 3 - Sequential Logic and Controllers/VgaController/vgaController.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file videogen.sv
-    Info (12023): Found entity 1: videoGen File: C:/Users/Usuario/Documents/jVargas_kZheng_jEspinoza_digital_design_lab_2024/Lab 3 - Sequential Logic and Controllers/VgaController/videoGen.sv Line: 1
+    Info (12023): Found entity 1: videoGen File: C:/Users/jespinoz/Documents/TEC/Taller/backup/jVargas_kZheng_jEspinoza_digital_design_lab_2024/Lab 3 - Sequential Logic and Controllers/VgaController/videoGen.sv Line: 1
 Info (12021): Found 0 design units, including 0 entities, in source file rectgen.sv
 Info (12021): Found 1 design units, including 1 entities, in source file pll.sv
-    Info (12023): Found entity 1: pll File: C:/Users/Usuario/Documents/jVargas_kZheng_jEspinoza_digital_design_lab_2024/Lab 3 - Sequential Logic and Controllers/VgaController/pll.sv Line: 1
-Info (12127): Elaborating entity "vga" for the top level hierarchy
-Info (12128): Elaborating entity "pll" for hierarchy "pll:vgapll" File: C:/Users/Usuario/Documents/jVargas_kZheng_jEspinoza_digital_design_lab_2024/Lab 3 - Sequential Logic and Controllers/VgaController/vga.sv Line: 12
-Info (12128): Elaborating entity "vgaController" for hierarchy "vgaController:vgaCont" File: C:/Users/Usuario/Documents/jVargas_kZheng_jEspinoza_digital_design_lab_2024/Lab 3 - Sequential Logic and Controllers/VgaController/vga.sv Line: 22
-Info (12128): Elaborating entity "videoGen" for hierarchy "videoGen:vgavideoGen" File: C:/Users/Usuario/Documents/jVargas_kZheng_jEspinoza_digital_design_lab_2024/Lab 3 - Sequential Logic and Controllers/VgaController/vga.sv Line: 30
+    Info (12023): Found entity 1: pll File: C:/Users/jespinoz/Documents/TEC/Taller/backup/jVargas_kZheng_jEspinoza_digital_design_lab_2024/Lab 3 - Sequential Logic and Controllers/VgaController/pll.sv Line: 1
+Warning (10236): Verilog HDL Implicit Net warning at Battleship.sv(31): created implicit net for "player_turn" File: C:/Users/jespinoz/Documents/TEC/Taller/backup/jVargas_kZheng_jEspinoza_digital_design_lab_2024/Lab 3 - Sequential Logic and Controllers/VgaController/Battleship.sv Line: 31
+Warning (10236): Verilog HDL Implicit Net warning at Battleship.sv(32): created implicit net for "pc_turn" File: C:/Users/jespinoz/Documents/TEC/Taller/backup/jVargas_kZheng_jEspinoza_digital_design_lab_2024/Lab 3 - Sequential Logic and Controllers/VgaController/Battleship.sv Line: 32
+Warning (10236): Verilog HDL Implicit Net warning at Battleship.sv(33): created implicit net for "is_victory" File: C:/Users/jespinoz/Documents/TEC/Taller/backup/jVargas_kZheng_jEspinoza_digital_design_lab_2024/Lab 3 - Sequential Logic and Controllers/VgaController/Battleship.sv Line: 33
+Warning (10236): Verilog HDL Implicit Net warning at Battleship.sv(34): created implicit net for "is_defeat" File: C:/Users/jespinoz/Documents/TEC/Taller/backup/jVargas_kZheng_jEspinoza_digital_design_lab_2024/Lab 3 - Sequential Logic and Controllers/VgaController/Battleship.sv Line: 34
+Info (12127): Elaborating entity "Battleship" for the top level hierarchy
+Info (12128): Elaborating entity "vga_clock" for hierarchy "vga_clock:clkdiv" File: C:/Users/jespinoz/Documents/TEC/Taller/backup/jVargas_kZheng_jEspinoza_digital_design_lab_2024/Lab 3 - Sequential Logic and Controllers/VgaController/Battleship.sv Line: 19
+Info (12128): Elaborating entity "FSM" for hierarchy "FSM:fsm" File: C:/Users/jespinoz/Documents/TEC/Taller/backup/jVargas_kZheng_jEspinoza_digital_design_lab_2024/Lab 3 - Sequential Logic and Controllers/VgaController/Battleship.sv Line: 35
+Warning (10036): Verilog HDL or VHDL warning at FSM.sv(27): object "next_state" assigned a value but never read File: C:/Users/jespinoz/Documents/TEC/Taller/backup/jVargas_kZheng_jEspinoza_digital_design_lab_2024/Lab 3 - Sequential Logic and Controllers/VgaController/FSM.sv Line: 27
+Info (12128): Elaborating entity "controls" for hierarchy "controls:movement_controls" File: C:/Users/jespinoz/Documents/TEC/Taller/backup/jVargas_kZheng_jEspinoza_digital_design_lab_2024/Lab 3 - Sequential Logic and Controllers/VgaController/Battleship.sv Line: 43
+Warning (10230): Verilog HDL assignment warning at controls.sv(23): truncated value with size 32 to match size of target (3) File: C:/Users/jespinoz/Documents/TEC/Taller/backup/jVargas_kZheng_jEspinoza_digital_design_lab_2024/Lab 3 - Sequential Logic and Controllers/VgaController/controls.sv Line: 23
+Warning (10230): Verilog HDL assignment warning at controls.sv(24): truncated value with size 32 to match size of target (3) File: C:/Users/jespinoz/Documents/TEC/Taller/backup/jVargas_kZheng_jEspinoza_digital_design_lab_2024/Lab 3 - Sequential Logic and Controllers/VgaController/controls.sv Line: 24
+Warning (10230): Verilog HDL assignment warning at controls.sv(25): truncated value with size 32 to match size of target (3) File: C:/Users/jespinoz/Documents/TEC/Taller/backup/jVargas_kZheng_jEspinoza_digital_design_lab_2024/Lab 3 - Sequential Logic and Controllers/VgaController/controls.sv Line: 25
+Warning (10230): Verilog HDL assignment warning at controls.sv(26): truncated value with size 32 to match size of target (3) File: C:/Users/jespinoz/Documents/TEC/Taller/backup/jVargas_kZheng_jEspinoza_digital_design_lab_2024/Lab 3 - Sequential Logic and Controllers/VgaController/controls.sv Line: 26
+Info (12128): Elaborating entity "updateIndex" for hierarchy "updateIndex:updateIJ" File: C:/Users/jespinoz/Documents/TEC/Taller/backup/jVargas_kZheng_jEspinoza_digital_design_lab_2024/Lab 3 - Sequential Logic and Controllers/VgaController/Battleship.sv Line: 48
+Warning (10036): Verilog HDL or VHDL warning at updateIndex.sv(7): object "enable_mov" assigned a value but never read File: C:/Users/jespinoz/Documents/TEC/Taller/backup/jVargas_kZheng_jEspinoza_digital_design_lab_2024/Lab 3 - Sequential Logic and Controllers/VgaController/updateIndex.sv Line: 7
+Warning (10646): Verilog HDL Event Control warning at updateIndex.sv(9): posedge or negedge of vector "clk" depends solely on its least-significant bit File: C:/Users/jespinoz/Documents/TEC/Taller/backup/jVargas_kZheng_jEspinoza_digital_design_lab_2024/Lab 3 - Sequential Logic and Controllers/VgaController/updateIndex.sv Line: 9
+Info (12128): Elaborating entity "vga" for hierarchy "vga:vga" File: C:/Users/jespinoz/Documents/TEC/Taller/backup/jVargas_kZheng_jEspinoza_digital_design_lab_2024/Lab 3 - Sequential Logic and Controllers/VgaController/Battleship.sv Line: 54
+Info (12128): Elaborating entity "pll" for hierarchy "vga:vga|pll:vgapll" File: C:/Users/jespinoz/Documents/TEC/Taller/backup/jVargas_kZheng_jEspinoza_digital_design_lab_2024/Lab 3 - Sequential Logic and Controllers/VgaController/vga.sv Line: 13
+Info (12128): Elaborating entity "vgaController" for hierarchy "vga:vga|vgaController:vgaCont" File: C:/Users/jespinoz/Documents/TEC/Taller/backup/jVargas_kZheng_jEspinoza_digital_design_lab_2024/Lab 3 - Sequential Logic and Controllers/VgaController/vga.sv Line: 23
+Info (12128): Elaborating entity "videoGen" for hierarchy "vga:vga|videoGen:vgavideoGen" File: C:/Users/jespinoz/Documents/TEC/Taller/backup/jVargas_kZheng_jEspinoza_digital_design_lab_2024/Lab 3 - Sequential Logic and Controllers/VgaController/vga.sv Line: 33
+Warning (10036): Verilog HDL or VHDL warning at videoGen.sv(15): object "numberFrameX" assigned a value but never read File: C:/Users/jespinoz/Documents/TEC/Taller/backup/jVargas_kZheng_jEspinoza_digital_design_lab_2024/Lab 3 - Sequential Logic and Controllers/VgaController/videoGen.sv Line: 15
+Warning (10036): Verilog HDL or VHDL warning at videoGen.sv(15): object "numberFrameY" assigned a value but never read File: C:/Users/jespinoz/Documents/TEC/Taller/backup/jVargas_kZheng_jEspinoza_digital_design_lab_2024/Lab 3 - Sequential Logic and Controllers/VgaController/videoGen.sv Line: 15
+Warning (10036): Verilog HDL or VHDL warning at videoGen.sv(15): object "segmentWidth" assigned a value but never read File: C:/Users/jespinoz/Documents/TEC/Taller/backup/jVargas_kZheng_jEspinoza_digital_design_lab_2024/Lab 3 - Sequential Logic and Controllers/VgaController/videoGen.sv Line: 15
+Warning (10036): Verilog HDL or VHDL warning at videoGen.sv(16): object "numberSizeX" assigned a value but never read File: C:/Users/jespinoz/Documents/TEC/Taller/backup/jVargas_kZheng_jEspinoza_digital_design_lab_2024/Lab 3 - Sequential Logic and Controllers/VgaController/videoGen.sv Line: 16
+Warning (10036): Verilog HDL or VHDL warning at videoGen.sv(16): object "numberSizeY" assigned a value but never read File: C:/Users/jespinoz/Documents/TEC/Taller/backup/jVargas_kZheng_jEspinoza_digital_design_lab_2024/Lab 3 - Sequential Logic and Controllers/VgaController/videoGen.sv Line: 16
 Info (278001): Inferred 2 megafunctions from design logic
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "videoGen:vgavideoGen|Div0" File: C:/Users/Usuario/Documents/jVargas_kZheng_jEspinoza_digital_design_lab_2024/Lab 3 - Sequential Logic and Controllers/VgaController/videoGen.sv Line: 16
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "videoGen:vgavideoGen|Div1" File: C:/Users/Usuario/Documents/jVargas_kZheng_jEspinoza_digital_design_lab_2024/Lab 3 - Sequential Logic and Controllers/VgaController/videoGen.sv Line: 17
-Info (12130): Elaborated megafunction instantiation "videoGen:vgavideoGen|lpm_divide:Div0" File: C:/Users/Usuario/Documents/jVargas_kZheng_jEspinoza_digital_design_lab_2024/Lab 3 - Sequential Logic and Controllers/VgaController/videoGen.sv Line: 16
-Info (12133): Instantiated megafunction "videoGen:vgavideoGen|lpm_divide:Div0" with the following parameter: File: C:/Users/Usuario/Documents/jVargas_kZheng_jEspinoza_digital_design_lab_2024/Lab 3 - Sequential Logic and Controllers/VgaController/videoGen.sv Line: 16
-    Info (12134): Parameter "LPM_WIDTHN" = "32"
-    Info (12134): Parameter "LPM_WIDTHD" = "6"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "vga:vga|videoGen:vgavideoGen|Div0" File: C:/Users/jespinoz/Documents/TEC/Taller/backup/jVargas_kZheng_jEspinoza_digital_design_lab_2024/Lab 3 - Sequential Logic and Controllers/VgaController/videoGen.sv Line: 36
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "vga:vga|videoGen:vgavideoGen|Div1" File: C:/Users/jespinoz/Documents/TEC/Taller/backup/jVargas_kZheng_jEspinoza_digital_design_lab_2024/Lab 3 - Sequential Logic and Controllers/VgaController/videoGen.sv Line: 37
+Info (12130): Elaborated megafunction instantiation "vga:vga|videoGen:vgavideoGen|lpm_divide:Div0" File: C:/Users/jespinoz/Documents/TEC/Taller/backup/jVargas_kZheng_jEspinoza_digital_design_lab_2024/Lab 3 - Sequential Logic and Controllers/VgaController/videoGen.sv Line: 36
+Info (12133): Instantiated megafunction "vga:vga|videoGen:vgavideoGen|lpm_divide:Div0" with the following parameter: File: C:/Users/jespinoz/Documents/TEC/Taller/backup/jVargas_kZheng_jEspinoza_digital_design_lab_2024/Lab 3 - Sequential Logic and Controllers/VgaController/videoGen.sv Line: 36
+    Info (12134): Parameter "LPM_WIDTHN" = "10"
+    Info (12134): Parameter "LPM_WIDTHD" = "9"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
-Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_kbm.tdf
-    Info (12023): Found entity 1: lpm_divide_kbm File: C:/Users/Usuario/Documents/jVargas_kZheng_jEspinoza_digital_design_lab_2024/Lab 3 - Sequential Logic and Controllers/VgaController/db/lpm_divide_kbm.tdf Line: 25
-Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_qlh.tdf
-    Info (12023): Found entity 1: sign_div_unsign_qlh File: C:/Users/Usuario/Documents/jVargas_kZheng_jEspinoza_digital_design_lab_2024/Lab 3 - Sequential Logic and Controllers/VgaController/db/sign_div_unsign_qlh.tdf Line: 25
-Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_qve.tdf
-    Info (12023): Found entity 1: alt_u_div_qve File: C:/Users/Usuario/Documents/jVargas_kZheng_jEspinoza_digital_design_lab_2024/Lab 3 - Sequential Logic and Controllers/VgaController/db/alt_u_div_qve.tdf Line: 23
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "g[0]" is stuck at GND File: C:/Users/Usuario/Documents/jVargas_kZheng_jEspinoza_digital_design_lab_2024/Lab 3 - Sequential Logic and Controllers/VgaController/vga.sv Line: 6
-    Warning (13410): Pin "g[1]" is stuck at GND File: C:/Users/Usuario/Documents/jVargas_kZheng_jEspinoza_digital_design_lab_2024/Lab 3 - Sequential Logic and Controllers/VgaController/vga.sv Line: 6
-    Warning (13410): Pin "g[2]" is stuck at GND File: C:/Users/Usuario/Documents/jVargas_kZheng_jEspinoza_digital_design_lab_2024/Lab 3 - Sequential Logic and Controllers/VgaController/vga.sv Line: 6
-    Warning (13410): Pin "g[3]" is stuck at GND File: C:/Users/Usuario/Documents/jVargas_kZheng_jEspinoza_digital_design_lab_2024/Lab 3 - Sequential Logic and Controllers/VgaController/vga.sv Line: 6
-    Warning (13410): Pin "g[4]" is stuck at GND File: C:/Users/Usuario/Documents/jVargas_kZheng_jEspinoza_digital_design_lab_2024/Lab 3 - Sequential Logic and Controllers/VgaController/vga.sv Line: 6
-    Warning (13410): Pin "g[5]" is stuck at GND File: C:/Users/Usuario/Documents/jVargas_kZheng_jEspinoza_digital_design_lab_2024/Lab 3 - Sequential Logic and Controllers/VgaController/vga.sv Line: 6
-    Warning (13410): Pin "g[6]" is stuck at GND File: C:/Users/Usuario/Documents/jVargas_kZheng_jEspinoza_digital_design_lab_2024/Lab 3 - Sequential Logic and Controllers/VgaController/vga.sv Line: 6
-    Warning (13410): Pin "g[7]" is stuck at GND File: C:/Users/Usuario/Documents/jVargas_kZheng_jEspinoza_digital_design_lab_2024/Lab 3 - Sequential Logic and Controllers/VgaController/vga.sv Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_jbm.tdf
+    Info (12023): Found entity 1: lpm_divide_jbm File: C:/Users/jespinoz/Documents/TEC/Taller/backup/jVargas_kZheng_jEspinoza_digital_design_lab_2024/Lab 3 - Sequential Logic and Controllers/VgaController/db/lpm_divide_jbm.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_plh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_plh File: C:/Users/jespinoz/Documents/TEC/Taller/backup/jVargas_kZheng_jEspinoza_digital_design_lab_2024/Lab 3 - Sequential Logic and Controllers/VgaController/db/sign_div_unsign_plh.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_ove.tdf
+    Info (12023): Found entity 1: alt_u_div_ove File: C:/Users/jespinoz/Documents/TEC/Taller/backup/jVargas_kZheng_jEspinoza_digital_design_lab_2024/Lab 3 - Sequential Logic and Controllers/VgaController/db/alt_u_div_ove.tdf Line: 23
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Info (286030): Timing-Driven Synthesis is running
+Info (17049): 4 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file C:/Users/jespinoz/Documents/TEC/Taller/backup/jVargas_kZheng_jEspinoza_digital_design_lab_2024/Lab 3 - Sequential Logic and Controllers/VgaController/output_files/vgaController.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 597 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 1 input pins
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "start" File: C:/Users/jespinoz/Documents/TEC/Taller/backup/jVargas_kZheng_jEspinoza_digital_design_lab_2024/Lab 3 - Sequential Logic and Controllers/VgaController/Battleship.sv Line: 2
+Info (21057): Implemented 377 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 8 input pins
     Info (21059): Implemented 29 output pins
-    Info (21061): Implemented 567 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 10 warnings
-    Info: Peak virtual memory: 4847 megabytes
-    Info: Processing ended: Wed Apr 10 13:33:53 2024
-    Info: Elapsed time: 00:00:16
-    Info: Total CPU time (on all processors): 00:00:42
+    Info (21061): Implemented 338 logic cells
+    Info (21062): Implemented 2 DSP elements
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 20 warnings
+    Info: Peak virtual memory: 4839 megabytes
+    Info: Processing ended: Sat Apr 13 13:39:21 2024
+    Info: Elapsed time: 00:00:17
+    Info: Total CPU time (on all processors): 00:00:31
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/jespinoz/Documents/TEC/Taller/backup/jVargas_kZheng_jEspinoza_digital_design_lab_2024/Lab 3 - Sequential Logic and Controllers/VgaController/output_files/vgaController.map.smsg.
 
 

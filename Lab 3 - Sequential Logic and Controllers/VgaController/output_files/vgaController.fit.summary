@@ -1,17 +1,17 @@
-Fitter Status : Successful - Wed Apr 10 13:35:02 2024
+Fitter Status : Successful - Sat Apr 13 13:41:08 2024
 Quartus Prime Version : 22.1std.0 Build 915 10/25/2022 SC Lite Edition
 Revision Name : vgaController
-Top-level Entity Name : vga
+Top-level Entity Name : Battleship
 Family : Cyclone V
 Device : 5CSEMA5F31C6
 Timing Models : Final
-Logic utilization (in ALMs) : 291 / 32,070 ( < 1 % )
-Total registers : 24
-Total pins : 30 / 457 ( 7 % )
+Logic utilization (in ALMs) : 170 / 32,070 ( < 1 % )
+Total registers : 77
+Total pins : 37 / 457 ( 8 % )
 Total virtual pins : 0
 Total block memory bits : 0 / 4,065,280 ( 0 % )
 Total RAM Blocks : 0 / 397 ( 0 % )
-Total DSP Blocks : 0 / 87 ( 0 % )
+Total DSP Blocks : 2 / 87 ( 2 % )
 Total HSSI RX PCSs : 0
 Total HSSI PMA RX Deserializers : 0
 Total HSSI TX PCSs : 0
