@@ -1,5 +1,6 @@
 module vga(
 	input logic clk,
+	input reg[2:0] i_actual, j_actual, 
 	output logic vgaclk,
 	output logic hsync, vsync,
 	output logic sync_b, blank_b,
@@ -24,6 +25,8 @@ module vga(
 	videoGen vgavideoGen(
 		.x(x),
 		.y(y),
+		.i_actual(i_actual),
+		.j_actual(j_actual), 
 		.r(r),
 		.g(g),
 		.b(b)

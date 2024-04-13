@@ -1,41 +1,65 @@
 module videoGen(
-    input logic [9:0] x, y,
+    input logic [9:0] x, y, 
+    //input reg[6:0] player_board [4:0][4:0], 
+    //input reg[6:0] pc_board [4:0][4:0], 
+    input reg[2:0] i_actual, j_actual, 
+    //input is_defeat, is_victory,
     output logic [7:0] r, g, b
 );
-    logic inrect_main, inrect_secondary;
-    
-    parameter size = 10'd56;
-    parameter frame = 10'd4;
-    
-	 parameter size_secondary = 10'd28;
-	 
-	 
-    int colIndex_main, rowIndex_main, col_px_main, row_px_main;
-    int colIndex_secondary, rowIndex_secondary, col_px_secondary, row_px_secondary;
-    
-    assign colIndex_main = (x-60) / (size+frame);
-    assign rowIndex_main = (y-30) / (size+frame);
-    
-    assign col_px_main = colIndex_main*(size+frame) + 60;
-    assign row_px_main = rowIndex_main*(size+frame) + 30;
-    
-    
-	 
-	 assign inrect_main = (colIndex_main < 1 && rowIndex_main < 1) && (x >= col_px_main && x < col_px_main+size && y >= row_px_main && y < row_px_main+size);
-    
-    
-	 
-	 assign colIndex_secondary = (x - 420) / (size_secondary+frame);
-    assign rowIndex_secondary = (y - 300) / (size_secondary+frame);
-    
-    assign col_px_secondary = colIndex_secondary*(size_secondary+frame) + 420;
-    assign row_px_secondary = rowIndex_secondary*(size_secondary+frame) + 300;
-    
-    assign inrect_secondary = (colIndex_secondary < 1 && rowIndex_secondary < 1) && (x >= col_px_secondary && x < col_px_secondary+size_secondary && y >= row_px_secondary && y < row_px_secondary+size_secondary);
-    
-	  assign {r, g, b} = inrect_main ? {8'hFF, 8'h00, 8'h00} :
-                        inrect_secondary ? {8'h00, 8'h00, 8'hFF} :
-                        {8'h00, 8'h00, 8'h00};
+
+
+
+    // Declare signals
+    reg inrect_main, inrect_secondary;
+    reg [9:0] colIndex, rowIndex, col_px, row_px;
+    reg [7:0] numberFrameX, numberFrameY, segmentWidth;
+    reg [7:0] size, frame, numberSizeX, numberSizeY;
+
+    // Constants
+    parameter VGA_WIDTH = 640;
+    parameter VGA_HEIGHT = 480;
+    parameter BOARD_SIZE = 5;
+
+    // Initialize parameters
+    initial begin
+        size = 58;
+        frame = 2;
+        numberSizeX = 30;
+        numberSizeY = 47;
+        numberFrameX = 13;
+        numberFrameY = 6;
+        segmentWidth = 2;
+    end
+
+    // Calculate column and row indices
+    always @* begin
+        colIndex = x / (size + frame);          
+        rowIndex = y / (size + frame);
+    end
+
+    // Calculate column and row pixels
+    always @* begin
+        col_px = colIndex * (size + frame);
+        row_px = rowIndex * (size + frame);
+    end
+
+    // Check if inside a rectangle
+    always @* begin
+        inrect_main = (colIndex < BOARD_SIZE && rowIndex < BOARD_SIZE) && 
+                      (x >= col_px + frame && x < col_px + size && 
+                       y >= row_px + frame && y < row_px + size);
+        inrect_secondary = ((colIndex >= BOARD_SIZE) && (colIndex < (2 * BOARD_SIZE)) && 
+                            (rowIndex >= 0) && (rowIndex < BOARD_SIZE)) && 
+                           (x >= col_px + frame && x < col_px + size && 
+                            y >= row_px + frame && y < row_px + size);
+    end
+
+		// Set color based on rectangles
+		always @* begin
+			 {r, g, b} = inrect_main ? (colIndex == j_actual && rowIndex == i_actual) ? {8'hFF, 8'hFF, 8'hFF} : {8'hFF, 8'h00, 8'h00} :
+										  inrect_secondary ? {8'h00, 8'h00, 8'hFF} :
+										  {8'h00, 8'h00, 8'h00};
+		end
 
 
 endmodule
