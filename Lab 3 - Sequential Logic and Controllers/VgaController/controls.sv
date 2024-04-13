@@ -14,9 +14,9 @@ module controls(
 		end else begin
 		
 			// If the position is not allowed
-			if(i_actual == 3'b101 && move_down == 0) i_next = i_actual;
+			if(i_actual == 3'b100 && move_down == 0) i_next = i_actual;
 			else if(i_actual == 3'b000 && move_up == 0) i_next = i_actual;
-			else if(j_actual == 3'b101 && move_right == 0) j_next = j_actual;
+			else if(j_actual == 3'b100 && move_right == 0) j_next = j_actual;
 			else if(j_actual == 3'b000 && move_left == 0) j_next = j_actual;
 			else begin
 			
