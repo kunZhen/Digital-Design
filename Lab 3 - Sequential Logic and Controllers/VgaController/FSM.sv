@@ -2,20 +2,29 @@ module FSM (
   input wire clk, // reloj
   input wire rst, // reset
   input wire start, // game begin
+  
   //input wire time_expired, // Indicates if time limit expired
-  input wire boats_placed, // Indicates if the full boat is in the board
   input wire player_ships, //how many ships the player has
   input wire pc_ships, // how many ships the pc has
-  input wire player_move,
-  output wire player_turn, // Indicates whether the game is in the "PLAYER_TURHN" state.
+  
+  input wire player_move, // switch player selects cell
+  
+  input wire finished_placing, // how many ships should be placed in the board
+  
+  output wire placing_ships, // Indicates whether the game is in the "PLACING_SHIP" state.
+  output wire player_turn, // Indicates whether the game is in the "PLAYER_TURN" state.
   output wire pc_turn, // Indicates whether the game is in the "PC_TURN" state.
   output wire is_victory, //  Indicates whether the game is in the "VICTORY" state.
   output wire is_defeat //  Indicates whether the game is in the "DEFEAT" state.
 );
 
+
+
+
   // Define estados
   typedef enum logic [2:0] {
     START,
+	 PLACING_SHIPS,
     PLAYER_TURN,
     PC_TURN,
     VICTORY,
@@ -51,12 +60,17 @@ module FSM (
     case (state_reg)
 	 
       START: begin // Game is in PLAY state once the full boat is placed on the board
-        next_state_reg = boats_placed ? PLAYER_TURN : START;
+        next_state_reg = !start ? PLACING_SHIPS : START;
       end
+		
+		PLACING_SHIPS: begin // Game is in PLAY state once the full boat is placed on the board
+        next_state_reg = (finished_placing) ? PLAYER_TURN : PLACING_SHIPS;
+      end
+		
 		
       PLAYER_TURN: begin
 			//next_state_reg = (time_expired || player_move) ? PC_TURN : PLAYER_TURN; // Remains in "PLAY" state unless the time limit expires or player moves
-			next_state_reg = (player_move) ? PC_TURN : PLAYER_TURN; // Remains in "PLAY" state unless the time limit expires or player moves
+			next_state_reg = (!player_move) ? PC_TURN : PLAYER_TURN; // Remains in "PLAY" state unless the time limit expires or player moves
 
       end
 		
@@ -79,9 +93,11 @@ module FSM (
   // Lógica de salida
   assign current_state = state_reg;
   assign next_state = next_state_reg;
+  
   assign is_victory = (current_state == VICTORY);
   assign is_defeat = (current_state == DEFEAT);
   assign player_turn = (current_state == PLAYER_TURN);
   assign pc_turn = (current_state == PC_TURN);
+  assign placing_ships = (current_state == PLACING_SHIPS);
 
 endmodule

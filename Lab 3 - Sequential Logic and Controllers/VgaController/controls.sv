@@ -1,9 +1,12 @@
 module controls(
-	input reg [2:0]i_actual, j_actual, 
+	input reg [2:0]i_actual, j_actual, ships_placed,
 	input logic move_up, move_down, move_left, move_right, clk, rst,
 	output reg [2:0]i_next, j_next //output logic can_move
 );
+
+
 				
+	parameter MAX_INDEX = 4;
 				
 	always @(negedge clk or negedge rst) begin
 	
@@ -14,9 +17,9 @@ module controls(
 		end else begin
 		
 			// If the position is not allowed
-			if(i_actual == 3'b100 && move_down == 0) i_next = i_actual;
+			if(i_actual == MAX_INDEX && move_down == 0) i_next = i_actual;
 			else if(i_actual == 3'b000 && move_up == 0) i_next = i_actual;
-			else if(j_actual == 3'b100 && move_right == 0) j_next = j_actual;
+			else if(j_actual == MAX_INDEX && move_right == 0) j_next = j_actual;
 			else if(j_actual == 3'b000 && move_left == 0) j_next = j_actual;
 			else begin
 			

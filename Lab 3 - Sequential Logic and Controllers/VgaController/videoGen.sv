@@ -1,9 +1,7 @@
 module videoGen(
     input logic [9:0] x, y, 
-    //input reg[6:0] player_board [4:0][4:0], 
-    //input reg[6:0] pc_board [4:0][4:0], 
     input reg[2:0] i_actual, j_actual, 
-    //input is_defeat, is_victory,
+	 
     output logic [7:0] r, g, b
 );
 

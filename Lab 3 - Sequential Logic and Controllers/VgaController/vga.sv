@@ -6,7 +6,10 @@ module vga(
 	output logic sync_b, blank_b,
 	output logic [7:0] r, g, b
 );
+
 	logic [9:0] x, y;
+	
+	
 	pll vgapll(
 		.inclk0(clk),
 		.c0(vgaclk)
@@ -27,6 +30,7 @@ module vga(
 		.y(y),
 		.i_actual(i_actual),
 		.j_actual(j_actual), 
+		
 		.r(r),
 		.g(g),
 		.b(b)

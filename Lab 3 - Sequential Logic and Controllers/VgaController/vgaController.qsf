@@ -82,6 +82,25 @@ set_location_assignment PIN_A13 -to r[0]
 set_location_assignment PIN_C10 -to sync_b
 set_location_assignment PIN_A11 -to vgaclk
 set_location_assignment PIN_D11 -to vsync
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_location_assignment PIN_AD10 -to start
+set_location_assignment PIN_AE12 -to rst
+set_location_assignment PIN_AE11 -to player_move
+set_location_assignment PIN_Y16 -to move_up
+set_location_assignment PIN_AA14 -to move_right
+set_location_assignment PIN_AA15 -to move_left
+set_location_assignment PIN_W15 -to move_down
+set_location_assignment PIN_AC9 -to player_place_ship
+set_location_assignment PIN_AB12 -to amount_of_ships[0]
+set_location_assignment PIN_AC12 -to amount_of_ships[1]
+set_location_assignment PIN_AF9 -to amount_of_ships[2]
+set_global_assignment -name SYSTEMVERILOG_FILE decoder.sv
 set_global_assignment -name SYSTEMVERILOG_FILE vga_clock.sv
 set_global_assignment -name SYSTEMVERILOG_FILE updateIndex.sv
 set_global_assignment -name SYSTEMVERILOG_FILE FSM.sv
@@ -92,18 +111,19 @@ set_global_assignment -name SYSTEMVERILOG_FILE vgaController.sv
 set_global_assignment -name SYSTEMVERILOG_FILE videoGen.sv
 set_global_assignment -name SYSTEMVERILOG_FILE rectgen.sv
 set_global_assignment -name SYSTEMVERILOG_FILE pll.sv
-set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
-set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
-set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
-set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_location_assignment PIN_AD10 -to start
-set_location_assignment PIN_AE12 -to rst
-set_location_assignment PIN_AC9 -to player_move
-set_location_assignment PIN_Y16 -to move_up
-set_location_assignment PIN_AA14 -to move_right
-set_location_assignment PIN_AA15 -to move_left
-set_location_assignment PIN_W15 -to move_down
+set_global_assignment -name SYSTEMVERILOG_FILE place_ship.sv
+set_location_assignment PIN_AE26 -to amount_of_ships_seg[0]
+set_location_assignment PIN_AE27 -to amount_of_ships_seg[1]
+set_location_assignment PIN_AE28 -to amount_of_ships_seg[2]
+set_location_assignment PIN_AG27 -to amount_of_ships_seg[3]
+set_location_assignment PIN_AF28 -to amount_of_ships_seg[4]
+set_location_assignment PIN_AG28 -to amount_of_ships_seg[5]
+set_location_assignment PIN_AH28 -to amount_of_ships_seg[6]
+set_location_assignment PIN_AB23 -to ships_placed_seg[0]
+set_location_assignment PIN_AE29 -to ships_placed_seg[1]
+set_location_assignment PIN_AD29 -to ships_placed_seg[2]
+set_location_assignment PIN_AC28 -to ships_placed_seg[3]
+set_location_assignment PIN_AD30 -to ships_placed_seg[4]
+set_location_assignment PIN_AC29 -to ships_placed_seg[5]
+set_location_assignment PIN_AC30 -to ships_placed_seg[6]
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
