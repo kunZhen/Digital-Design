@@ -11,7 +11,7 @@ module updateIndex (
 			i_actual = 0;
 			j_actual = 0;
 			
-	  end else if (placing_ships) begin
+	  end else if (placing_ships || player_turn) begin
 			i_actual = i_next;
 			j_actual = j_next;
 			

@@ -19,7 +19,7 @@ module place_ship (input wire player_place_ship, // switch input
 		
 	end
 	
-	assign finished_placing = (ships_placed == amount_of_ships);
+	assign finished_placing = (ships_placed == (amount_of_ships - 1));
 
 
 endmodule
