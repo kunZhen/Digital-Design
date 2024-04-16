@@ -3,9 +3,17 @@ module Battleship (
 	input logic move_up, move_down, move_left, move_right, clk, rst,
 	input logic player_move, player_place_ship,
 	input reg [2:0] amount_of_ships,
+	
+	// Señal de reloj para el monitor VGA
 	output logic vgaclk,
+	
+	// Señales de sincronización horizontal y vertical para el monitor VGA
 	output logic hsync, vsync,
+	
+	// Señales de sincronización y en blanco para el monitor VGA
 	output logic sync_b, blank_b,
+	
+	//Componentes de color para el monitor VGA
 	output logic [7:0] r, g, b,
 	
 	// siete segmentos para mostrar el número de barcos colocados y la cantidad de barcos restantes.
@@ -14,14 +22,20 @@ module Battleship (
 	);
 	
 	
-	reg clk_ms; // Registro para dividir la frecuencia del reloj clk
+	// Registro para dividir la frecuencia del reloj clk
+	reg clk_ms; 
 	
-	reg [2:0] i_actual, j_actual; // Coordenadas actuales del jugador en el tablero
-	reg [2:0] i_next, j_next; // Coordenadas siguientes del jugador en el tablero
+	// Coordenadas actuales del jugador en el tablero
+	reg [2:0] i_actual, j_actual; 
 	
-	reg [2:0] pc_ships = 3'b001; // Cantidad de barcos de la PC
+	// Coordenadas siguientes del jugador en el tablero
+	reg [2:0] i_next, j_next; 
 	
-	reg [2:0] player_ships = 3'b001; //  Cantidad de barcos del jugador
+	// Cantidad de barcos de la PC
+	reg [2:0] pc_ships = 3'b001; 
+	
+	//  Cantidad de barcos del jugador
+	reg [2:0] player_ships = 3'b001; 
 	
 	
 	logic player_turn, pc_turn, placing_ships, is_victory, is_defeat, finished_placing;
