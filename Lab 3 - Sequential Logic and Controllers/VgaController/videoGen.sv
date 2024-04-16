@@ -57,9 +57,9 @@ module videoGen(
 
 		// Set color based on rectangles
 		always @* begin
-			 {r, g, b} = inrect_main ? (colIndex == j_actual && rowIndex == i_actual) ? {8'hFF, 8'hFF, 8'hFF} : {8'hFF, 8'h00, 8'h00} :
-										  inrect_secondary ? {8'h00, 8'h00, 8'hFF} :
-										  {8'h00, 8'h00, 8'h00};
+			 {r, g, b} = inrect_main ? (colIndex == j_actual && rowIndex == i_actual) ? {8'hFF, 8'hFF, 8'hFF} : {8'hFF, 8'h00, 8'h00} : // blanco y rojo
+										  inrect_secondary ? {8'h00, 8'h00, 8'hFF} : // azul
+										  {8'h00, 8'h00, 8'h00}; // negro
 		end
 
 
