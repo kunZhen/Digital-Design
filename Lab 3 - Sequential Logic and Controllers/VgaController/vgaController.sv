@@ -1,13 +1,18 @@
 module vgaController #(
-	parameter HACTIVE = 10'd640,
-				 HFP = 10'd16,
-				 HSYN = 10'd96,
-				 HBP = 10'd48,
-				 HMAX = HACTIVE + HFP + HSYN + HBP,
-				 VBP = 10'd33,
-				 VACTIVE = 10'd480,
-				 VFP = 10'd10,
-				 VSYN = 10'd2,
+	// definen los periodos de tiempo para 
+	parameter HACTIVE = 10'd640, // la activación horizontal, 
+				 HFP = 10'd16, // el tiempo de preparación horizontal, 
+				 HSYN = 10'd96, // el tiempo de sincronización horizontal y 
+				 HBP = 10'd48, // el tiempo de post-sincronización horizontal 
+				 
+				 HMAX = HACTIVE + HFP + HSYN + HBP, 
+				 
+				 // // definen los periodos de tiempo para
+				 VBP = 10'd33, // el tiempo de post-sincronización vertical,
+				 VACTIVE = 10'd480, // la activación vertica, 
+				 VFP = 10'd10, // el tiempo de preparación vertical y
+				 VSYN = 10'd2, // el tiempo de sincronización vertical
+				 
 				 VMAX = VBP + VACTIVE + VFP + VSYN
 	)
 	(
@@ -18,7 +23,7 @@ module vgaController #(
 	
 	always @(posedge vgaclk) begin
 		x++;
-		if(x==HMAX) begin
+		if(x == HMAX) begin
 			x = 0;
 			y++;
 			if(y == VMAX) y = 0;

@@ -23,16 +23,16 @@ module FSM (
 
   // Define estados
   typedef enum logic [2:0] {
-    START,
-	 PLACING_SHIPS,
-    PLAYER_TURN,
-    PC_TURN,
-    VICTORY,
-    DEFEAT
+    START, // 000
+	 PLACING_SHIPS, // 001
+    PLAYER_TURN, // 010
+    PC_TURN, // 011
+    VICTORY, // 100
+    DEFEAT // 101
   } fsm_states;
 
   
-  // Variablesde los estados actuales y siguientes
+  // Variables de los estados actuales y siguientes
   fsm_states current_state, next_state;
 
   
@@ -47,7 +47,6 @@ module FSM (
       state_reg <= START;
 		
     end else begin
-	 
       state_reg <= next_state_reg;
     end
 	 

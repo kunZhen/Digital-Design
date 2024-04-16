@@ -1,13 +1,16 @@
 module videoGen(
-    input logic [9:0] x, y, 
+    // Coordenadas de píxeles en la pantalla VGA
+	 input logic [9:0] x, y,  
+	 
+	 // Posición actual del jugador en el juego
     input reg[2:0] i_actual, j_actual, 
 	 
+	 // Componentes de color para cada píxel en la pantalla VGA
     output logic [7:0] r, g, b
 );
 
 
-
-    // Declare signals
+    // Variables que indican si el píxel está dentro de un rectángulo principal o secundario
     reg inrect_main, inrect_secondary;
     reg [9:0] colIndex, rowIndex, col_px, row_px;
     reg [7:0] numberFrameX, numberFrameY, segmentWidth;

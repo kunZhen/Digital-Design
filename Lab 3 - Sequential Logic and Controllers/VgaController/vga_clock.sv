@@ -1,8 +1,15 @@
-module vga_clock(clk,clock_out);
+module vga_clock(clk, clock_out);
 
-	input clk; // input clock on FPGA
-	output reg clock_out; // output clock after dividing the input clock by divisor
-	reg[27:0] counter=28'd0;
+	// Señal de reloj de entrada proveniente del FPGA
+	input clk;
+	
+	// Señal de reloj de salida después de dividir la frecuencia
+	output reg clock_out;
+
+	// Registro de 28 bits que cuenta el número de ciclos de reloj de entrada
+	reg[27:0] counter = 28'd0;
+	
+	// Valor por el cual se dividirá la frecuencia de la señal de entrada
 	parameter DIVISOR = 28'd5000000;
 	
 	// The frequency of the output clk_out
@@ -13,9 +20,9 @@ module vga_clock(clk,clock_out);
 	
 	always @(posedge clk) begin
 		counter <= counter + 28'd1;
-			if(counter>=(DIVISOR-1))
+			if (counter >= (DIVISOR-1))
 				counter <= 28'd0;
-		clock_out <= (counter<DIVISOR/2)?1'b1:1'b0;
+		clock_out <= (counter < DIVISOR/2) ? 1'b1 : 1'b0;
 	end
 	
 endmodule
