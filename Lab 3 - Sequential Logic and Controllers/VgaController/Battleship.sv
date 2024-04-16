@@ -82,8 +82,14 @@ module Battleship (
 	
 	// Controla el movimiento del jugador en el tablero
 	controls movement_controls(
-		.i_actual(i_actual), .j_actual(j_actual), .ships_placed(ships_placed), .amount_of_ships(amount_of_ships),
-		.move_up(move_up), .move_down(move_down), .move_left(move_left), .move_right(move_right),
+		.i_actual(i_actual), 
+		.j_actual(j_actual), 
+		.ships_placed(ships_placed), 
+		.amount_of_ships(amount_of_ships),
+		.move_up(move_up), 
+		.move_down(move_down), 
+		.move_left(move_left), 
+		.move_right(move_right),
 		.clk(clk_ms), .rst(rst),
 		.i_next(i_next), .j_next(j_next)
 	);

@@ -1,15 +1,30 @@
 module controls(
-	input reg [2:0]i_actual, j_actual, ships_placed, amount_of_ships,
-	input logic move_up, move_down, move_left, move_right, clk, rst,
-	output reg [2:0]i_next, j_next //output logic can_move
+	
+	// Coordenadas actuales del jugador
+	input reg [2:0]i_actual, j_actual, 
+	
+	//  Cantidad de barcos ya colocados en el tablero
+	ships_placed, 
+	
+	// Cantidad total de barcos a colocar en el tablero
+	amount_of_ships,
+	
+	// Movimientos 
+	input logic move_up, move_down, move_left, move_right, 
+	
+	// Señal de reloj y reset
+	clk, rst,
+	
+	// Coordenadas a las que el jugador se moverá en el próximo ciclo de reloj
+	output reg [2:0]i_next, j_next
 );
 
-
-				
+	// Valor máximo para las coordenadas del tablero. En este caso, se establece en 4, lo que implica un tablero de 5x5.
 	parameter MAX_INDEX = 4;
 				
 	always @(negedge clk or negedge rst) begin
 	
+		// Señal reset activa, reestablece las coordenadas
 		if (!rst) begin
 			i_next = 0;
 			j_next = 0;
