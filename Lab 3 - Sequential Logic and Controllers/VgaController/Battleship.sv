@@ -47,8 +47,21 @@ module Battleship (
 
 	logic [2:0] amount_of_ships_limit = 3'b101;
 	
-	
+	reg [2:0] amount_of_ships_internal; // Señal interna para realizar operaciones
 
+always @(negedge clk or negedge rst) begin
+    if (!rst) begin
+        amount_of_ships_internal <= 3'b000; // Inicialización en 0 en el reset
+    end else begin
+        // Limitar el valor de amount_of_ships_internal
+        if (amount_of_ships > amount_of_ships_limit) begin
+            amount_of_ships_internal <= amount_of_ships_limit;
+        end else begin
+            amount_of_ships_internal <= amount_of_ships; // Asignación directa
+        end
+    end
+end
+	
 	// Divide la frecuencia del reloj clk para generar una señal de reloj para el monitor VGA
 	vga_clock clkdiv (
 		clk, clk_ms
@@ -92,7 +105,7 @@ module Battleship (
 		.i_actual(i_actual), 
 		.j_actual(j_actual), 
 		.ships_placed(ships_placed), 
-		.amount_of_ships(amount_of_ships),
+		.amount_of_ships(amount_of_ships_internal),
 		.move_up(move_up), 
 		.move_down(move_down), 
 		.move_left(move_left), 
@@ -115,7 +128,7 @@ module Battleship (
 	
 	// Decodifica las señales de barcos colocados y cantidad de barcos restantes para visualización en siete segmentos
 	decoder ships_placed_deco(ships_placed, ships_placed_seg);
-	decoder amount_of_ships_deco(amount_of_ships, amount_of_ships_seg);
+	decoder amount_of_ships_deco(amount_of_ships_internal, amount_of_ships_seg);
 	
 	
 endmodule
