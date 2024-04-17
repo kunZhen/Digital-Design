@@ -1,6 +1,11 @@
 module controls(
 	
 	// Coordenadas actuales del jugador
+	/*El rango [2:0] corresponde a que el jugador 
+	puede estar en las posiciones 000,001,010,011,100,101, 
+	se deben invalida las opciones 110 y 111 debido a que los índices
+	de 6 y 7 no existen
+	*/
 	input reg [2:0]i_actual, j_actual, 
 	
 	//  Cantidad de barcos ya colocados en el tablero

@@ -2,7 +2,7 @@ module Battleship (
 	input logic start, // 
 	input logic move_up, move_down, move_left, move_right, clk, rst,
 	input logic player_move, player_place_ship,
-	input reg [2:0] amount_of_ships,
+	input reg [2:0] amount_of_ships, //cantidad de barcos
 	
 	// Señal de reloj para el monitor VGA
 	output logic vgaclk,
@@ -31,31 +31,38 @@ module Battleship (
 	// Coordenadas siguientes del jugador en el tablero
 	reg [2:0] i_next, j_next; 
 	
-	// Cantidad de barcos de la PC
-	reg [2:0] pc_ships = 3'b001; 
-	
-	//  Cantidad de barcos del jugador
-	reg [2:0] player_ships = 3'b001; 
+	// Cantidad de barcos de la PC (Inicializado con 0 barcos)
+	reg [2:0] pc_ships = 3'b000; 
+
+	// Cantidad de barcos del jugador (Inicializado con 0 barcos)
+	reg [2:0] player_ships = 3'b000;
 	
 	
 	logic player_turn, pc_turn, placing_ships, is_victory, is_defeat, finished_placing;
 							  
 							  
 	reg[2:0] ships_placed;
-							  
-							  
+	
+	logic [2:0] ship_size_limit = 3'b101;
+
+	logic [2:0] amount_of_ships_limit = 3'b101;
+	
+	
+
 	// Divide la frecuencia del reloj clk para generar una señal de reloj para el monitor VGA
 	vga_clock clkdiv (
 		clk, clk_ms
 	);
 	
 	
+							  
 	// Controla el proceso de colocación de barcos por parte del jugador
 	place_ship place_ship(
 		.player_place_ship(player_place_ship), // switch player selected cell
 		.placing_ships(placing_ships), // state
 		.clk(clk_ms), .rst(rst),
-		.amount_of_ships(amount_of_ships),
+		.ship_size_limit(ship_size_limit),
+		.amount_of_ships_limit(amount_of_ships_limit),
 		.ships_placed(ships_placed),
 		.finished_placing(finished_placing) // how many ships have been placed
 	);
