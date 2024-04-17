@@ -61,7 +61,7 @@ end
 	
 							  
 	// Controla el proceso de colocación de barcos por parte del jugador
-	place_ship place_ship(
+	/*place_ship place_ship(
 		.player_place_ship(player_place_ship), // switch player selected cell
 		.placing_ships(placing_ships), // state
 		.clk(clk_ms), .rst(rst),
@@ -69,7 +69,7 @@ end
 		.amount_of_ships_limit(amount_of_ships_limit),
 		.ships_placed(ships_placed),
 		.finished_placing(finished_placing) // how many ships have been placed
-	);
+	);*/
 	
 	
 	// Máquina de estados finitos que controla el flujo del juego
@@ -92,7 +92,7 @@ end
 	);
 	
 	// Controla el movimiento del jugador en el tablero
-	controls movement_controls(
+	/*controls movement_controls(
 		.i_actual(i_actual), 
 		.j_actual(j_actual), 
 		.ships_placed(ships_placed), 
@@ -103,13 +103,13 @@ end
 		.move_right(move_right),
 		.clk(clk_ms), .rst(rst),
 		.i_next(i_next), .j_next(j_next)
-	);
+	);*/
 	
 	// Actualiza las coordenadas del jugador en el tablero
-	updateIndex updateIJ(
+	/*updateIndex updateIJ(
 		i_next, j_next, clk_ms, rst, player_turn, placing_ships,
 		i_actual, j_actual
-	);
+	);*/
 	
 	// Genera señales de video VGA para mostrar el tablero del juego en un monitor
 	vga vga(
