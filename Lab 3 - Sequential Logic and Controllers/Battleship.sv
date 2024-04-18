@@ -49,13 +49,16 @@ module Battleship(
 	logic [2:0] amount_of_ships_limit = 3'b101;
 	
 	reg [2:0] amount_of_ships_internal; // Señal interna para realizar operaciones
-
-always_comb begin
-    amount_of_ships_internal = (amount_of_ships > amount_of_ships_limit) ? amount_of_ships_limit : amount_of_ships;
-end
 	
+	// Definición de los tableros como matrices 5x5 de dos bits
+   logic [1:0] tablero_jugador[5][5];
+   logic [1:0] tablero_pc[5][5];
 
-
+	always_comb begin
+		 amount_of_ships_internal = (amount_of_ships > amount_of_ships_limit) ? amount_of_ships_limit : amount_of_ships;
+	end
+	
+	
 
 // Divide la frecuencia del reloj clk para generar una señal de reloj para el monitor VGA
 	vga_clock clkdiv (
@@ -80,6 +83,14 @@ end
 	);
 	
 	*/
+	
+	// Instancia del módulo tablero
+    tablero game_board (
+        .clk(clk),
+        .rst(rst),
+        .tablero_jugador(tablero_jugador),
+        .tablero_pc(tablero_pc)
+    );
 	
 // Genera señales de video VGA para mostrar el tablero del juego en un monitor
 	vga vga(
