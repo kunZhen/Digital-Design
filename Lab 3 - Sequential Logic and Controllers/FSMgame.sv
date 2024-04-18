@@ -1,7 +1,6 @@
 module FSMgame (
   input wire clk, // reloj
   input wire rst, // reset
-  input wire start, // game begin after deciding how many boats to put on play será switch[3]
   
   //input wire time_expired, // Indicates if time limit expired
   input wire player_ships, //how many ships the player has
@@ -16,12 +15,16 @@ module FSMgame (
 
   input wire pc_move,  // it confirms that the pc already did its turn
   
+  input wire ships_located,
+  
   output wire decision, // Indicates whether the game is in the "DECISION" state.
   output wire colocation_ships, // Indicates whether the game is in the "COLOCATION" state.
   output wire player_turn, // Indicates whether the game is in the "PLAYER_TURN" state.
   output wire pc_turn, // Indicates whether the game is in the "PC_TURN" state.
   output wire is_victory, //  Indicates whether the game is in the "VICTORY" state.
   output wire is_defeat //  Indicates whether the game is in the "DEFEAT" state.
+  
+  
 );
 
   // Define estados
@@ -64,7 +67,7 @@ module FSMgame (
 	 
       DECISION: begin // Game is in DECISION state, in  which using three switches it will choose how many boats the player 
 							//wants to put
-        next_state_reg = (!start) ? COLOCATION : DECISION;
+        next_state_reg = (ships_located) ? COLOCATION : DECISION;
       end
 		
 		COLOCATION: begin 
