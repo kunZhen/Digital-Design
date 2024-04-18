@@ -1,8 +1,8 @@
 module tablero(
     input logic clk, rst,
     input logic decision,  // Señal de decisión para controlar el llenado del tablero
-    output logic [1:0] tablero_jugador[5][5],
-    output logic [1:0] tablero_pc[5][5]
+    output reg [1:0] tablero_jugador[5][5],
+    output reg [1:0] tablero_pc[5][5]
 );
 
     // Estados posibles para las celdas del tablero
@@ -27,7 +27,7 @@ module tablero(
         for (int i = 0; i < 5; i++) begin
             for (int j = 0; j < 5; j++) begin
                 tablero_jugador[i][j] <= AGUA;
-                tablero_pc[i][j] <= BARCO;
+                tablero_pc[i][j] <= AGUA;
             end
         end
     endtask

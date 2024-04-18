@@ -51,8 +51,8 @@ module Battleship(
 	reg [2:0] amount_of_ships_internal; // Señal interna para realizar operaciones
 	
 	// Definición de los tableros como matrices 5x5 de dos bits
-   logic [1:0] tablero_jugador[5][5];
-   logic [1:0] tablero_pc[5][5];
+   reg [1:0] tablero_jugador[5][5];
+   reg [1:0] tablero_pc[5][5];
 
 	always_comb begin
 		 amount_of_ships_internal = (amount_of_ships > amount_of_ships_limit) ? amount_of_ships_limit : amount_of_ships;
@@ -88,6 +88,7 @@ module Battleship(
     tablero game_board (
         .clk(clk),
         .rst(rst),
+		  .decision(1'b1),
         .tablero_jugador(tablero_jugador),
         .tablero_pc(tablero_pc)
     );
@@ -95,7 +96,8 @@ module Battleship(
 // Genera señales de video VGA para mostrar el tablero del juego en un monitor
 	vga vga(
 		clk, i_actual, j_actual,
-		vgaclk, hsync, vsync, sync_b, blank_b, r, g, b
+		vgaclk, hsync, vsync, sync_b, blank_b, tablero_jugador,
+		tablero_pc, r, g, b
 	);
 	
 	
