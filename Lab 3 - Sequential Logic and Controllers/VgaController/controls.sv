@@ -17,7 +17,7 @@ module controls(
 		end else begin
 		
 			// If the position is not allowed
-			if(i_actual == MAX_INDEX - (amount_of_ships - ships_placed - 1) && move_down == 0) i_next = i_actual;
+			if(i_actual == MAX_INDEX && move_down == 0) i_next = i_actual;
 			else if(i_actual == 3'b000 && move_up == 0) i_next = i_actual;
 			else if(j_actual == MAX_INDEX && move_right == 0) j_next = j_actual;
 			else if(j_actual == 3'b000 && move_left == 0) j_next = j_actual;
