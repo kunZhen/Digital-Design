@@ -8,7 +8,7 @@ module FSMgame (
   
   
   
-  input wire finished_placing, // how many ships should be placed in the board
+  input wire finished_placing,
 	
   
   input wire player_move, //  switch[5].  Player confirms cell that wants to attack

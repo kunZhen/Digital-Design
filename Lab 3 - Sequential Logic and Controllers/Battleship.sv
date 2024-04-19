@@ -1,19 +1,17 @@
 module Battleship(
-	input logic start, // 
+
 	input logic move_up, move_down, move_left, move_right, clk, rst,
 	input logic player_move,
 
-
-	//del estado decision se ocupan los siguientes inputs
+	// Coordenadas actuales del jugador en el tablero
+	logic [2:0] i_actual, j_actual; 
 	
-		
-	input reg [2:0] player_ships_input, //cantidad de barcos del jugador que después pasarán a ser iguales
-												//a la cantidad de barcos por el PC
-												
+	// Coordenadas siguientes del jugador en el tablero
+	logic [2:0] i_next, j_next; 
+						
 	input logic confirm_amount_button,
 	
-	output logic [2:0] game_ships_amount,
-	
+	// Graphics --------------------------------------------------------
 	// Señal de reloj para el monitor VGA
 	output logic vgaclk,
 	
@@ -26,20 +24,16 @@ module Battleship(
 	//Componentes de color para el monitor VGA
 	output logic [7:0] r, g, b,
 	
+
+	// 7 segments ------------------------------------------------------
 	// siete segmentos para mostrar el número de barcos colocados y la cantidad de barcos restantes.
-	output logic[6:0] ships_placed_seg, 
-	output logic[6:0] player_ships_input_seg
+	output logic[6:0] ships_placed_seg,
 	);
 	
 	
 	// Registro para dividir la frecuencia del reloj clk
 	reg clk_ms; 
 	
-	// Coordenadas actuales del jugador en el tablero
-	logic [2:0] i_actual, j_actual; 
-	
-	// Coordenadas siguientes del jugador en el tablero
-	logic [2:0] i_next, j_next; 
 	
 	// Cantidad de barcos de la PC (Inicializado con 0 barcos)
 	reg [2:0] pc_ships = 3'b000; 
@@ -50,27 +44,27 @@ module Battleship(
 	
 	
 	
-	
+	// For FSM  ---------------------------------------------------------
 	logic decision, colocation_ships, player_turn,  pc_turn, is_victory, is_defeat ;
 	
 	logic ships_decided;
 	
 	logic finished_placing;
-							  
-							  
-	reg[2:0] ships_placed;
-	
-	logic [2:0] ship_size_limit = 3'b101;
+
+	// -------------------------------------------------------------------					  
+
+	input reg [2:0] player_ships_input, //cantidad de barcos del jugador que después pasarán a ser iguales
+												//a la cantidad de barcos por el PC
 
 	logic [2:0] player_ships_input_limit = 3'b101;
 	
 	reg [2:0] player_ships_input_internal; // Señal interna para realizar operaciones
-	
-	reg [2:0] random_number;
 
 	always_comb begin
 		 player_ships_input_internal = (player_ships_input > player_ships_input_limit) ? player_ships_input_limit : player_ships_input;
 	end
+
+	// Boards ------------------------------------------------------------
 	
 	// Definición de los tableros como matrices 5x5 de dos bits
    reg [1:0] tablero_jugador[5][5];
