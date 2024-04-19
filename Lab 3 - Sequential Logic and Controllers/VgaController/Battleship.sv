@@ -26,6 +26,10 @@ module Battleship (
 							  
 							  
 	reg[2:0] ships_placed;
+	
+	// Definición de los tableros como matrices 5x5 de dos bits
+   reg [1:0] tablero_jugador[5][5];
+   reg [1:0] tablero_pc[5][5];
 							  
 							  
 	vga_clock clkdiv (
@@ -42,22 +46,32 @@ module Battleship (
 		.finished_placing(finished_placing) // how many ships have been placed
 	);
 	
-	FSMgame fsm(
+	FSM fsm(
 	  .clk(clk),
 	  .rst(rst),
+	  .start(start),
 	  //.time_expired(time_expired),
 	  .player_ships(player_ships),
-	  .pc_ships_setup(pc_ships),
+	  .pc_ships(pc_ships),
 	  .player_move(player_move),
-	  .finished_placing(0),
-	  .ships_decided(ships_decided),
-	  .decision(decision),
-	  .colocation_ships(colocation_ships),
+	  
+	  .finished_placing(finished_placing),
+	  
+	  .placing_ships(placing_ships),
 	  .player_turn(player_turn),
 	  .pc_turn(pc_turn),
 	  .is_victory(is_victory),
 	  .is_defeat(is_defeat)
 	);
+	
+	// Instancia del módulo tablero
+    tablero game_board (
+        .clk(clk_ms),
+        .rst(rst),
+		  .decision(1),
+        .tablero_jugador(tablero_jugador),
+        .tablero_pc(tablero_pc)
+    );
 	
 	
 	controls movement_controls(
@@ -75,7 +89,8 @@ module Battleship (
 	
 	vga vga(
 		clk, i_actual, j_actual,
-		vgaclk, hsync, vsync, sync_b, blank_b, r, g, b
+		vgaclk, hsync, vsync, sync_b, blank_b, tablero_jugador,
+		tablero_pc, r, g, b
 	);
 	
 	
