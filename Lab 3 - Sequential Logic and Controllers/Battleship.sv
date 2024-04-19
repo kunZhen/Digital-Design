@@ -3,9 +3,7 @@ module Battleship(
 	input logic move_up, move_down, move_left, move_right, clk, rst,
 	input logic player_move,
 
-	
-	
-	
+
 	//del estado decision se ocupan los siguientes inputs
 	
 		
@@ -38,10 +36,10 @@ module Battleship(
 	reg clk_ms; 
 	
 	// Coordenadas actuales del jugador en el tablero
-	reg [2:0] i_actual, j_actual; 
+	logic [2:0] i_actual, j_actual; 
 	
 	// Coordenadas siguientes del jugador en el tablero
-	reg [2:0] i_next, j_next; 
+	logic [2:0] i_next, j_next; 
 	
 	// Cantidad de barcos de la PC (Inicializado con 0 barcos)
 	reg [2:0] pc_ships = 3'b000; 
@@ -56,6 +54,8 @@ module Battleship(
 	logic decision, colocation_ships, player_turn,  pc_turn, is_victory, is_defeat ;
 	
 	logic ships_decided;
+	
+	logic finished_placing;
 							  
 							  
 	reg[2:0] ships_placed;
@@ -76,15 +76,28 @@ module Battleship(
    reg [1:0] tablero_jugador[5][5];
    reg [1:0] tablero_pc[5][5];
 
-	
-	
-	
 
 // Divide la frecuencia del reloj clk para generar una señal de reloj para el monitor VGA
 	vga_clock clkdiv (
 		clk, clk_ms
 	);
 	
+	FSMgame fsm(
+	  .clk(clk),
+	  .rst(rst),
+	  //.time_expired(time_expired),
+	  .player_ships(player_ships),
+	  .pc_ships_setup(pc_ships),
+	  .player_move(player_move),
+	  .finished_placing(0),
+	  .ships_decided(ships_decided),
+	  .decision(decision),
+	  .colocation_ships(colocation_ships),
+	  .player_turn(player_turn),
+	  .pc_turn(pc_turn),
+	  .is_victory(is_victory),
+	  .is_defeat(is_defeat)
+	);
 	
 	// Instancia del módulo decisionstate
     decisionstate decision_mod (
@@ -97,50 +110,43 @@ module Battleship(
 	 );
 	
 	
-	FSMgame fsm(
-	  .clk(clk),
-	  .rst(rst),
-	  //.time_expired(time_expired),
-	  .player_ships(player_ships),
-	  .pc_ships_setup(pc_ships),
-	  .player_move(player_move),
-	  .finished_placing(finished_placing),
-	  .ships_decided(ships_decided),
-	  .decision(decision),
-	  .colocation_ships(colocation_ships),
-	  .player_turn(player_turn),
-	  .pc_turn(pc_turn),
-	  .is_victory(is_victory),
-	  .is_defeat(is_defeat)
-	);
-	
-	
 	// Instancia del módulo tablero
     tablero game_board (
-        .clk(clk),
+        .clk(clk_ms),
         .rst(rst),
-		  .decision(1'b1),
+		  .decision(decision),
         .tablero_jugador(tablero_jugador),
         .tablero_pc(tablero_pc)
     );
 	
-	// Controla el movimiento del jugador en el tablero
 	controls movement_controls(
-		.i_actual(i_actual), 
-		.j_actual(j_actual), 
-		.i_next(i_next), 
-		.j_next(j_next),
-		.move_up(move_up), 
-		.move_down(move_down), 
-		.move_left(move_left), 
-		.move_right(move_right),
-		.clk(clk_ms), .rst(rst)
+    .i_actual(i_actual), 
+    .j_actual(j_actual), 
+    .i_next(i_next), 
+    .j_next(j_next),
+    .move_up(move_up), 
+    .move_down(move_down), 
+    .move_left(move_left), 
+    .move_right(move_right),
+    .clk(clk_ms), 
+    .rst(rst),
+    .enable(colocation_ships) // Only allow movement in COLOCATION state
 	);
-	
 
+	updateIndex updateIJ(
+		 .i_next(i_next), 
+		 .j_next(j_next), 
+		 .clk(clk_ms), 
+		 .rst(rst), 
+		 .enable(colocation_ships), // Only update indices in COLOCATION state
+		 .i_actual(i_actual), 
+		 .j_actual(j_actual)
+	);
+
+	
 // Genera señales de video VGA para mostrar el tablero del juego en un monitor
 	vga vga(
-		clk, 3'b000, 3'b000,
+		clk, i_actual, j_actual,
 		vgaclk, hsync, vsync, sync_b, blank_b, tablero_jugador,
 		tablero_pc, r, g, b
 	);

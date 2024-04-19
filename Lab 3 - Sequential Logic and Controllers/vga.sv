@@ -33,8 +33,8 @@ module vga(
 	videoGen vgavideoGen(
 		.x(x),
 		.y(y),
-		.i_actual(3'b000),
-		.j_actual(3'b100), 
+		.i_actual(i_actual),
+		.j_actual(j_actual), 
 		.tablero_jugador(tablero_jugador),
       .tablero_pc(tablero_pc),
 		.r(r),
