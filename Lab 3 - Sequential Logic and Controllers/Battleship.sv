@@ -123,13 +123,7 @@ module Battleship(
 		.clk(clk_ms), .rst(rst)
 	);
 	
-	random_generator(
-		.clk(clk),
-		.rst(rst),
-		.player_ships_input(player_ships_input),
-		.random_number(random_number)
-	);
-	
+
 // Genera señales de video VGA para mostrar el tablero del juego en un monitor
 	vga vga(
 		clk, i_actual, j_actual,
