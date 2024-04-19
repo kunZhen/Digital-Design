@@ -1,4 +1,4 @@
-module place_amount_ships (
+/*module place_amount_ships (
     
     input wire decision,     // placing ships state
     input logic clk, rst,
@@ -34,7 +34,7 @@ module place_amount_ships (
             current_ship_amount <= 3'b000; // Initialize ship amount to zero
         end else begin
             // Detect rising edge of player_confirm_ship
-            if (!player_confirm_ship && !player_confirm_ship_prev && decision /*&& !placed_once && (current_ship_amount <= amount_of_ships_limit) */) begin
+            if (!player_confirm_ship && !player_confirm_ship_prev && decision && !placed_once && (current_ship_amount <= amount_of_ships_limit) ) begin
                 current_ship_amount <= current_ship_amount + 1; // Increment ship size
                player_amount_ships_reg <= player_amount_ships_reg - 1;
                 //placed_once <= 1; // Set flag to indicate ship placed
@@ -51,3 +51,4 @@ module place_amount_ships (
 	 //final_player_ships = current_ship_amount
 
 endmodule
+*/
