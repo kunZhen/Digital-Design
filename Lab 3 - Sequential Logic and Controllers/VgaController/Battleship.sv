@@ -42,19 +42,17 @@ module Battleship (
 		.finished_placing(finished_placing) // how many ships have been placed
 	);
 	
-						
-	FSM fsm(
+	FSMgame fsm(
 	  .clk(clk),
 	  .rst(rst),
-	  .start(start),
 	  //.time_expired(time_expired),
 	  .player_ships(player_ships),
-	  .pc_ships(pc_ships),
+	  .pc_ships_setup(pc_ships),
 	  .player_move(player_move),
-	  
-	  .finished_placing(finished_placing),
-	  
-	  .placing_ships(placing_ships),
+	  .finished_placing(0),
+	  .ships_decided(ships_decided),
+	  .decision(decision),
+	  .colocation_ships(colocation_ships),
 	  .player_turn(player_turn),
 	  .pc_turn(pc_turn),
 	  .is_victory(is_victory),
