@@ -7,15 +7,15 @@ module FSMgame (
   input wire pc_ships_setup, // how many ships the pc has
   
   
-  
+  input wire ships_decided,
   input wire finished_placing,
-	
+  
   
   input wire player_move, //  switch[5].  Player confirms cell that wants to attack
 
   input wire pc_move,  // it confirms that the pc already did its turn
   
-  input wire ships_decided,
+  
   
   output wire decision_State, // Indicates whether the game is in the "DECISION" state.
   output wire colocation_ships_State, // Indicates whether the game is in the "COLOCATION" state.

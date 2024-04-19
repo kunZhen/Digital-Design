@@ -44,7 +44,7 @@ module Battleship (
 	
 	
 	// For FSM  ---------------------------------------------------------
-	logic decisionState, colocation_ships_State, player_turn_State,  pc_turn_State, is_victory_State, is_defeat_State;
+	logic decision_State, colocation_ships_State, player_turn_State,  pc_turn_State, is_victory_State, is_defeat_State;
 	
 	logic ships_decided;
 	
@@ -90,6 +90,15 @@ module Battleship (
 	  .is_defeat_State(is_defeat_State)
 	);
 	
+	decisionState decision_mod (
+        .player_amount_ships(player_ships_input_internal),   // Conecta con la entrada de barcos del jugador
+        .decision_State(decision_State),                            // Asumimos siempre activo para este ejemplo
+        .clk(clk_ms),                                  // Reloj del sistema
+        .rst(rst),                                  // Reset del sistema
+        .player_confirm_amount(confirm_amount_button),     // Botón de confirmación de cantidad de barcos
+		  .ships_decided(ships_decided)
+	 );
+	
 	// Instancia del módulo tablero
     tablero game_board (
         .clk(clk_ms),
@@ -101,10 +110,17 @@ module Battleship (
 	
 	
 	controls movement_controls(
-		.i_actual(i_actual), .j_actual(j_actual), .ships_placed(0), .amount_of_ships(0),
-		.move_up(move_up), .move_down(move_down), .move_left(move_left), .move_right(move_right),
-		.clk(clk_ms), .rst(rst),
-		.i_next(i_next), .j_next(j_next)
+		.i_actual(i_actual), 
+		.j_actual(j_actual),
+		.colocation_ships_State(colocation_ships_State),
+		.move_up(move_up), 
+		.move_down(move_down), 
+		.move_left(move_left), 
+		.move_right(move_right),
+		.clk(clk_ms), 
+		.rst(rst),
+		.i_next(i_next), 
+		.j_next(j_next)
 	);
 	
 	updateIndex updateIJ(
