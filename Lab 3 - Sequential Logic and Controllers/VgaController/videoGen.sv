@@ -3,6 +3,8 @@ module videoGen(
     input reg [2:0] i_actual, j_actual,
     input reg [1:0] tablero_jugador[5][5],
     input reg [1:0] tablero_pc[5][5],
+    input [2:0] player_ships_input_internal, // Nueva entrada para la longitud del barco durante la colocación
+    input logic confirm_placement,           // Nueva entrada para confirmar la colocación del barco
     output logic [7:0] r, g, b
 );
 
@@ -10,6 +12,12 @@ module videoGen(
     reg [9:0] colIndex, rowIndex, col_px, row_px;
     reg [7:0] size, frame;
     reg [9:0] line_position;
+
+    // Constantes del juego para simplificar el código
+    localparam AGUA = 2'b00;
+    localparam BARCO = 2'b01;
+    localparam TIRO_FALLADO = 2'b10;
+    localparam TIRO_ACERTADO = 2'b11;
 
     parameter VGA_WIDTH = 640;
     parameter VGA_HEIGHT = 480;
@@ -45,32 +53,36 @@ module videoGen(
                             y >= row_px + frame && y < row_px + size);
     end
 
-    always @* begin
-        if (inline) begin
-            r = 8'h00; g = 8'h00; b = 8'h00; // Línea negra divisoria
-        end else if (inrect_main) begin
-            if (rowIndex == i_actual && colIndex == j_actual) begin
-                r = 8'hA5; g = 8'h2A; b = 8'h2A; // Color café para la celda seleccionada
+   always @* begin
+    if (inline) begin
+        r = 8'h00; g = 8'h00; b = 8'h00; // Línea negra divisoria
+    end else if (inrect_main) begin
+        if (rowIndex == i_actual && colIndex >= j_actual && colIndex < j_actual + player_ships_input_internal) begin
+            if (confirm_placement) begin
+                r = 8'hFF; g = 8'h8C; b = 8'h00; // Naranja para colocación confirmada
             end else begin
-                case (tablero_jugador[rowIndex][colIndex])
-                    2'b00: begin r = 8'h00; g = 8'h00; b = 8'h00; end // Agua
-                    2'b01: begin r = 8'hFF; g = 8'h00; b = 8'h00; end // Barco
-                    2'b10: begin r = 8'h00; g = 8'h00; b = 8'hFF; end // Tiro fallado
-                    2'b11: begin r = 8'h00; g = 8'hFF; b = 8'h00; end // Tiro acertado
-                    default: begin r = 8'hFF; g = 8'hFF; b = 8'hFF; end // Blanco por defecto
-                endcase
+                r = 8'h8B; g = 8'h45; b = 8'h13; // Marrón para área de selección
             end
-        end else if (inrect_secondary) begin
-            case (tablero_pc[rowIndex][colIndex - BOARD_SIZE - (LINE_WIDTH / (size + frame))])
-                2'b00: begin r = 8'h20; g = 8'h20; b = 8'h20; end // Agua
-                2'b01: begin r = 8'h80; g = 8'h00; b = 8'h80; end // Barco
-                2'b10: begin r = 8'hFF; g = 8'hFF; b = 8'h00; end // Tiro fallado
-                2'b11: begin r = 8'hFF; g = 8'hA5; b = 8'h00; end // Tiro acertado
+        end else begin
+            case (tablero_jugador[rowIndex][colIndex])
+                AGUA: begin r = 8'h00; g = 8'h00; b = 8'hFF; end // Azul para agua
+                BARCO: begin r = 8'h00; g = 8'hFF; b = 8'h00; end // Verde para barcos
+                TIRO_FALLADO: begin r = 8'hFF; g = 8'h00; b = 8'h00; end // Rojo para tiro fallado
+                TIRO_ACERTADO: begin r = 8'hFF; g = 8'hFF; b = 8'h00; end // Amarillo para tiro acertado
                 default: begin r = 8'hFF; g = 8'hFF; b = 8'hFF; end // Blanco por defecto
             endcase
-        end else begin
-            r = 8'hFF; g = 8'hFF; b = 8'hFF; // Blanco por defecto fuera de los rectángulos
         end
+    end else if (inrect_secondary) begin
+        case (tablero_pc[rowIndex][colIndex - BOARD_SIZE - (LINE_WIDTH / (size + frame))])
+            AGUA: begin r = 8'h20; g = 8'h20; b = 8'h20; end // Gris para agua
+            BARCO: begin r = 8'h80; g = 8'h00; b = 8'h80; end // Morado para barcos
+            TIRO_FALLADO: begin r = 8'hFF; g = 8'hFF; b = 8'h00; end // Amarillo para tiro fallado
+            TIRO_ACERTADO: begin r = 8'hFF; g = 8'hA5; b = 8'h00; end // Naranja para tiro acertado
+            default: begin r = 8'hFF; g = 8'hFF; b = 8'hFF; end // Blanco por defecto
+        endcase
+    end else begin
+        r = 8'hFF; g = 8'hFF; b = 8'hFF; // Blanco por defecto fuera de los rectángulos
     end
+end
 
 endmodule

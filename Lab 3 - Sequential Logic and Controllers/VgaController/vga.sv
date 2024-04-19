@@ -1,11 +1,13 @@
 module vga(
 	input logic clk,
-	input reg[2:0] i_actual, j_actual, 
+	input reg [2:0] i_actual, j_actual,
+	input reg [1:0] tablero_jugador[5][5],
+	input reg [1:0] tablero_pc[5][5],
+	input [2:0] player_ships_input_internal,  // Additional input for ship placement length
+	input logic confirm_placement,            // Additional input for confirming ship placement
 	output logic vgaclk,
 	output logic hsync, vsync,
 	output logic sync_b, blank_b,
-	input reg [1:0] tablero_jugador[5][5],
-   input reg [1:0] tablero_pc[5][5],
 	output logic [7:0] r, g, b
 );
 
@@ -34,9 +36,11 @@ module vga(
 		.x(x),
 		.y(y),
 		.i_actual(i_actual),
-		.j_actual(j_actual), 
+		.j_actual(j_actual),
 		.tablero_jugador(tablero_jugador),
-      .tablero_pc(tablero_pc),
+		.tablero_pc(tablero_pc),
+		.player_ships_input_internal(player_ships_input_internal),  // Connected new input for handling ship placement length
+		.confirm_placement(confirm_placement),                       // Connected new input for handling confirmation of ship placement
 		.r(r),
 		.g(g),
 		.b(b)

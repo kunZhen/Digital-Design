@@ -47,7 +47,7 @@ module Battleship (
 	
 	
 	// For FSM  ---------------------------------------------------------
-	logic decision_State, colocation_ships_State, player_turn_State,  pc_turn_State, is_victory_State, is_defeat_State;
+	logic decision_State, colocation_ships_State,setup_state, player_turn_State,  pc_turn_State, is_victory_State, is_defeat_State;
 	
 	logic ships_decided;
 	
@@ -68,8 +68,9 @@ module Battleship (
 	// Boards ------------------------------------------------------------
 	
 	// Definición de los tableros como matrices 5x5 de dos bits
-   reg [1:0] tablero_jugador[5][5];
-   reg [1:0] tablero_pc[5][5];
+ logic [1:0] tablero_jugador[5][5], tablero_jugador_out[5][5];
+
+ reg [1:0] tablero_pc[5][5];
 							  
 							  
 	vga_clock clkdiv (
@@ -102,19 +103,23 @@ module Battleship (
 		  .ships_decided(ships_decided)
 	 );
 	 
-	 /*colocationShipsState colocation_ships (
+	
+    // Instantiate the colocationShipsState module
+    /*colocationShipsState colocationModule (
         .clk(clk),
         .rst(rst),
         .colocation_ships_State(colocation_ships_state),
         .i_actual(i_actual),
         .j_actual(j_actual),
-        .initial_ships_count(player_ships_input_internal),
+        .initial_ships_count(initial_ships_count),
         .confirm_colocation_button(confirm_colocation_button),
         .tablero_jugador(tablero_jugador),
-        .tablero_pc(tablero_pc),
+        .tablero_jugador_out(tablero_jugador_out),
+        .confirm_placement(confirm_placement),
         .finished_placing(finished_placing),
         .placement_error(placement_error)
     );*/
+
 	 
 	
 	// Instancia del módulo tablero
@@ -122,7 +127,7 @@ module Battleship (
         .clk(clk_ms),
         .rst(rst),
 		  .decision_State(decision_State),
-        .tablero_jugador(tablero_jugador),
+        .tablero_jugador(tablero_jugador_out),
         .tablero_pc(tablero_pc)
     );
 	
@@ -135,6 +140,7 @@ module Battleship (
 		.move_down(move_down), 
 		.move_left(move_left), 
 		.move_right(move_right),
+		.player_ships_input_internal(player_ships_input_internal),
 		.clk(clk_ms), 
 		.rst(rst),
 		.i_next(i_next), 
@@ -147,11 +153,24 @@ module Battleship (
 	);
 	
 	
-	vga vga(
-		clk, i_actual, j_actual,
-		vgaclk, hsync, vsync, sync_b, blank_b, tablero_jugador,
-		tablero_pc, r, g, b
-	);
+	vga display (
+	.clk(clk),
+	.i_actual(i_actual),
+	.j_actual(j_actual),
+	.tablero_jugador(tablero_jugador),
+	.tablero_pc(tablero_pc),
+	.player_ships_input_internal(player_ships_input_internal),
+	.confirm_placement(confirm_colocation_button), // Suponiendo que esto debe reflejar un estado de confirmación
+	.vgaclk(vgaclk),
+	.hsync(hsync),
+	.vsync(vsync),
+	.sync_b(sync_b),
+	.blank_b(blank_b),
+	.r(r),
+	.g(g),
+	.b(b)
+);
+
 	
 	
 	// Decodifica las señales de barcos colocados y cantidad de barcos restantes para visualización en siete segmentos
