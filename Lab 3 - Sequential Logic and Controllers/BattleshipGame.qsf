@@ -91,6 +91,8 @@ set_location_assignment PIN_A11 -to vgaclk
 set_location_assignment PIN_D11 -to vsync
 set_global_assignment -name SYSTEMVERILOG_FILE FSMgame.sv
 set_global_assignment -name SYSTEMVERILOG_FILE place_amount_ships.sv
+set_global_assignment -name SYSTEMVERILOG_FILE tablero.sv
+set_global_assignment -name SYSTEMVERILOG_FILE tablero_tb.sv
 set_global_assignment -name SYSTEMVERILOG_FILE decisionstate.sv
 set_global_assignment -name SYSTEMVERILOG_FILE decoder.sv
 set_location_assignment PIN_AF10 -to confirm_amount_button
@@ -110,6 +112,11 @@ set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name EDA_TEST_BENCH_ENABLE_STATUS TEST_BENCH_MODE -section_id eda_simulation
+set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH tablero_tb -section_id eda_simulation
+set_global_assignment -name EDA_TEST_BENCH_NAME tablero_tb -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id tablero_tb
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME tablero_tb -section_id tablero_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE tablero_tb.sv -section_id tablero_tb
 set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH Battleship_tb -section_id eda_simulation
 set_global_assignment -name EDA_TEST_BENCH_NAME decisionstate_tb -section_id eda_simulation
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id decisionstate_tb

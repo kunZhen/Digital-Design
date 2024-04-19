@@ -72,8 +72,15 @@ module Battleship(
 		 player_ships_input_internal = (player_ships_input > player_ships_input_limit) ? player_ships_input_limit : player_ships_input;
 	end
 	
+	// Definición de los tableros como matrices 5x5 de dos bits
+   reg [1:0] tablero_jugador[5][5];
+   reg [1:0] tablero_pc[5][5];
 
-
+	always_comb begin
+		 amount_of_ships_internal = (amount_of_ships > amount_of_ships_limit) ? amount_of_ships_limit : amount_of_ships;
+	end
+	
+	
 
 // Divide la frecuencia del reloj clk para generar una señal de reloj para el monitor VGA
 	vga_clock clkdiv (
@@ -110,6 +117,15 @@ module Battleship(
 	);
 	
 	
+	// Instancia del módulo tablero
+    tablero game_board (
+        .clk(clk),
+        .rst(rst),
+		  .decision(1'b1),
+        .tablero_jugador(tablero_jugador),
+        .tablero_pc(tablero_pc)
+    );
+	
 	// Controla el movimiento del jugador en el tablero
 	controls movement_controls(
 		.i_actual(i_actual), 
@@ -126,8 +142,9 @@ module Battleship(
 
 // Genera señales de video VGA para mostrar el tablero del juego en un monitor
 	vga vga(
-		clk, i_actual, j_actual,
-		vgaclk, hsync, vsync, sync_b, blank_b, r, g, b
+		clk, 3'b000, 3'b000,
+		vgaclk, hsync, vsync, sync_b, blank_b, tablero_jugador,
+		tablero_pc, r, g, b
 	);
 	
 	// Decodifica las señales de barcos colocados y cantidad de barcos restantes para visualización en siete segmentos

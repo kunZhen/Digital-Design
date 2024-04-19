@@ -4,6 +4,8 @@ module vga(
 	output logic vgaclk,
 	output logic hsync, vsync,
 	output logic sync_b, blank_b,
+	input reg [1:0] tablero_jugador[5][5],
+   input reg [1:0] tablero_pc[5][5],
 	output logic [7:0] r, g, b
 );
 
@@ -31,9 +33,10 @@ module vga(
 	videoGen vgavideoGen(
 		.x(x),
 		.y(y),
-		.i_actual(i_actual),
-		.j_actual(j_actual), 
-		
+		.i_actual(3'b100),
+		.j_actual(3'b100), 
+		.tablero_jugador(tablero_jugador),
+      .tablero_pc(tablero_pc),
 		.r(r),
 		.g(g),
 		.b(b)
