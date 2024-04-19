@@ -76,9 +76,7 @@ module Battleship(
    reg [1:0] tablero_jugador[5][5];
    reg [1:0] tablero_pc[5][5];
 
-	always_comb begin
-		 amount_of_ships_internal = (amount_of_ships > amount_of_ships_limit) ? amount_of_ships_limit : amount_of_ships;
-	end
+	
 	
 	
 
