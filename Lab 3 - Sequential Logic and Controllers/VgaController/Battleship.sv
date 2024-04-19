@@ -7,6 +7,9 @@ module Battleship (
 						
 	input logic confirm_amount_button,
 	
+	input logic	confirm_colocation_button,
+	output logic placement_error,
+	
 	// Graphics --------------------------------------------------------
 	// Señal de reloj para el monitor VGA
 	output logic vgaclk,
@@ -98,12 +101,27 @@ module Battleship (
         .player_confirm_amount(confirm_amount_button),     // Botón de confirmación de cantidad de barcos
 		  .ships_decided(ships_decided)
 	 );
+	 
+	 /*colocationShipsState colocation_ships (
+        .clk(clk),
+        .rst(rst),
+        .colocation_ships_State(colocation_ships_state),
+        .i_actual(i_actual),
+        .j_actual(j_actual),
+        .initial_ships_count(player_ships_input_internal),
+        .confirm_colocation_button(confirm_colocation_button),
+        .tablero_jugador(tablero_jugador),
+        .tablero_pc(tablero_pc),
+        .finished_placing(finished_placing),
+        .placement_error(placement_error)
+    );*/
+	 
 	
 	// Instancia del módulo tablero
     tablero game_board (
         .clk(clk_ms),
         .rst(rst),
-		  .decision(1),
+		  .decision_State(decision_State),
         .tablero_jugador(tablero_jugador),
         .tablero_pc(tablero_pc)
     );

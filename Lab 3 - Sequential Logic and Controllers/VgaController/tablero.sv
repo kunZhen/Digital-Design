@@ -1,6 +1,6 @@
 module tablero(
     input logic clk, rst,
-    input logic decision,  // Señal de decisión para controlar el llenado del tablero
+    input logic decision_State,  // Señal de decisión para controlar el llenado del tablero
     output reg [1:0] tablero_jugador[5][5],
     output reg [1:0] tablero_pc[5][5]
 );
@@ -16,7 +16,7 @@ module tablero(
         if (!rst) begin
             // Resetear tableros a estado inicial
             fill_with_water();  // Llama a una tarea para llenar con agua
-        end else if (decision) begin
+        end else if (decision_State) begin
             // Llenar tableros con agua cuando 'decision' es activo
             fill_with_water();  // Llama a una tarea para llenar con agua
         end
