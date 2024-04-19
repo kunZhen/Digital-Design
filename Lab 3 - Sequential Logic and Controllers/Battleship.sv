@@ -95,7 +95,7 @@ module Battleship(
 	
 // Genera señales de video VGA para mostrar el tablero del juego en un monitor
 	vga vga(
-		clk, i_actual, j_actual,
+		clk, 3'b000, 3'b000,
 		vgaclk, hsync, vsync, sync_b, blank_b, tablero_jugador,
 		tablero_pc, r, g, b
 	);

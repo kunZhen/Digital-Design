@@ -12,7 +12,7 @@ module tablero(
     localparam TIRO_ACERTADO = 2'b11;
 
     // Implementación de la lógica para actualizar los tableros
-    always_ff @(posedge clk or negedge rst) begin
+    always_ff @(negedge clk or negedge rst) begin
         if (!rst) begin
             // Resetear tableros a estado inicial
             fill_with_water();  // Llama a una tarea para llenar con agua
@@ -26,8 +26,8 @@ module tablero(
     task fill_with_water;
         for (int i = 0; i < 5; i++) begin
             for (int j = 0; j < 5; j++) begin
-                tablero_jugador[i][j] <= AGUA;
-                tablero_pc[i][j] <= AGUA;
+                tablero_jugador[i][j] <= TIRO_FALLADO;
+                tablero_pc[i][j] <= TIRO_FALLADO;
             end
         end
     endtask
