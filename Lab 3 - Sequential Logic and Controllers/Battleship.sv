@@ -51,9 +51,11 @@ module Battleship(
 	
 	
 	
+	
+	
 	logic decision, colocation_ships, player_turn,  pc_turn, is_victory, is_defeat ;
 	
-	logic ships_located;
+	logic ships_decided;
 							  
 							  
 	reg[2:0] ships_placed;
@@ -63,6 +65,8 @@ module Battleship(
 	logic [2:0] player_ships_input_limit = 3'b101;
 	
 	reg [2:0] player_ships_input_internal; // Señal interna para realizar operaciones
+	
+	reg [2:0] random_number;
 
 	always_comb begin
 		 player_ships_input_internal = (player_ships_input > player_ships_input_limit) ? player_ships_input_limit : player_ships_input;
@@ -84,7 +88,7 @@ module Battleship(
         .clk(clk_ms),                                  // Reloj del sistema
         .rst(rst),                                  // Reset del sistema
         .player_confirm_amount(confirm_amount_button),     // Botón de confirmación de cantidad de barcos
-        .amount_ships_game(game_ships_amount)		  // Conecta a la salida que maneja los barcos en el juego
+		  .ships_decided(ships_decided)
 	 );
 	
 	
@@ -96,7 +100,7 @@ module Battleship(
 	  .pc_ships_setup(pc_ships),
 	  .player_move(player_move),
 	  .finished_placing(finished_placing),
-	  .ships_located(ships_located),
+	  .ships_decided(ships_decided),
 	  .decision(decision),
 	  .colocation_ships(colocation_ships),
 	  .player_turn(player_turn),
@@ -106,9 +110,26 @@ module Battleship(
 	);
 	
 	
+	// Controla el movimiento del jugador en el tablero
+	controls movement_controls(
+		.i_actual(i_actual), 
+		.j_actual(j_actual), 
+		.i_next(i_next), 
+		.j_next(j_next),
+		.move_up(move_up), 
+		.move_down(move_down), 
+		.move_left(move_left), 
+		.move_right(move_right),
+		.clk(clk_ms), .rst(rst)
+	);
 	
-	 
-	 
+	random_generator(
+		.clk(clk),
+		.rst(rst),
+		.player_ships_input(player_ships_input),
+		.random_number(random_number)
+	);
+	
 // Genera señales de video VGA para mostrar el tablero del juego en un monitor
 	vga vga(
 		clk, i_actual, j_actual,

@@ -15,7 +15,7 @@ module FSMgame (
 
   input wire pc_move,  // it confirms that the pc already did its turn
   
-  input wire ships_located,
+  input wire ships_decided,
   
   output wire decision, // Indicates whether the game is in the "DECISION" state.
   output wire colocation_ships, // Indicates whether the game is in the "COLOCATION" state.
@@ -67,7 +67,7 @@ module FSMgame (
 	 
       DECISION: begin // Game is in DECISION state, in  which using three switches it will choose how many boats the player 
 							//wants to put
-        next_state_reg = (ships_located) ? COLOCATION : DECISION;
+        next_state_reg = (ships_decided) ? COLOCATION : DECISION;
       end
 		
 		COLOCATION: begin 
