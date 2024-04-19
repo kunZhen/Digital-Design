@@ -77,7 +77,6 @@ module Battleship (
 	FSMgame fsm(
 	  .clk(clk),
 	  .rst(rst),
-	  //.time_expired(time_expired),
 	  .player_ships(player_ships),
 	  .pc_ships_setup(pc_ships),
 	  .player_move(player_move),

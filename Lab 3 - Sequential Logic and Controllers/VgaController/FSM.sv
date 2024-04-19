@@ -2,8 +2,6 @@ module FSM (
   input wire clk, // reloj
   input wire rst, // reset
   input wire start, // game begin
-  
-  //input wire time_expired, // Indicates if time limit expired
   input wire player_ships, //how many ships the player has
   input wire pc_ships, // how many ships the pc has
   
