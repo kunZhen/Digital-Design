@@ -44,7 +44,7 @@ module Battleship (
 	
 	
 	// For FSM  ---------------------------------------------------------
-	logic decision, colocation_ships, player_turn,  pc_turn, is_victory, is_defeat;
+	logic decisionState, colocation_ships_State, player_turn_State,  pc_turn_State, is_victory_State, is_defeat_State;
 	
 	logic ships_decided;
 	
@@ -82,12 +82,12 @@ module Battleship (
 	  .player_move(player_move),
 	  .finished_placing(0),
 	  .ships_decided(ships_decided),
-	  .decision(decision),
-	  .colocation_ships(colocation_ships),
-	  .player_turn(player_turn),
-	  .pc_turn(pc_turn),
-	  .is_victory(is_victory),
-	  .is_defeat(is_defeat)
+	  .decision_State(decision_State),
+	  .colocation_ships_State(colocation_ships_State),
+	  .player_turn_State(player_turn_State),
+	  .pc_turn_State(pc_turn_State),
+	  .is_victory_State(is_victory_State),
+	  .is_defeat_State(is_defeat_State)
 	);
 	
 	// Instancia del módulo tablero

@@ -17,12 +17,12 @@ module FSMgame (
   
   input wire ships_decided,
   
-  output wire decision, // Indicates whether the game is in the "DECISION" state.
-  output wire colocation_ships, // Indicates whether the game is in the "COLOCATION" state.
-  output wire player_turn, // Indicates whether the game is in the "PLAYER_TURN" state.
-  output wire pc_turn, // Indicates whether the game is in the "PC_TURN" state.
-  output wire is_victory, //  Indicates whether the game is in the "VICTORY" state.
-  output wire is_defeat //  Indicates whether the game is in the "DEFEAT" state.
+  output wire decision_State, // Indicates whether the game is in the "DECISION" state.
+  output wire colocation_ships_State, // Indicates whether the game is in the "COLOCATION" state.
+  output wire player_turn_State, // Indicates whether the game is in the "PLAYER_TURN" state.
+  output wire pc_turn_State, // Indicates whether the game is in the "PC_TURN" state.
+  output wire is_victory_State, //  Indicates whether the game is in the "VICTORY" state.
+  output wire is_defeat_State //  Indicates whether the game is in the "DEFEAT" state.
   
   
 );
@@ -156,12 +156,12 @@ module FSMgame (
   
   
   
-  assign decision = (current_state == DECISION);
-  assign colocation_ships = (current_state == COLOCATION);
-  assign player_turn = (current_state == PLAYER_TURN);
-  assign pc_turn = (current_state == PC_TURN);
-  assign is_victory = (current_state == VICTORY);
-  assign is_defeat = (current_state == DEFEAT);
+  assign decision_State = (current_state == DECISION);
+  assign colocation_ships_State = (current_state == COLOCATION);
+  assign player_turn_State = (current_state == PLAYER_TURN);
+  assign pc_turn_State = (current_state == PC_TURN);
+  assign is_victory_State = (current_state == VICTORY);
+  assign is_defeat_State = (current_state == DEFEAT);
   
 
 endmodule
