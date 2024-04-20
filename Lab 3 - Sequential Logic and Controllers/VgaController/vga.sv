@@ -4,7 +4,7 @@ module vga(
 	input reg [1:0] tablero_jugador[5][5],
 	input reg [1:0] tablero_pc[5][5],
 	input [2:0] player_ships_input_internal,  // Additional input for ship placement length
-	input logic confirm_placement,            // Additional input for confirming ship placement
+	input logic colocation_ships_State,            // Additional input for confirming ship placement
 	output logic vgaclk,
 	output logic hsync, vsync,
 	output logic sync_b, blank_b,
@@ -40,7 +40,7 @@ module vga(
 		.tablero_jugador(tablero_jugador),
 		.tablero_pc(tablero_pc),
 		.player_ships_input_internal(player_ships_input_internal),  // Connected new input for handling ship placement length
-		.confirm_placement(confirm_placement),                       // Connected new input for handling confirmation of ship placement
+		.colocation_ships_State,                       
 		.r(r),
 		.g(g),
 		.b(b)

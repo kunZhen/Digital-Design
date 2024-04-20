@@ -65,18 +65,17 @@ module Battleship (
 	reg [2:0] player_ships_size_internal; // Señal interna para realizar operaciones
 
 	always_comb begin
-// Modified to set the number and size of the ships based on player input
-player_ships_input_internal = (player_ships_input > player_ships_input_limit) ? player_ships_input_limit : player_ships_input;
-player_ships_size_internal = player_ships_input_internal ; // Assuming size correlates to quantity
+	// Modified to set the number and size of the ships based on player input
+	player_ships_input_internal = (player_ships_input > player_ships_input_limit) ? player_ships_input_limit : player_ships_input;
+	player_ships_size_internal = player_ships_input_internal ; // Assuming size correlates to quantity
 
 	end
 
 	// Boards ------------------------------------------------------------
 	
 	// Definición de los tableros como matrices 5x5 de dos bits
- logic [1:0] tablero_jugador[5][5], tablero_jugador_out[5][5];
-
- reg [1:0] tablero_pc[5][5];
+	 reg [1:0] tablero_jugador[5][5];
+	 reg [1:0] tablero_pc[5][5];
 							  
 							  
 	vga_clock clkdiv (
@@ -110,32 +109,32 @@ player_ships_size_internal = player_ships_input_internal ; // Assuming size corr
 	 );
 	 
 	
-    // Instantiate the colocationShipsState module
-colocationShipsState colocationModule (
-    .clk(clk),
-    .rst(rst),
-    .colocation_ships_State(colocation_ships_State),
-    .i_actual(i_actual),
-    .j_actual(j_actual),
-    .initial_ships_count(player_ships_input_internal),  // Assuming this is the number of ships to place
-    .confirm_colocation_button(confirm_colocation_button),
-    .tablero_jugador(tablero_jugador),  // Input board state
-    .tablero_jugador_out(tablero_jugador_out),  // Output board state reflects changes
-    .confirm_placement(confirm_placement),
-    .finished_placing(finished_placing),
-    .placement_error(placement_error)
-);
+	// Instantiate the colocationShipsState module
+	/*colocationShipsState colocationModule (
+		 .clk(clk),
+		 .rst(rst),
+		 .colocation_ships_State(colocation_ships_State),
+		 .i_actual(i_actual),
+		 .j_actual(j_actual),
+		 .initial_ships_count(player_ships_input_internal),  // Assuming this is the number of ships to place
+		 .confirm_colocation_button(confirm_colocation_button),
+		 .tablero_jugador(tablero_jugador),  // Input board state
+		 .tablero_jugador_out(tablero_jugador_out),  // Output board state reflects changes
+		 .confirm_placement(confirm_placement),
+		 .finished_placing(finished_placing),
+		 .placement_error(placement_error)
+	);*/
 	 
-	/*
+	
 	// Instancia del módulo tablero
     tablero game_board (
         .clk(clk_ms),
         .rst(rst),
 		  .decision_State(decision_State),
-        .tablero_jugador(tablero_jugador_out),
+        .tablero_jugador(tablero_jugador),
         .tablero_pc(tablero_pc)
     );
-	*/
+	
 	
 	controls movement_controls(
 		.i_actual(i_actual), 
@@ -162,10 +161,10 @@ colocationShipsState colocationModule (
 	.clk(clk),
 	.i_actual(i_actual),
 	.j_actual(j_actual),
-	.tablero_jugador(tablero_jugador_out),
+	.tablero_jugador(tablero_jugador),
 	.tablero_pc(tablero_pc),
 	.player_ships_input_internal(player_ships_input_internal),
-	.confirm_placement(confirm_colocation_button), // Suponiendo que esto debe reflejar un estado de confirmación
+	.colocation_ships_State(colocation_ships_State),
 	.vgaclk(vgaclk),
 	.hsync(hsync),
 	.vsync(vsync),
@@ -174,7 +173,7 @@ colocationShipsState colocationModule (
 	.r(r),
 	.g(g),
 	.b(b)
-);
+	);
 
 	
 	

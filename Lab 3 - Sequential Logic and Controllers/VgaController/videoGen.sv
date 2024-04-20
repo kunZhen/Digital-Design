@@ -4,7 +4,7 @@ module videoGen(
     input reg [1:0] tablero_jugador[5][5],
     input reg [1:0] tablero_pc[5][5],
     input [2:0] player_ships_input_internal, // Nueva entrada para la longitud del barco durante la colocación
-    input logic confirm_placement,           // Nueva entrada para confirmar la colocación del barco
+    input logic colocation_ships_State,           // Nueva entrada para confirmar la colocación del barco
     output logic [7:0] r, g, b
 );
 
@@ -57,8 +57,8 @@ module videoGen(
         if (inline) begin
             r = 8'h00; g = 8'h00; b = 8'h00; // Black line
         end else if (inrect_main) begin
-            if (confirm_placement && rowIndex == i_actual && colIndex >= j_actual && colIndex < j_actual + player_ships_input_internal) begin
-                r = 8'hFF; g = 8'h8C; b = 8'h00; // Orange for confirmed placement
+            if (colocation_ships_State && rowIndex == i_actual && colIndex >= j_actual && colIndex < j_actual + player_ships_input_internal) begin
+                r = 8'hFF; g = 8'h8C; b = 8'h00; 
             end else begin
                 case (tablero_jugador[rowIndex][colIndex])
                     AGUA: begin r = 8'h00; g = 8'h00; b = 8'hFF; end // Blue for water
@@ -71,9 +71,9 @@ module videoGen(
         end else if (inrect_secondary) begin
             case (tablero_pc[rowIndex][colIndex - BOARD_SIZE - (LINE_WIDTH / (size + frame))])
                 AGUA: begin r = 8'h20; g = 8'h20; b = 8'h20; end // Grey for water
-                BARCO: begin r = 8'h80; g = 8'h00; b = 8'h80; end // Purple for ships
-                CASILLA_SELECCION: begin r = 8'hFF; g = 8'hFF; b = 8'h00; end // Yellow for missed shot
-                CASILLA_CONFIRMADA: begin r = 8'hFF; g = 8'hA5; b = 8'h00; end // Orange for hit
+                BARCO: begin r = 8'h00; g = 8'hFF; b = 8'h00; end // Green for ships
+                CASILLA_SELECCION: begin r = 8'hFF; g = 8'h00; b = 8'h00; end // Red for missed shott
+                CASILLA_CONFIRMADA: begin r = 8'hFF; g = 8'hFF; b = 8'h00; end // Yellow for hit
                 default: begin r = 8'hFF; g = 8'hFF; b = 8'hFF; end // White by default
             endcase
         end else begin
