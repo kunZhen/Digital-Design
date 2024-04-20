@@ -1,6 +1,8 @@
 module videoGen(
     input logic [9:0] x, y,
     input reg [2:0] i_actual, j_actual,
+	 //input reg [1:0] tablero_jugador_copy[5][5],
+	 //input reg [1:0] tablero_pc_copy[5][5],
     input reg [1:0] tablero_jugador[5][5],
     input reg [1:0] tablero_pc[5][5],
     input [2:0] player_ships_input_internal, // Nueva entrada para la longitud del barco durante la colocación
@@ -12,6 +14,9 @@ module videoGen(
     reg [9:0] colIndex, rowIndex, col_px, row_px;
     reg [7:0] size, frame;
     reg [9:0] line_position;
+	 
+	 //reg [1:0] tablero_jugador_graficos[5][5];
+	 //reg [1:0] tablero_pc_graficos[5][5];
 
     // Constantes del juego para simplificar el código
     localparam AGUA = 2'b00;
@@ -34,6 +39,8 @@ module videoGen(
         colIndex = x / (size + frame);
         rowIndex = y / (size + frame);
         inline = (x >= line_position) && (x < line_position + LINE_WIDTH);
+		  //tablero_jugador_graficos = (colocation_ships_State ? tablero_jugador_copy : tablero_jugador);
+        //tablero_pc_graficos = (colocation_ships_State ? tablero_pc_copy : tablero_pc);
     end
 
     always @* begin
@@ -52,6 +59,8 @@ module videoGen(
                            (x >= col_px + frame && x < col_px + size &&
                             y >= row_px + frame && y < row_px + size);
     end
+	
+
 
     always @* begin
         if (inline) begin

@@ -47,11 +47,13 @@ module Battleship (
 	
 	
 	// For FSM  ---------------------------------------------------------
-	logic decision_State, colocation_ships_State,setup_state, player_turn_State,  pc_turn_State, is_victory_State, is_defeat_State;
+	logic decision_State, colocation_ships_State, setup_state, player_turn_State,  pc_turn_State, is_victory_State, is_defeat_State;
 	
 	logic ships_decided;
 	
 	logic finished_placing;
+	
+	logic update_enable_player_ship;
 
 	// -------------------------------------------------------------------					  
 
@@ -61,22 +63,31 @@ module Battleship (
 	
 	reg [2:0] player_ships_input_internal; // Señal interna para realizar operaciones
 	
-	
 	reg [2:0] player_ships_size_internal; // Señal interna para realizar operaciones
-
+	
+	reg [2:0] player_ships_placed;
+	reg [2:0] player_actual_ship;
+	
+	reg [2:0] player_ships_placed_next;
+	reg [2:0] player_actual_ship_next;
+	
 	always_comb begin
 	// Modified to set the number and size of the ships based on player input
 	player_ships_input_internal = (player_ships_input > player_ships_input_limit) ? player_ships_input_limit : player_ships_input;
-	player_ships_size_internal = player_ships_input_internal ; // Assuming size correlates to quantity
-
 	end
+	
 
 	// Boards ------------------------------------------------------------
 	
 	// Definición de los tableros como matrices 5x5 de dos bits
 	 reg [1:0] tablero_jugador[5][5];
 	 reg [1:0] tablero_pc[5][5];
-							  
+	 
+	 reg [1:0] tablero_jugador_next[5][5];
+	 reg [1:0] tablero_pc_next[5][5];
+	 
+	 //reg [1:0] tablero_jugador_copy[5][5];
+	 //reg [1:0] tablero_pc_copy[5][5];
 							  
 	vga_clock clkdiv (
 		clk, clk_ms
@@ -105,25 +116,53 @@ module Battleship (
         .clk(clk_ms),                                  // Reloj del sistema
         .rst(rst),                                  // Reset del sistema
         .player_confirm_amount(confirm_amount_button),     // Botón de confirmación de cantidad de barcos
-		  .ships_decided(ships_decided)
+		  .ships_decided(ships_decided),
+		  .player_ships_placed(player_ships_placed)
 	 );
 	 
 	
-	// Instantiate the colocationShipsState module
-	/*colocationShipsState colocationModule (
+	// Instancia del módulo colocationShipsState
+	colocationShipsState myColocationShipsState(
+		 .clk(clk),
+		 .rst(rst),
+		 .update_enable_player_ship(update_enable_player_ship),
+		 .i_actual(i_actual),
+		 .j_actual(j_actual),
+		 .colocation_ships_State(colocation_ships_State),
+		 .confirm_colocation_button(confirm_colocation_button),
+		 .player_ships_size_internal(player_ships_size_internal),
+		 .player_ships_placed(player_ships_placed),
+		 .player_actual_ship(player_actual_ship),
+		 .player_ships_placed_next(player_ships_placed_next),
+		 .player_actual_ship_next(player_actual_ship_next),
+		 .tablero_jugador(tablero_jugador),
+		 .tablero_pc(tablero_pc),
+		 .tablero_jugador_next(tablero_jugador_next),
+		 .tablero_pc_next(tablero_pc_next),
+		 //.tablero_jugador_copy(tablero_jugador_copy),
+		 //.tablero_pc_copy(tablero_pc_copy)
+	);
+
+	
+	updateAmountShips updateAmount_ships(
 		 .clk(clk),
 		 .rst(rst),
 		 .colocation_ships_State(colocation_ships_State),
-		 .i_actual(i_actual),
-		 .j_actual(j_actual),
-		 .initial_ships_count(player_ships_input_internal),  // Assuming this is the number of ships to place
-		 .confirm_colocation_button(confirm_colocation_button),
-		 .tablero_jugador(tablero_jugador),  // Input board state
-		 .tablero_jugador_out(tablero_jugador_out),  // Output board state reflects changes
-		 .confirm_placement(confirm_placement),
-		 .finished_placing(finished_placing),
-		 .placement_error(placement_error)
-	);*/
+		 .player_ships_placed_next(player_ships_placed_next),
+		 .player_actual_ship_next(player_actual_ship_next),
+		 .player_ships_placed(player_ships_placed),
+		 .player_actual_ship(player_actual_ship)
+	);
+	
+	/*updateTableros update_boards (
+        .clk(clk),
+        .rst(rst),
+        .update_enable_player_ship(update_enable_player_ship),
+        .tablero_jugador_next(tablero_jugador_next),
+        .tablero_pc_next(tablero_pc_next),
+        .tablero_jugador(tablero_jugador),
+        .tablero_pc(tablero_pc)
+    );*/
 	 
 	
 	// Instancia del módulo tablero
@@ -132,7 +171,9 @@ module Battleship (
         .rst(rst),
 		  .decision_State(decision_State),
         .tablero_jugador(tablero_jugador),
-        .tablero_pc(tablero_pc)
+        .tablero_pc(tablero_pc),
+		  .tablero_jugador_next(tablero_jugador_next),
+		  .tablero_pc_next(tablero_pc_next)
     );
 	
 	
@@ -163,6 +204,8 @@ module Battleship (
 	.j_actual(j_actual),
 	.tablero_jugador(tablero_jugador),
 	.tablero_pc(tablero_pc),
+	//.tablero_jugador_copy(tablero_jugador_copy),
+	//.tablero_pc_copy(tablero_pc_copy),
 	.player_ships_input_internal(player_ships_input_internal),
 	.colocation_ships_State(colocation_ships_State),
 	.vgaclk(vgaclk),
