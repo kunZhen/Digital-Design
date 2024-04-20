@@ -60,9 +60,15 @@ module Battleship (
 	logic [2:0] player_ships_input_limit = 3'b101;
 	
 	reg [2:0] player_ships_input_internal; // Señal interna para realizar operaciones
+	
+	
+	reg [2:0] player_ships_size_internal; // Señal interna para realizar operaciones
 
 	always_comb begin
-		 player_ships_input_internal = (player_ships_input > player_ships_input_limit) ? player_ships_input_limit : player_ships_input;
+// Modified to set the number and size of the ships based on player input
+player_ships_input_internal = (player_ships_input > player_ships_input_limit) ? player_ships_input_limit : player_ships_input;
+player_ships_size_internal = player_ships_input_internal ; // Assuming size correlates to quantity
+
 	end
 
 	// Boards ------------------------------------------------------------
@@ -156,7 +162,7 @@ colocationShipsState colocationModule (
 	.clk(clk),
 	.i_actual(i_actual),
 	.j_actual(j_actual),
-	.tablero_jugador(tablero_jugador),
+	.tablero_jugador(tablero_jugador_out),
 	.tablero_pc(tablero_pc),
 	.player_ships_input_internal(player_ships_input_internal),
 	.confirm_placement(confirm_colocation_button), // Suponiendo que esto debe reflejar un estado de confirmación

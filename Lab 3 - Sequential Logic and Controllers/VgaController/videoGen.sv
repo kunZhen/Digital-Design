@@ -53,36 +53,31 @@ module videoGen(
                             y >= row_px + frame && y < row_px + size);
     end
 
-   always @* begin
-    if (inline) begin
-        r = 8'h00; g = 8'h00; b = 8'h00; // Línea negra divisoria
-    end else if (inrect_main) begin
-        if (rowIndex == i_actual && colIndex >= j_actual && colIndex < j_actual + player_ships_input_internal) begin
-            if (confirm_placement) begin
-                r = 8'hFF; g = 8'h8C; b = 8'h00; // Naranja para colocación confirmada
+    always @* begin
+        if (inline) begin
+            r = 8'h00; g = 8'h00; b = 8'h00; // Black line
+        end else if (inrect_main) begin
+            if (confirm_placement && rowIndex == i_actual && colIndex >= j_actual && colIndex < j_actual + player_ships_input_internal) begin
+                r = 8'hFF; g = 8'h8C; b = 8'h00; // Orange for confirmed placement
             end else begin
-                r = 8'h8B; g = 8'h45; b = 8'h13; // Marrón para área de selección
+                case (tablero_jugador[rowIndex][colIndex])
+                    AGUA: begin r = 8'h00; g = 8'h00; b = 8'hFF; end // Blue for water
+                    BARCO: begin r = 8'h00; g = 8'hFF; b = 8'h00; end // Green for ships
+                    CASILLA_SELECCION: begin r = 8'hFF; g = 8'h00; b = 8'h00; end // Red for missed shot
+                    CASILLA_CONFIRMADA: begin r = 8'hFF; g = 8'hFF; b = 8'h00; end // Yellow for hit
+                    default: begin r = 8'hFF; g = 8'hFF; b = 8'hFF; end // White by default
+                endcase
             end
-        end else begin
-            case (tablero_jugador[rowIndex][colIndex])
-                AGUA: begin r = 8'h00; g = 8'h00; b = 8'hFF; end // Azul para agua
-                BARCO: begin r = 8'h00; g = 8'hFF; b = 8'h00; end // Verde para barcos
-                CASILLA_SELECCION: begin r = 8'hFF; g = 8'h00; b = 8'h00; end // Rojo para tiro fallado
-               CASILLA_CONFIRMADA: begin r = 8'hFF; g = 8'hFF; b = 8'h00; end // Amarillo para tiro acertado
-                default: begin r = 8'hFF; g = 8'hFF; b = 8'hFF; end // Blanco por defecto
+        end else if (inrect_secondary) begin
+            case (tablero_pc[rowIndex][colIndex - BOARD_SIZE - (LINE_WIDTH / (size + frame))])
+                AGUA: begin r = 8'h20; g = 8'h20; b = 8'h20; end // Grey for water
+                BARCO: begin r = 8'h80; g = 8'h00; b = 8'h80; end // Purple for ships
+                CASILLA_SELECCION: begin r = 8'hFF; g = 8'hFF; b = 8'h00; end // Yellow for missed shot
+                CASILLA_CONFIRMADA: begin r = 8'hFF; g = 8'hA5; b = 8'h00; end // Orange for hit
+                default: begin r = 8'hFF; g = 8'hFF; b = 8'hFF; end // White by default
             endcase
+        end else begin
+            r = 8'hFF; g = 8'hFF; b = 8'hFF; // Default white outside rectangles
         end
-    end else if (inrect_secondary) begin
-        case (tablero_pc[rowIndex][colIndex - BOARD_SIZE - (LINE_WIDTH / (size + frame))])
-            AGUA: begin r = 8'h20; g = 8'h20; b = 8'h20; end // Gris para agua
-            BARCO: begin r = 8'h80; g = 8'h00; b = 8'h80; end // Morado para barcos
-            CASILLA_SELECCION: begin r = 8'hFF; g = 8'hFF; b = 8'h00; end // Amarillo para tiro fallado
-            CASILLA_CONFIRMADA: begin r = 8'hFF; g = 8'hA5; b = 8'h00; end // Naranja para tiro acertado
-            default: begin r = 8'hFF; g = 8'hFF; b = 8'hFF; end // Blanco por defecto
-        endcase
-    end else begin
-        r = 8'hFF; g = 8'hFF; b = 8'hFF; // Blanco por defecto fuera de los rectángulos
     end
-end
-
 endmodule
