@@ -98,15 +98,12 @@ set_location_assignment PIN_W15 -to move_down
 set_global_assignment -name SYSTEMVERILOG_FILE decoder.sv
 set_global_assignment -name SYSTEMVERILOG_FILE vga_clock.sv
 set_global_assignment -name SYSTEMVERILOG_FILE updateIndex.sv
-set_global_assignment -name SYSTEMVERILOG_FILE FSM.sv
 set_global_assignment -name SYSTEMVERILOG_FILE controls.sv
 set_global_assignment -name SYSTEMVERILOG_FILE Battleship.sv
 set_global_assignment -name SYSTEMVERILOG_FILE vga.sv
 set_global_assignment -name SYSTEMVERILOG_FILE vgaController.sv
 set_global_assignment -name SYSTEMVERILOG_FILE videoGen.sv
-set_global_assignment -name SYSTEMVERILOG_FILE rectgen.sv
 set_global_assignment -name SYSTEMVERILOG_FILE pll.sv
-set_global_assignment -name SYSTEMVERILOG_FILE place_ship.sv
 set_location_assignment PIN_AE26 -to ships_placed_seg[0]
 set_location_assignment PIN_AE27 -to ships_placed_seg[1]
 set_location_assignment PIN_AE28 -to ships_placed_seg[2]

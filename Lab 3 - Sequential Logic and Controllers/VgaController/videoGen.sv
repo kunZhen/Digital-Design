@@ -16,8 +16,8 @@ module videoGen(
     // Constantes del juego para simplificar el código
     localparam AGUA = 2'b00;
     localparam BARCO = 2'b01;
-    localparam TIRO_FALLADO = 2'b10;
-    localparam TIRO_ACERTADO = 2'b11;
+    localparam CASILLA_SELECCION = 2'b10;
+    localparam CASILLA_CONFIRMADA = 2'b11;
 
     parameter VGA_WIDTH = 640;
     parameter VGA_HEIGHT = 480;
@@ -67,8 +67,8 @@ module videoGen(
             case (tablero_jugador[rowIndex][colIndex])
                 AGUA: begin r = 8'h00; g = 8'h00; b = 8'hFF; end // Azul para agua
                 BARCO: begin r = 8'h00; g = 8'hFF; b = 8'h00; end // Verde para barcos
-                TIRO_FALLADO: begin r = 8'hFF; g = 8'h00; b = 8'h00; end // Rojo para tiro fallado
-                TIRO_ACERTADO: begin r = 8'hFF; g = 8'hFF; b = 8'h00; end // Amarillo para tiro acertado
+                CASILLA_SELECCION: begin r = 8'hFF; g = 8'h00; b = 8'h00; end // Rojo para tiro fallado
+               CASILLA_CONFIRMADA: begin r = 8'hFF; g = 8'hFF; b = 8'h00; end // Amarillo para tiro acertado
                 default: begin r = 8'hFF; g = 8'hFF; b = 8'hFF; end // Blanco por defecto
             endcase
         end
@@ -76,8 +76,8 @@ module videoGen(
         case (tablero_pc[rowIndex][colIndex - BOARD_SIZE - (LINE_WIDTH / (size + frame))])
             AGUA: begin r = 8'h20; g = 8'h20; b = 8'h20; end // Gris para agua
             BARCO: begin r = 8'h80; g = 8'h00; b = 8'h80; end // Morado para barcos
-            TIRO_FALLADO: begin r = 8'hFF; g = 8'hFF; b = 8'h00; end // Amarillo para tiro fallado
-            TIRO_ACERTADO: begin r = 8'hFF; g = 8'hA5; b = 8'h00; end // Naranja para tiro acertado
+            CASILLA_SELECCION: begin r = 8'hFF; g = 8'hFF; b = 8'h00; end // Amarillo para tiro fallado
+            CASILLA_CONFIRMADA: begin r = 8'hFF; g = 8'hA5; b = 8'h00; end // Naranja para tiro acertado
             default: begin r = 8'hFF; g = 8'hFF; b = 8'hFF; end // Blanco por defecto
         endcase
     end else begin

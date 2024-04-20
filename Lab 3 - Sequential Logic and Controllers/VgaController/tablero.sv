@@ -8,8 +8,8 @@ module tablero(
     // Estados posibles para las celdas del tablero
     localparam AGUA = 2'b00;
     localparam BARCO = 2'b01;
-    localparam TIRO_FALLADO = 2'b10;
-    localparam TIRO_ACERTADO = 2'b11;
+    localparam CASILLA_SELECCION = 2'b10;
+    localparam  CASILLA_CONFIRMADA = 2'b11;
 
     // Implementación de la lógica para actualizar los tableros
     always_ff @(negedge clk or negedge rst) begin
@@ -26,8 +26,8 @@ module tablero(
     task fill_with_water;
         for (int i = 0; i < 5; i++) begin
             for (int j = 0; j < 5; j++) begin
-                tablero_jugador[i][j] <= TIRO_FALLADO;
-                tablero_pc[i][j] <= TIRO_FALLADO;
+                tablero_jugador[i][j] <= AGUA;
+                tablero_pc[i][j] <= AGUA;
             end
         end
     endtask

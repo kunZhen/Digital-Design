@@ -38,7 +38,7 @@ module Battleship (
 	// Registro para dividir la frecuencia del reloj clk
 	reg clk_ms; 
 	
-	
+	logic confirm_placement;
 	// Cantidad de barcos de la PC (Inicializado con 0 barcos)
 	reg [2:0] pc_ships = 3'b000; 
 
@@ -105,23 +105,22 @@ module Battleship (
 	 
 	
     // Instantiate the colocationShipsState module
-    /*colocationShipsState colocationModule (
-        .clk(clk),
-        .rst(rst),
-        .colocation_ships_State(colocation_ships_state),
-        .i_actual(i_actual),
-        .j_actual(j_actual),
-        .initial_ships_count(initial_ships_count),
-        .confirm_colocation_button(confirm_colocation_button),
-        .tablero_jugador(tablero_jugador),
-        .tablero_jugador_out(tablero_jugador_out),
-        .confirm_placement(confirm_placement),
-        .finished_placing(finished_placing),
-        .placement_error(placement_error)
-    );*/
-
+colocationShipsState colocationModule (
+    .clk(clk),
+    .rst(rst),
+    .colocation_ships_State(colocation_ships_State),
+    .i_actual(i_actual),
+    .j_actual(j_actual),
+    .initial_ships_count(player_ships_input_internal),  // Assuming this is the number of ships to place
+    .confirm_colocation_button(confirm_colocation_button),
+    .tablero_jugador(tablero_jugador),  // Input board state
+    .tablero_jugador_out(tablero_jugador_out),  // Output board state reflects changes
+    .confirm_placement(confirm_placement),
+    .finished_placing(finished_placing),
+    .placement_error(placement_error)
+);
 	 
-	
+	/*
 	// Instancia del módulo tablero
     tablero game_board (
         .clk(clk_ms),
@@ -130,7 +129,7 @@ module Battleship (
         .tablero_jugador(tablero_jugador_out),
         .tablero_pc(tablero_pc)
     );
-	
+	*/
 	
 	controls movement_controls(
 		.i_actual(i_actual), 
@@ -148,7 +147,7 @@ module Battleship (
 	);
 	
 	updateIndex updateIJ(
-		i_next, j_next, clk_ms, rst, 1, 1,
+		i_next, j_next, clk_ms, rst, colocation_ships_State, colocation_ships_State,
 		i_actual, j_actual
 	);
 	
