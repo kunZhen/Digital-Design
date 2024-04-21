@@ -109,7 +109,7 @@ module Battleship (
 	  .player_move(player_move),
 	  .finished_placing(finished_placing),
 	  .ships_decided(ships_decided),
-	  .finished_setUp(0),
+	  .finished_setUp(finished_setUp),
 	  .decision_State(decision_State),
 	  .colocation_ships_State(colocation_ships_State),
 	  .setup_State(setup_State),
@@ -168,6 +168,7 @@ module Battleship (
 		  .player_ship_amount_define(player_ship_amount_define),
 		  .finished_placing(finished_placing),
 		  .pc_actual_ship_amount(pc_actual_ship_amount),
+		  .finished_setUp(finished_setUp),
         .tablero_jugador(tablero_jugador),
         .tablero_pc(tablero_pc)
     );

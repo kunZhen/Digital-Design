@@ -12,6 +12,7 @@ module tablero(
 	 input reg [2:0] player_ship_amount_define,
 	 output logic finished_placing,
 	 output reg [2:0] pc_actual_ship_amount,
+	 output logic finished_setUp,
     output reg [1:0] tablero_jugador[5][5],
     output reg [1:0] tablero_pc[5][5]
 );
@@ -23,7 +24,8 @@ module tablero(
 
     reg confirm_colocation_button_prev;
 	 
-	 reg [4:0] lfsr;  // LFSR de 5 bits para generar posiciones aleatorias
+	 reg [2:0] i_random_interna;
+	 reg [2:0] j_random_interna;
 	 
     always_ff @(negedge clk or negedge rst) begin
 		 if (!rst) begin
@@ -32,6 +34,7 @@ module tablero(
 			  pc_actual_ship_amount <= 0;
 			  finished_placing <= 0;
 			  confirm_colocation_button_prev <= 1'b0;
+			  finished_setUp <= 0;
 		 end else begin
 			  confirm_colocation_button_prev <= confirm_colocation_button; // Update on every cycle for consistent behavior
 			  if (colocation_ships_State && (player_actual_ship_amount == player_ship_amount_define) ) begin
@@ -39,12 +42,17 @@ module tablero(
 			  end else if (colocation_ships_State && !confirm_colocation_button && confirm_colocation_button_prev && (player_actual_ship_amount < player_ship_amount_define)) begin
 					place_ship();
 					player_actual_ship_amount <= player_actual_ship_amount + 1;
-			  end else if (setup_State) begin
+			  end else if (setup_State && (pc_actual_ship_amount < player_ship_amount_define) && (tablero_pc[i_random][j_random] != BARCO) ) begin
+					i_random_interna = i_random;
+					j_random_interna = j_random;
 					setUp_pc_ships();
-					pc_actual_ship_amount <= pc_actual_ship_amount + 1;
+					//pc_actual_ship_amount <= pc_actual_ship_amount + 1;
+			  end else if (setup_State && (pc_actual_ship_amount == player_ship_amount_define) ) begin 
+					finished_setUp <= 1;
 			  end
 		 end
 	end
+	
 	 
     // Tarea para llenar los tableros con agua
     task fill_with_water;
@@ -57,9 +65,11 @@ module tablero(
     endtask
 	 
 	 task setUp_pc_ships;
-        for (int j = 0; j < j_random; j++) begin
+        tablero_pc[i_random_interna][j_random_interna] <= BARCO;
+		  /*for (int j = 0; j < j_random; j++) begin
             tablero_pc[i_random][j_random + j] <= BARCO;
-        end
+        end*/
+		  pc_actual_ship_amount <= pc_actual_ship_amount + 1;
     endtask
 
     task place_ship;
