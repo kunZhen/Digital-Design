@@ -9,6 +9,7 @@ module FSMgame (
   
   input wire ships_decided,
   input wire finished_placing,
+  input wire finished_setUp,
   
   
   input wire player_move, //  switch[5].  Player confirms cell that wants to attack
@@ -91,7 +92,7 @@ module FSMgame (
 		
 		*/
 			//next_state_reg = (time_expired || player_move) ? PC_TURN : PLAYER_TURN; // Remains in "PLAY" state unless the time limit expires or player moves
-			next_state_reg = (pc_ships_setup == 3'b101) ? PLAYER_TURN : SETUP; // Remain in SETUP state until all boats are placed
+			next_state_reg = (finished_setUp) ? PLAYER_TURN : SETUP; // Remain in SETUP state until all boats are placed
 															//player amount of ships
       end
 		

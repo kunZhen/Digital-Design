@@ -26,7 +26,11 @@ module Battleship (
 
 	// 7 segments ------------------------------------------------------
 	// siete segmentos para mostrar el número de barcos colocados y la cantidad de barcos restantes.
-	output logic[6:0] ships_placed_seg
+	output logic[6:0] ships_placed_seg,
+	
+	output logic[6:0] ships_left_seg,
+	
+	output logic decision_State, colocation_ships_State, setup_state, player_turn_State,  pc_turn_State, is_victory_State, is_defeat_State
 	);
 	
 	// Coordenadas actuales del jugador en el tablero
@@ -47,11 +51,13 @@ module Battleship (
 	
 	
 	// For FSM  ---------------------------------------------------------
-	logic decision_State, colocation_ships_State, setup_state, player_turn_State,  pc_turn_State, is_victory_State, is_defeat_State;
+	
 	
 	logic ships_decided;
 	
 	logic finished_placing;
+	
+	logic finished_setUp;
 	
 	logic update_enable_player_ship;
 
@@ -66,10 +72,9 @@ module Battleship (
 	reg [2:0] player_ships_size_internal; // Señal interna para realizar operaciones
 	
 	reg [2:0] player_ships_placed;
-	reg [2:0] player_actual_ship;
-	
-	reg [2:0] player_ships_placed_next;
-	reg [2:0] player_actual_ship_next;
+	reg [2:0] player_actual_ship_amount;
+	reg [2:0] player_ship_amount_define;
+
 	
 	always_comb begin
 	// Modified to set the number and size of the ships based on player input
@@ -95,8 +100,9 @@ module Battleship (
 	  .player_ships(player_ships),
 	  .pc_ships_setup(pc_ships),
 	  .player_move(player_move),
-	  .finished_placing(0),
+	  .finished_placing(finished_placing),
 	  .ships_decided(ships_decided),
+	  .finished_setUp(0),
 	  .decision_State(decision_State),
 	  .colocation_ships_State(colocation_ships_State),
 	  .player_turn_State(player_turn_State),
@@ -108,12 +114,26 @@ module Battleship (
 	decisionState decision_mod (
         .player_amount_ships(player_ships_input_internal),   // Conecta con la entrada de barcos del jugador
         .decision_State(decision_State),                            // Asumimos siempre activo para este ejemplo
+		  .colocation_ships_State(colocation_ships_State),
         .clk(clk_ms),                                  // Reloj del sistema
         .rst(rst),                                  // Reset del sistema
         .player_confirm_amount(confirm_amount_button),     // Botón de confirmación de cantidad de barcos
 		  .ships_decided(ships_decided),
-		  .player_ships_placed(player_ships_placed)
+		  //.finished_placing(finished_placing),
+		  .player_ship_amount_define(player_ship_amount_define)
 	 );
+	 
+	 /*colocationShipsState shipPlacer (
+        .clk(clk),
+        .rst(rst),
+        .i_actual(i_actual),
+        .j_actual(j_actual),
+        .colocation_ships_State(colocation_ships_State),
+        .confirm_colocation_button(confirm_colocation_button),
+        .player_ships_input_internal(player_ships_input_internal),
+        .player_ships_placed(player_ships_placed),
+        .player_actual_ship(player_actual_ship_amout)
+    );*/
 	
 	// Instancia del módulo tablero
     tablero game_board (
@@ -124,6 +144,10 @@ module Battleship (
 		  .decision_State(decision_State),
 		  .colocation_ships_State(colocation_ships_State),
 		  .confirm_colocation_button(confirm_colocation_button),
+		  .player_ships_input_internal(player_ships_input_internal),
+		  .player_actual_ship_amount(player_actual_ship_amount),
+		  .player_ship_amount_define(player_ship_amount_define),
+		  .finished_placing(finished_placing),
         .tablero_jugador(tablero_jugador),
         .tablero_pc(tablero_pc)
     );
@@ -173,6 +197,7 @@ module Battleship (
 	
 	// Decodifica las señales de barcos colocados y cantidad de barcos restantes para visualización en siete segmentos
 	decoder amount_of_ships_deco(player_ships_input_internal, ships_placed_seg);
+	decoder amount_of_ships_left(player_actual_ship_amount, ships_left_seg);
 	
 endmodule
 	
