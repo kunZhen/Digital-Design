@@ -83,11 +83,6 @@ module Battleship (
 	 reg [1:0] tablero_jugador[5][5];
 	 reg [1:0] tablero_pc[5][5];
 	 
-	 //reg [1:0] tablero_jugador_next[5][5];
-	 //reg [1:0] tablero_pc_next[5][5];
-	 
-	 //reg [1:0] tablero_jugador_copy[5][5];
-	 //reg [1:0] tablero_pc_copy[5][5];
 							  
 	vga_clock clkdiv (
 		clk, clk_ms
@@ -119,51 +114,6 @@ module Battleship (
 		  .ships_decided(ships_decided),
 		  .player_ships_placed(player_ships_placed)
 	 );
-	 
-	
-	// Instancia del módulo colocationShipsState
-	/*colocationShipsState myColocationShipsState(
-		 .clk(clk),
-		 .rst(rst),
-		 .update_enable_player_ship(update_enable_player_ship),
-		 .i_actual(i_actual),
-		 .j_actual(j_actual),
-		 .colocation_ships_State(colocation_ships_State),
-		 .confirm_colocation_button(confirm_colocation_button),
-		 .player_ships_size_internal(player_ships_size_internal),
-		 .player_ships_placed(player_ships_placed),
-		 .player_actual_ship(player_actual_ship),
-		 .player_ships_placed_next(player_ships_placed_next),
-		 .player_actual_ship_next(player_actual_ship_next),
-		 .tablero_jugador(tablero_jugador),
-		 .tablero_pc(tablero_pc),
-		 .tablero_jugador_next(tablero_jugador_next),
-		 .tablero_pc_next(tablero_pc_next),
-		 //.tablero_jugador_copy(tablero_jugador_copy),
-		 //.tablero_pc_copy(tablero_pc_copy)
-	);*/
-
-	
-	/*updateAmountShips updateAmount_ships(
-		 .clk(clk),
-		 .rst(rst),
-		 .colocation_ships_State(colocation_ships_State),
-		 .player_ships_placed_next(player_ships_placed_next),
-		 .player_actual_ship_next(player_actual_ship_next),
-		 .player_ships_placed(player_ships_placed),
-		 .player_actual_ship(player_actual_ship)
-	);*/
-	
-	/*updateTableros update_boards (
-        .clk(clk),
-        .rst(rst),
-        .update_enable_player_ship(update_enable_player_ship),
-        .tablero_jugador_next(tablero_jugador_next),
-        .tablero_pc_next(tablero_pc_next),
-        .tablero_jugador(tablero_jugador),
-        .tablero_pc(tablero_pc)
-    );*/
-	 
 	
 	// Instancia del módulo tablero
     tablero game_board (
@@ -176,8 +126,6 @@ module Battleship (
 		  .confirm_colocation_button(confirm_colocation_button),
         .tablero_jugador(tablero_jugador),
         .tablero_pc(tablero_pc)
-		  //.tablero_jugador_next(tablero_jugador_next),
-		  //.tablero_pc_next(tablero_pc_next)
     );
 	
 	
@@ -208,8 +156,6 @@ module Battleship (
 	.j_actual(j_actual),
 	.tablero_jugador(tablero_jugador),
 	.tablero_pc(tablero_pc),
-	//.tablero_jugador_copy(tablero_jugador_copy),
-	//.tablero_pc_copy(tablero_pc_copy),
 	.player_ships_input_internal(player_ships_input_internal),
 	.colocation_ships_State(colocation_ships_State),
 	.vgaclk(vgaclk),
