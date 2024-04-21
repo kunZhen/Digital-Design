@@ -1,10 +1,13 @@
 module tablero(
     input logic clk, rst,
+    input reg [2:0] i_actual, j_actual,
+    input logic colocation_ships_State,
     input logic decision_State,  // Señal de decisión para controlar el llenado del tablero
+	 input logic confirm_colocation_button,
     output reg [1:0] tablero_jugador[5][5],
-    output reg [1:0] tablero_pc[5][5],
-	 output reg [1:0] tablero_jugador_next[5][5],
-    output reg [1:0] tablero_pc_next[5][5]
+    output reg [1:0] tablero_pc[5][5]
+	 //output reg [1:0] tablero_jugador_next[5][5],
+    //output reg [1:0] tablero_pc_next[5][5]
 );
 
     // Estados posibles para las celdas del tablero
@@ -21,7 +24,9 @@ module tablero(
         end else if (decision_State) begin
             // Llenar tableros con agua cuando 'decision' es activo
             fill_with_water();  // Llama a una tarea para llenar con agua
-        end
+        end else if (colocation_ships_State && !confirm_colocation_button) begin
+				place_ship();
+		  end
     end
 
     // Tarea para llenar los tableros con agua
@@ -31,10 +36,14 @@ module tablero(
                 tablero_jugador[i][j] <= AGUA;
                 tablero_pc[i][j] <= AGUA;
 					 
-					 tablero_jugador_next[i][j] <= AGUA;
-					 tablero_pc_next[i][j] <= AGUA;
+					 //tablero_jugador_next[i][j] <= AGUA;
+					 //tablero_pc_next[i][j] <= AGUA;
             end
         end
     endtask
+	 
+	 task place_ship;
+		tablero_jugador[i_actual][j_actual] <= BARCO;
+	endtask
 
 endmodule
