@@ -30,7 +30,7 @@ module Battleship (
 	
 	output logic[6:0] ships_left_seg,
 	
-	output logic decision_State, colocation_ships_State, setup_state, player_turn_State,  pc_turn_State, is_victory_State, is_defeat_State
+	output logic decision_State, colocation_ships_State, setup_State, player_turn_State,  pc_turn_State, is_victory_State, is_defeat_State
 	);
 	
 	// Coordenadas actuales del jugador en el tablero
@@ -105,6 +105,7 @@ module Battleship (
 	  .finished_setUp(0),
 	  .decision_State(decision_State),
 	  .colocation_ships_State(colocation_ships_State),
+	  .setup_State(setup_State),
 	  .player_turn_State(player_turn_State),
 	  .pc_turn_State(pc_turn_State),
 	  .is_victory_State(is_victory_State),

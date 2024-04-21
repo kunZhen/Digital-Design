@@ -17,7 +17,7 @@ module FSMgame (
   input wire pc_move,  // it confirms that the pc already did its turn
   
   
-  
+  output wire setup_State,
   output wire decision_State, // Indicates whether the game is in the "DECISION" state.
   output wire colocation_ships_State, // Indicates whether the game is in the "COLOCATION" state.
   output wire player_turn_State, // Indicates whether the game is in the "PLAYER_TURN" state.
@@ -159,6 +159,7 @@ module FSMgame (
   
   assign decision_State = (current_state == DECISION);
   assign colocation_ships_State = (current_state == COLOCATION);
+  assign setup_State = (current_state == SETUP);
   assign player_turn_State = (current_state == PLAYER_TURN);
   assign pc_turn_State = (current_state == PC_TURN);
   assign is_victory_State = (current_state == VICTORY);
