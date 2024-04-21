@@ -28,13 +28,18 @@ module Battleship (
 	// siete segmentos para mostrar el número de barcos colocados y la cantidad de barcos restantes.
 	output logic[6:0] ships_placed_seg,
 	
-	output logic[6:0] ships_left_seg,
+	output logic[6:0] ships_left_seg_player,
+	
+	output logic[6:0] ships_left_seg_pc,
 	
 	output logic decision_State, colocation_ships_State, setup_State, player_turn_State,  pc_turn_State, is_victory_State, is_defeat_State
 	);
 	
 	// Coordenadas actuales del jugador en el tablero
 	logic [2:0] i_actual, j_actual; 
+	
+	reg [2:0] i_random;
+   reg [2:0] j_random;
 	
 	// Coordenadas siguientes del jugador en el tablero
 	logic [2:0] i_next, j_next; 
@@ -74,6 +79,8 @@ module Battleship (
 	reg [2:0] player_ships_placed;
 	reg [2:0] player_actual_ship_amount;
 	reg [2:0] player_ship_amount_define;
+	
+	reg[2:0] pc_actual_ship_amount;
 
 	
 	always_comb begin
@@ -135,6 +142,14 @@ module Battleship (
         .player_ships_placed(player_ships_placed),
         .player_actual_ship(player_actual_ship_amout)
     );*/
+	 
+	 random_generator my_random_generator(
+        .clk(clk),
+        .rst(rst),
+        .player_ships_input_internal(player_ships_input_internal),  // Ejemplo de semilla inicial
+        .i_random(i_random),
+        .j_random(j_random)
+    );
 	
 	// Instancia del módulo tablero
     tablero game_board (
@@ -142,13 +157,17 @@ module Battleship (
         .rst(rst),
 		  .i_actual(i_actual),
 		  .j_actual(j_actual),
+		  .i_random(i_random),
+		  .j_random(j_random),
 		  .decision_State(decision_State),
 		  .colocation_ships_State(colocation_ships_State),
+		  .setup_State(setup_State),
 		  .confirm_colocation_button(confirm_colocation_button),
 		  .player_ships_input_internal(player_ships_input_internal),
 		  .player_actual_ship_amount(player_actual_ship_amount),
 		  .player_ship_amount_define(player_ship_amount_define),
 		  .finished_placing(finished_placing),
+		  .pc_actual_ship_amount(pc_actual_ship_amount),
         .tablero_jugador(tablero_jugador),
         .tablero_pc(tablero_pc)
     );
@@ -198,7 +217,8 @@ module Battleship (
 	
 	// Decodifica las señales de barcos colocados y cantidad de barcos restantes para visualización en siete segmentos
 	decoder amount_of_ships_deco(player_ships_input_internal, ships_placed_seg);
-	decoder amount_of_ships_left(player_actual_ship_amount, ships_left_seg);
+	decoder amount_of_ships_left_player(player_actual_ship_amount, ships_left_seg_player);
+	decoder amount_of_ships_left_pc(pc_actual_ship_amount, ships_left_seg_pc);
 	
 endmodule
 	

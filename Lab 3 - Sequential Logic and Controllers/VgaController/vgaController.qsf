@@ -86,9 +86,6 @@ set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_location_assignment PIN_AE12 -to rst
 set_location_assignment PIN_AE11 -to player_move
 set_location_assignment PIN_Y16 -to move_up
@@ -122,13 +119,6 @@ set_global_assignment -name SYSTEMVERILOG_FILE colocationShipsState.sv
 set_location_assignment PIN_AD11 -to confirm_colocation_button
 set_global_assignment -name SYSTEMVERILOG_FILE updateTableros.sv
 set_global_assignment -name SYSTEMVERILOG_FILE updateAmountShips.sv
-set_location_assignment PIN_AB23 -to ships_left_seg[0]
-set_location_assignment PIN_AE29 -to ships_left_seg[1]
-set_location_assignment PIN_AD29 -to ships_left_seg[2]
-set_location_assignment PIN_AC28 -to ships_left_seg[3]
-set_location_assignment PIN_AD30 -to ships_left_seg[4]
-set_location_assignment PIN_AC29 -to ships_left_seg[5]
-set_location_assignment PIN_AC30 -to ships_left_seg[6]
 set_location_assignment PIN_V16 -to decision_State
 set_location_assignment PIN_W16 -to colocation_ships_State
 set_location_assignment PIN_V18 -to player_turn_State
@@ -136,4 +126,29 @@ set_location_assignment PIN_W17 -to pc_turn_State
 set_location_assignment PIN_Y21 -to is_victory_State
 set_location_assignment PIN_W21 -to is_defeat_State
 set_location_assignment PIN_V17 -to setup_State
+set_global_assignment -name SYSTEMVERILOG_FILE random_generator.sv
+set_global_assignment -name SYSTEMVERILOG_FILE random_generator_tb.sv
+set_global_assignment -name EDA_TEST_BENCH_ENABLE_STATUS TEST_BENCH_MODE -section_id eda_simulation
+set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH random_generator_tb -section_id eda_simulation
+set_global_assignment -name EDA_TEST_BENCH_NAME random_generator_tb -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id random_generator_tb
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME random_generator_tb -section_id random_generator_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE random_generator_tb.sv -section_id random_generator_tb
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_location_assignment PIN_AB23 -to ships_left_seg_player[0]
+set_location_assignment PIN_AE29 -to ships_left_seg_player[1]
+set_location_assignment PIN_AD29 -to ships_left_seg_player[2]
+set_location_assignment PIN_AC28 -to ships_left_seg_player[3]
+set_location_assignment PIN_AD30 -to ships_left_seg_player[4]
+set_location_assignment PIN_AC29 -to ships_left_seg_player[5]
+set_location_assignment PIN_AC30 -to ships_left_seg_player[6]
+set_location_assignment PIN_AA24 -to ships_left_seg_pc[0]
+set_location_assignment PIN_Y23 -to ships_left_seg_pc[1]
+set_location_assignment PIN_Y24 -to ships_left_seg_pc[2]
+set_location_assignment PIN_W22 -to ships_left_seg_pc[3]
+set_location_assignment PIN_W24 -to ships_left_seg_pc[4]
+set_location_assignment PIN_V23 -to ships_left_seg_pc[5]
+set_location_assignment PIN_W25 -to ships_left_seg_pc[6]
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
