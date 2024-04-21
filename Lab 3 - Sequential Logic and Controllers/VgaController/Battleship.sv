@@ -158,6 +158,7 @@ module Battleship (
 	.tablero_pc(tablero_pc),
 	.player_ships_input_internal(player_ships_input_internal),
 	.colocation_ships_State(colocation_ships_State),
+	.decision_State(decision_State),
 	.vgaclk(vgaclk),
 	.hsync(hsync),
 	.vsync(vsync),
