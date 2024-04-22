@@ -111,8 +111,8 @@ module Battleship (
 	  .rst(rst),
 	  .player_has_move(player_has_move),
 	  .pc_ships_zero(pc_ships_zero),
-	  .pc_has_move(0),
-	  .player_ships_zero(0),
+	  .pc_has_move(pc_has_move),
+	  .player_ships_zero(player_ships_zero),
 	  .finished_placing(finished_placing),
 	  .ships_decided(ships_decided),
 	  .finished_setUp(finished_setUp),
@@ -180,6 +180,9 @@ module Battleship (
 		  .pc_ships_zero(pc_ships_zero),
 		  .confirm_attack_player_to_pc(confirm_attack_player_to_pc),
 		  .player_has_move(player_has_move),
+		  .pc_turn_State(pc_turn_State),
+		  .pc_has_move(pc_has_move),
+		  .player_ships_zero(player_ships_zero),
         .tablero_pc(tablero_pc)
     );
 	

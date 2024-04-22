@@ -107,23 +107,14 @@ module FSMgame (
 		
 		
 		PC_TURN: begin
-		  /*
-		  This state does the following instructions
-		  first it verifies if ships player equals 0, if it does so enter to DEFEAT state
-		  
-		  if not, it does all the PC functionality by itself
-										% selects a random square and confirms it
-										% goes to the player_matrix and sees if the square was a part of a boat or 
-										not
-										% update the graphics
-										
-					and then pass it back to the PLAYER TURN
-		  */
-			next_state_reg = (player_ships_zero) ? DEFEAT :
-									(pc_has_move) ? PLAYER_TURN: //cambiar a una variable
-									PC_TURN ;
-									
-		end 
+            if (player_ships_zero) begin
+                next_state_reg = DEFEAT;
+            end else if (pc_has_move) begin
+                next_state_reg = PLAYER_TURN;
+            end else begin
+                next_state_reg = PC_TURN; // Stay in PC_TURN if no move has been confirmed
+            end
+      end
 		
 		
 		

@@ -17,6 +17,9 @@ module tablero(
 	 input logic confirm_attack_player_to_pc,
 	 output logic pc_ships_zero,
 	 output logic player_has_move,
+	 input logic pc_turn_State,
+	 output logic pc_has_move,
+	 output logic player_ships_zero,
     output reg [1:0] tablero_jugador[5][5],
     output reg [1:0] tablero_pc[5][5]
 );
@@ -61,6 +64,7 @@ module tablero(
 					player_has_move <= 0;
 			  end else if (player_turn_State && !confirm_attack_player_to_pc && confirm_attack_player_to_pc_prev) begin 
 			  		player_has_move = 1;
+					pc_has_move = 0;
 					
 					if (tablero_pc[i_actual][j_actual] == BARCO) begin
 						tablero_pc[i_actual][j_actual] = ATACA_BARCO;
@@ -72,6 +76,22 @@ module tablero(
 					
 					end else begin 
 						tablero_pc[i_actual][j_actual] = ATACA_AGUA;
+					end
+					
+			  end else if (pc_turn_State) begin 
+					player_has_move = 0;
+					pc_has_move = 1;
+					
+					if (tablero_jugador[i_actual][j_actual] == BARCO) begin
+						tablero_jugador[i_actual][j_actual] = ATACA_BARCO;
+						player_actual_ship_amount <= player_actual_ship_amount - 1;
+						
+						if ( player_actual_ship_amount == 1) begin // change from 0 to 1 because after decrement it will be 0
+							pc_ships_zero = 1;
+						end
+					
+					end else begin 
+						tablero_jugador[i_actual][j_actual] = ATACA_AGUA;
 					end
 					
 			  end 
