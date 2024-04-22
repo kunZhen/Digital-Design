@@ -45,9 +45,6 @@ module tablero(
 			  finished_setUp <= 0;
 			  confirm_attack_player_to_pc_prev <= 0;
 			  pc_ships_zero <= 0;
-			  player_has_move <= 0;
-			  pc_has_move <= 0;
-			  player_ships_zero <= 0;
 		 end else begin
 			  confirm_colocation_button_prev <= confirm_colocation_button; // Update on every cycle for consistent behavior
 			  confirm_attack_player_to_pc_prev <= confirm_attack_player_to_pc;
@@ -60,51 +57,22 @@ module tablero(
 					i_random_interna = i_random;
 					j_random_interna = j_random;
 					setUp_pc_ships();
+					//pc_actual_ship_amount <= pc_actual_ship_amount + 1;
 			  end else if (setup_State && (pc_actual_ship_amount == player_ship_amount_define) ) begin 
 					finished_setUp <= 1;
-					player_has_move <= 0;
 			  end else if (player_turn_State && !confirm_attack_player_to_pc && confirm_attack_player_to_pc_prev) begin 
-			  		
-					
-					if (tablero_pc[i_random][j_random] == BARCO) begin
-
+					if (tablero_pc[i_actual][j_actual] == BARCO) begin
 						tablero_pc[i_actual][j_actual] = ATACA_BARCO;
 						pc_actual_ship_amount <= pc_actual_ship_amount - 1;
-						
-						if (pc_actual_ship_amount == 1) begin // change from 0 to 1 because after decrement it will be 0
+						if (pc_actual_ship_amount == 1) begin 
 							pc_ships_zero = 1;
 						end
-					
+							
 					end else begin 
 						tablero_pc[i_actual][j_actual] = ATACA_AGUA;
+						pc_ships_zero = 0;
 					end
-					
-					player_has_move = 1;
-					pc_has_move = 0;
-					
-			  end else if (pc_turn_State) begin 
-					
-					
-					if (tablero_jugador[i_random][j_random] == BARCO) begin
-						i_random_interna = i_random;
-						j_random_interna = j_random;
-						
-						tablero_jugador[i_random_interna][j_random_interna] = ATACA_BARCO;
-						
-						player_actual_ship_amount <= player_actual_ship_amount - 1;
-						
-						if ( player_actual_ship_amount == 1) begin // change from 0 to 1 because after decrement it will be 0
-							player_ships_zero = 1;
-						end
-					
-					end else begin 
-						tablero_jugador[i_random_interna][j_random_interna] = ATACA_AGUA;
-					end
-					
-					player_has_move = 0;
-					pc_has_move = 1;
-					
-			  end 
+			  end
 		 end
 	end
 	
