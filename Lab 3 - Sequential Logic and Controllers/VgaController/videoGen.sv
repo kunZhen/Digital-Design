@@ -192,7 +192,7 @@ module videoGen(
             end
         end else if (inrect_secondary) begin
             case (tablero_pc_videoGen[rowIndex][colIndex - BOARD_SIZE - (LINE_WIDTH / (size + frame))])
-                AGUA: begin r = r_agua_tablero_pc; g = g_agua_tablero_pc; b = b_agua_tablero_pc; end // Grey for water
+                AGUA: begin r = r_agua_tablero_pc; g = g_agua_tablero_pc; b = b_agua_tablero_pc; end 
                 BARCO: begin r = 8'h00; g = 8'hFF; b = 8'h00; end // Green for ships
                 CASILLA_SELECCION: begin r = 8'hFF; g = 8'h00; b = 8'h00; end // Red for missed shott
                 CASILLA_CONFIRMADA: begin r = 8'hFF; g = 8'hFF; b = 8'h00; end // Yellow for hit
