@@ -51,11 +51,6 @@ module Battleship (
 	reg clk_ms; 
 	
 	logic confirm_placement;
-	// Cantidad de barcos de la PC (Inicializado con 0 barcos)
-	reg [2:0] pc_ships = 3'b000; 
-
-	// Cantidad de barcos del jugador (Inicializado con 0 barcos)
-	reg [2:0] player_ships = 3'b000;
 	
 	
 	// For FSM  ---------------------------------------------------------
@@ -115,7 +110,7 @@ module Battleship (
 	  .clk(clk),
 	  .rst(rst),
 	  .player_has_move(0),
-	  .pc_ships_zero(0),
+	  .pc_ships_zero(pc_ships_zero),
 	  .pc_has_move(0),
 	  .player_ships_zero(0),
 	  .finished_placing(finished_placing),
@@ -182,7 +177,9 @@ module Battleship (
 		  .finished_setUp(finished_setUp),
 		  .player_turn_State(player_turn_State),
         .tablero_jugador(tablero_jugador),
+		  .pc_ships_zero(pc_ships_zero),
 		  .confirm_attack_player_to_pc(confirm_attack_player_to_pc),
+		  .player_has_move(player_has_move),
         .tablero_pc(tablero_pc)
     );
 	

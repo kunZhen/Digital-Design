@@ -95,28 +95,14 @@ module FSMgame (
       end
 		
       PLAYER_TURN: begin
-		
-		/*
-		This state does the following instructions
-	   using switch[5] it takes the position of the square and then goes validates 
- 		using the buttons it moves around the table and chooses which square he wants to attack the pc's board
-		and then it validates whether it hit some part of the boat(yellow) or didnt(green), meaning it updates
-		the graphics
-		
-		
-	   So then it validates if pc_ships are equal to 0, if yes it goes to Victory state, if not it goes
-		directly into PC_STATE.
-		So first validate if numofboatsPC is 0, if not validate if switch[5] its confirmed, 
-		
-		There is another condition in which there will be a temporizer in which if the player hasn't confirmed
-		any position in which he wants to attack, then it will go inmediately to PC 
-	
-	*/
-			next_state_reg = (pc_ships_zero) ? VICTORY :
-								  (player_has_move) ? PC_TURN ://cambiar a una función después de que se confirme la casilla que
-								  //se quiere atacar
-								  PLAYER_TURN;
-								  //(If timer is more than 15 seconds):PC_TURN  
+            if (pc_ships_zero)
+                next_state_reg = VICTORY;
+            else if (player_has_move)
+                next_state_reg = PC_TURN;
+            /*else if (timer_expired)
+                next_state_reg = PC_TURN;*/
+            else
+                next_state_reg = PLAYER_TURN;
       end
 		
 		
@@ -138,6 +124,8 @@ module FSMgame (
 									PC_TURN ;
 									
 		end 
+		
+		
 		
       VICTORY, DEFEAT: begin
         next_state_reg = state_reg;

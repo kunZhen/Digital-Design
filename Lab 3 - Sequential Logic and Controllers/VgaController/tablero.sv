@@ -15,6 +15,8 @@ module tablero(
 	 output logic finished_setUp,
 	 input logic player_turn_State,
 	 input logic confirm_attack_player_to_pc,
+	 output logic pc_ships_zero,
+	 output logic player_has_move,
     output reg [1:0] tablero_jugador[5][5],
     output reg [1:0] tablero_pc[5][5]
 );
@@ -39,6 +41,7 @@ module tablero(
 			  confirm_colocation_button_prev <= 1'b0;
 			  finished_setUp <= 0;
 			  confirm_attack_player_to_pc_prev <= 0;
+			  pc_ships_zero <= 0;
 		 end else begin
 			  confirm_colocation_button_prev <= confirm_colocation_button; // Update on every cycle for consistent behavior
 			  confirm_attack_player_to_pc_prev <= confirm_attack_player_to_pc;
@@ -57,8 +60,14 @@ module tablero(
 			  end else if (player_turn_State && !confirm_attack_player_to_pc && confirm_attack_player_to_pc_prev) begin 
 					if (tablero_pc[i_actual][j_actual] == BARCO) begin
 						tablero_pc[i_actual][j_actual] = ATACA_BARCO;
+						pc_actual_ship_amount <= pc_actual_ship_amount - 1;
+						if (pc_actual_ship_amount == 1) begin 
+							pc_ships_zero = 1;
+						end
+							
 					end else begin 
 						tablero_pc[i_actual][j_actual] = ATACA_AGUA;
+						pc_ships_zero = 0;
 					end
 			  end
 		 end
