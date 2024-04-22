@@ -109,7 +109,7 @@ module Battleship (
 	FSMgame fsm(
 	  .clk(clk),
 	  .rst(rst),
-	  .player_has_move(0),
+	  .player_has_move(player_has_move),
 	  .pc_ships_zero(pc_ships_zero),
 	  .pc_has_move(0),
 	  .player_ships_zero(0),
@@ -188,7 +188,7 @@ module Battleship (
 		.i_actual(i_actual), 
 		.j_actual(j_actual),
 		.colocation_ships_State(colocation_ships_State),
-		.player_turn_State(1),
+		.player_turn_State(player_turn_State),
 		.move_up(move_up), 
 		.move_down(move_down), 
 		.move_left(move_left), 
