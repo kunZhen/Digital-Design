@@ -1,20 +1,18 @@
 module FSMgame (
   input wire clk, // reloj
   input wire rst, // reset
-  
-  //input wire time_expired, // Indicates if time limit expired
-  input wire player_ships, //how many ships the player has
-  input wire pc_ships_setup, // how many ships the pc has
-  
+
   
   input wire ships_decided,
   input wire finished_placing,
   input wire finished_setUp,
   
+  input wire player_has_move,
+  input wire pc_ships_zero,
   
-  input wire player_move, //  switch[5].  Player confirms cell that wants to attack
-
-  input wire pc_move,  // it confirms that the pc already did its turn
+  input wire pc_has_move,
+  input wire player_ships_zero,
+  
   
   
   output wire setup_State,
@@ -114,8 +112,8 @@ module FSMgame (
 		any position in which he wants to attack, then it will go inmediately to PC 
 	
 	*/
-			next_state_reg = (pc_ships_setup == 3'b000) ? VICTORY :
-								  (!player_move) ? PC_TURN ://cambiar a una función después de que se confirme la casilla que
+			next_state_reg = (pc_ships_zero) ? VICTORY :
+								  (player_has_move) ? PC_TURN ://cambiar a una función después de que se confirme la casilla que
 								  //se quiere atacar
 								  PLAYER_TURN;
 								  //(If timer is more than 15 seconds):PC_TURN  
@@ -135,8 +133,8 @@ module FSMgame (
 										
 					and then pass it back to the PLAYER TURN
 		  */
-			next_state_reg = (player_ships == 3'b000)? DEFEAT :
-									(pc_move)? PLAYER_TURN: //cambiar a una variable
+			next_state_reg = (player_ships_zero) ? DEFEAT :
+									(pc_has_move) ? PLAYER_TURN: //cambiar a una variable
 									PC_TURN ;
 									
 		end 

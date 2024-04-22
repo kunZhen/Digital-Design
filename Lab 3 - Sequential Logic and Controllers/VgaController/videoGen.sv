@@ -6,6 +6,7 @@ module videoGen(
     input [2:0] player_ships_input_internal, // Nueva entrada para la longitud del barco durante la colocación
     input logic colocation_ships_State,           // Nueva entrada para confirmar la colocación del barco
 	 input logic decision_State,
+	 input logic player_turn_State,
     output logic [7:0] r, g, b
 );
 
@@ -15,6 +16,12 @@ module videoGen(
     reg [9:0] colIndex, rowIndex, col_px, row_px;
     reg [7:0] size, frame;
     reg [9:0] line_position;
+	 
+	 reg[1:0] tablero_jugador_videoGen[5][5];
+	 reg[1:0] tablero_pc_videoGen[5][5];
+	 
+	 reg[7:0] r_agua_tablero_pc, g_agua_tablero_pc, b_agua_tablero_pc;
+	 reg[7:0] r_agua_tablero_jugador, g_agua_tablero_jugador, b_agua_tablero_jugador;
 	 
 	 // Definición de la ROM de caracteres (128 caracteres con 8 filas de 8 bits cada una)
     reg [7:0] character_rom[128][8];
@@ -151,7 +158,20 @@ module videoGen(
 			  end
 		 end
 	end
-
+	
+	always @* begin
+		 if (colocation_ships_State | decision_State) begin
+			  tablero_jugador_videoGen = tablero_jugador;
+			  tablero_pc_videoGen = tablero_pc;
+			  r_agua_tablero_pc = 8'h66; g_agua_tablero_pc = 8'hCC; b_agua_tablero_pc = 8'hFF;
+			  r_agua_tablero_jugador = 8'h00; g_agua_tablero_jugador = 8'h00; b_agua_tablero_jugador = 8'hFF;
+		 end else if (player_turn_State) begin
+			  tablero_jugador_videoGen = tablero_pc;
+			  tablero_pc_videoGen = tablero_jugador;
+			  r_agua_tablero_pc = 8'h00; g_agua_tablero_pc = 8'h00; b_agua_tablero_pc = 8'hFF;
+			  r_agua_tablero_jugador = 8'h66; g_agua_tablero_jugador = 8'hCC; b_agua_tablero_jugador = 8'hFF;
+		 end
+	end
 
     always @* begin
         if (inline) begin
@@ -160,8 +180,8 @@ module videoGen(
             if (colocation_ships_State && rowIndex == i_actual && colIndex >= j_actual && colIndex < j_actual + player_ships_input_internal) begin
                 r = 8'hFF; g = 8'h8C; b = 8'h00; 
             end else begin
-                case (tablero_jugador[rowIndex][colIndex])
-                    AGUA: begin r = 8'h00; g = 8'h00; b = 8'hFF; end // Blue for water
+                case (tablero_jugador_videoGen[rowIndex][colIndex])
+                    AGUA: begin r = r_agua_tablero_jugador; g = g_agua_tablero_jugador; b = b_agua_tablero_jugador; end // Blue for water
                     BARCO: begin r = 8'h00; g = 8'hFF; b = 8'h00; end // Green for ships
                     CASILLA_SELECCION: begin r = 8'hFF; g = 8'h00; b = 8'h00; end // Red for missed shot
                     CASILLA_CONFIRMADA: begin r = 8'hFF; g = 8'hFF; b = 8'h00; end // Yellow for hit
@@ -169,8 +189,8 @@ module videoGen(
                 endcase
             end
         end else if (inrect_secondary) begin
-            case (tablero_pc[rowIndex][colIndex - BOARD_SIZE - (LINE_WIDTH / (size + frame))])
-                AGUA: begin r = 8'h66; g = 8'hCC; b = 8'hFF; end // Grey for water
+            case (tablero_pc_videoGen[rowIndex][colIndex - BOARD_SIZE - (LINE_WIDTH / (size + frame))])
+                AGUA: begin r = r_agua_tablero_pc; g = g_agua_tablero_pc; b = b_agua_tablero_pc; end // Grey for water
                 BARCO: begin r = 8'h00; g = 8'hFF; b = 8'h00; end // Green for ships
                 CASILLA_SELECCION: begin r = 8'hFF; g = 8'h00; b = 8'h00; end // Red for missed shott
                 CASILLA_CONFIRMADA: begin r = 8'hFF; g = 8'hFF; b = 8'h00; end // Yellow for hit

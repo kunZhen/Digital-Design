@@ -6,6 +6,7 @@ module vga(
 	input [2:0] player_ships_input_internal,  // Additional input for ship placement length
 	input logic colocation_ships_State,            // Additional input for confirming ship placement
 	input logic decision_State,
+	input logic player_turn_State,
 	output logic vgaclk,
 	output logic hsync, vsync,
 	output logic sync_b, blank_b,
@@ -43,6 +44,7 @@ module vga(
 		.player_ships_input_internal(player_ships_input_internal),  // Connected new input for handling ship placement length
 		.colocation_ships_State(colocation_ships_State), 
 		.decision_State(decision_State),
+		.player_turn_State(player_turn_State),
 		.r(r),
 		.g(g),
 		.b(b)

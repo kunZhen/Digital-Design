@@ -65,6 +65,13 @@ module Battleship (
 	logic finished_setUp;
 	
 	logic update_enable_player_ship;
+	
+	
+	logic player_has_move;
+	logic pc_ships_zero;
+	
+	logic pc_has_move;
+	logic player_ships_zero;
 
 	// -------------------------------------------------------------------					  
 
@@ -104,9 +111,10 @@ module Battleship (
 	FSMgame fsm(
 	  .clk(clk),
 	  .rst(rst),
-	  .player_ships(player_ships),
-	  .pc_ships_setup(pc_ships),
-	  .player_move(player_move),
+	  .player_has_move(player_has_move),
+	  .pc_ships_zero(0),
+	  .pc_has_move(0),
+	  .player_ships_zero(0),
 	  .finished_placing(finished_placing),
 	  .ships_decided(ships_decided),
 	  .finished_setUp(finished_setUp),
@@ -204,6 +212,7 @@ module Battleship (
 	.player_ships_input_internal(player_ships_input_internal),
 	.colocation_ships_State(colocation_ships_State),
 	.decision_State(decision_State),
+	.player_turn_State(player_turn_State),
 	.vgaclk(vgaclk),
 	.hsync(hsync),
 	.vsync(vsync),
