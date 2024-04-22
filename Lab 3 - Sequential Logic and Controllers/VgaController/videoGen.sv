@@ -178,8 +178,10 @@ module videoGen(
             r = 8'h00; g = 8'h00; b = 8'h00; // Black line
         end else if (inrect_main) begin
             if (colocation_ships_State && rowIndex == i_actual && colIndex >= j_actual && colIndex < j_actual + player_ships_input_internal) begin
-                r = 8'hFF; g = 8'h8C; b = 8'h00; 
-            end else begin
+						r = 8'hFF; g = 8'h8C; b = 8'h00; 
+            end else if (player_turn_State && (colIndex == j_actual && rowIndex == i_actual) )  begin
+						r = 8'hFF; g = 8'h8C; b = 8'h00; 
+				end else begin
                 case (tablero_jugador_videoGen[rowIndex][colIndex])
                     AGUA: begin r = r_agua_tablero_jugador; g = g_agua_tablero_jugador; b = b_agua_tablero_jugador; end // Blue for water
                     BARCO: begin r = 8'h00; g = 8'hFF; b = 8'h00; end // Green for ships

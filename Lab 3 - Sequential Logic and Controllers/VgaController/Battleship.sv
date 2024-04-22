@@ -8,6 +8,9 @@ module Battleship (
 	input logic confirm_amount_button,
 	
 	input logic	confirm_colocation_button,
+	
+	input logic confirm_attack_player_to_pc,
+	
 	output logic placement_error,
 	
 	// Graphics --------------------------------------------------------
@@ -111,7 +114,7 @@ module Battleship (
 	FSMgame fsm(
 	  .clk(clk),
 	  .rst(rst),
-	  .player_has_move(player_has_move),
+	  .player_has_move(0),
 	  .pc_ships_zero(0),
 	  .pc_has_move(0),
 	  .player_ships_zero(0),
@@ -177,7 +180,9 @@ module Battleship (
 		  .finished_placing(finished_placing),
 		  .pc_actual_ship_amount(pc_actual_ship_amount),
 		  .finished_setUp(finished_setUp),
+		  .player_turn_State(player_turn_State),
         .tablero_jugador(tablero_jugador),
+		  .confirm_attack_player_to_pc(confirm_attack_player_to_pc),
         .tablero_pc(tablero_pc)
     );
 	
@@ -186,6 +191,7 @@ module Battleship (
 		.i_actual(i_actual), 
 		.j_actual(j_actual),
 		.colocation_ships_State(colocation_ships_State),
+		.player_turn_State(1),
 		.move_up(move_up), 
 		.move_down(move_down), 
 		.move_left(move_left), 
@@ -198,7 +204,7 @@ module Battleship (
 	);
 	
 	updateIndex updateIJ(
-		i_next, j_next, clk_ms, rst, colocation_ships_State, colocation_ships_State,
+		i_next, j_next, clk_ms, rst, colocation_ships_State, player_turn_State,
 		i_actual, j_actual
 	);
 	
