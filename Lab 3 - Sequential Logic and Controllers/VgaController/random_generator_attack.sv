@@ -1,4 +1,4 @@
-module random_generator(
+module random_generator_attack(
     input clk,
     input rst,
     input [2:0] player_ships_input_internal,

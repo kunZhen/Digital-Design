@@ -41,8 +41,11 @@ module Battleship (
 	// Coordenadas actuales del jugador en el tablero
 	logic [2:0] i_actual, j_actual; 
 	
-	reg [2:0] i_random;
-   reg [2:0] j_random;
+	reg [2:0] i_random_setup;
+   reg [2:0] j_random_setup;
+	
+	reg [2:0] i_random_attack;
+   reg [2:0] j_random_attack;
 	
 	// Coordenadas siguientes del jugador en el tablero
 	logic [2:0] i_next, j_next; 
@@ -153,8 +156,16 @@ module Battleship (
         .clk(clk),
         .rst(rst),
         .player_ships_input_internal(player_ships_input_internal),  // Ejemplo de semilla inicial
-        .i_random(i_random),
-        .j_random(j_random)
+        .i_random(i_random_setup),
+        .j_random(j_random_setup)
+    );
+	
+	random_generator_attack my_random_generator_attack(
+        .clk(clk),
+        .rst(rst),
+        .player_ships_input_internal(player_ships_input_internal),  // Ejemplo de semilla inicial
+        .i_random(i_random_attack),
+        .j_random(j_random_attack)
     );
 	
 	// Instancia del módulo tablero
@@ -163,8 +174,10 @@ module Battleship (
         .rst(rst),
 		  .i_actual(i_actual),
 		  .j_actual(j_actual),
-		  .i_random(i_random),
-		  .j_random(j_random),
+		  .i_random_setup(i_random_setup),
+		  .j_random_setup(j_random_setup),
+		  .i_random_attack(i_random_attack),
+		  .j_random_attack(j_random_attack),
 		  .decision_State(decision_State),
 		  .colocation_ships_State(colocation_ships_State),
 		  .setup_State(setup_State),
