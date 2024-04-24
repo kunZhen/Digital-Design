@@ -196,7 +196,9 @@ module Battleship (
 		  .pc_turn_State(pc_turn_State),
 		  .pc_has_move(pc_has_move),
 		  .player_ships_zero(player_ships_zero),
-        .tablero_pc(tablero_pc)
+        .tablero_pc(tablero_pc),
+		  .is_victory_State(is_victory_State),
+		  .is_defeat_State(is_defeat_State)
     );
 	
 	

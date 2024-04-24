@@ -25,7 +25,10 @@ module tablero(
 	 output logic pc_has_move,
 	 output logic player_ships_zero,
     output reg [1:0] tablero_jugador[5][5],
-    output reg [1:0] tablero_pc[5][5]
+    output reg [1:0] tablero_pc[5][5],
+	 
+	 input logic is_victory_State,
+	 input logic is_defeat_State
 );
 
     localparam AGUA = 2'b00;
@@ -81,6 +84,7 @@ module tablero(
 				
 					if (pc_actual_ship_amount == 1) begin 
 							pc_ships_zero = 1;
+							fill_green_victory();
 						end
 
             player_has_move <= 1;
@@ -102,6 +106,7 @@ module tablero(
             
 				
 					if (player_actual_ship_amount == 1) begin 
+								fill_red_defeat();
 								player_ships_zero = 1;
 							end
 				
@@ -113,12 +118,33 @@ module tablero(
 				
             tablero_jugador[i_random_interna_attack][j_random_interna_attack] = ATACA_AGUA;
             pc_has_move <= 1;
-        end 
+        end else if (is_victory_State) begin
+				fill_green_victory();
+		  end else if (is_defeat_State) begin 
+				fill_red_defeat();
+		  end
     end
 end
 
 
-
+	task fill_green_victory;
+		for (int i = 0; i < 5; i++) begin
+            for (int j = 0; j < 5; j++) begin
+                tablero_jugador[i][j] <= BARCO;
+                tablero_pc[i][j] <= BARCO;
+            end
+      end
+    endtask
+	 
+	 task fill_red_defeat;
+		for (int i = 0; i < 5; i++) begin
+            for (int j = 0; j < 5; j++) begin
+                tablero_jugador[i][j] <= ATACA_BARCO;
+                tablero_pc[i][j] <= ATACA_BARCO;
+            end
+      end
+    endtask
+		
 	 
     // Tarea para llenar los tableros con agua
     task fill_with_water;
