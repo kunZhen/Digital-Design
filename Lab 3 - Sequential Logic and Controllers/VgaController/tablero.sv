@@ -46,6 +46,25 @@ module tablero(
 	 reg [2:0] i_random_interna_attack;
 	 reg [2:0] j_random_interna_attack;
 	 
+	 	task fill_green_victory;
+		for (int i = 0; i < 5; i++) begin
+            for (int j = 0; j < 5; j++) begin
+                tablero_jugador[i][j] <= BARCO;
+                tablero_pc[i][j] <= BARCO;
+            end
+      end
+    endtask
+	 
+	 task fill_red_defeat;
+		for (int i = 0; i < 5; i++) begin
+            for (int j = 0; j < 5; j++) begin
+                tablero_jugador[i][j] <= ATACA_BARCO;
+                tablero_pc[i][j] <= ATACA_BARCO;
+            end
+      end
+    endtask
+	 
+	 
 	always_ff @(negedge clk or negedge rst) begin
 		 if (!rst) begin
 			  fill_with_water();
@@ -127,23 +146,7 @@ module tablero(
 end
 
 
-	task fill_green_victory;
-		for (int i = 0; i < 5; i++) begin
-            for (int j = 0; j < 5; j++) begin
-                tablero_jugador[i][j] <= BARCO;
-                tablero_pc[i][j] <= BARCO;
-            end
-      end
-    endtask
-	 
-	 task fill_red_defeat;
-		for (int i = 0; i < 5; i++) begin
-            for (int j = 0; j < 5; j++) begin
-                tablero_jugador[i][j] <= ATACA_BARCO;
-                tablero_pc[i][j] <= ATACA_BARCO;
-            end
-      end
-    endtask
+
 		
 	 
     // Tarea para llenar los tableros con agua
