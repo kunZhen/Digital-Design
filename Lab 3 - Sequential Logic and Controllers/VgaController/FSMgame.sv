@@ -95,9 +95,9 @@ module FSMgame (
       end
 		
       PLAYER_TURN: begin
-         /*   if (pc_ships_zero)
+            if (pc_ships_zero)
                 next_state_reg = VICTORY;
-            else */if (player_has_move)
+            else if (player_has_move)
                 next_state_reg = PC_TURN;
             /*else if (timer_expired)
                 next_state_reg = PC_TURN;*/
@@ -107,9 +107,9 @@ module FSMgame (
 		
 		
 		PC_TURN: begin
-            /*if (player_ships_zero) begin
+            if (player_ships_zero) begin
                 next_state_reg = DEFEAT;
-            end else */if (pc_has_move) begin
+            end else if (pc_has_move) begin
                 next_state_reg = PLAYER_TURN;
             end else begin
                 next_state_reg = PC_TURN; // Stay in PC_TURN if no move has been confirmed

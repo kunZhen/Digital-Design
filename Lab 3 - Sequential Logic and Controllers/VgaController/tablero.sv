@@ -42,18 +42,20 @@ module tablero(
 
 	 reg [2:0] i_random_interna_attack;
 	 reg [2:0] j_random_interna_attack;
-always_ff @(negedge clk or negedge rst) begin
-    if (!rst) begin
-        fill_with_water();
-        player_actual_ship_amount <= 0;
-        pc_actual_ship_amount <= 0;
-        finished_placing <= 0;
-        confirm_colocation_button_prev <= 1'b0;
-        finished_setUp <= 0;
-        confirm_attack_player_to_pc_prev <= 0;
-        pc_ships_zero <= 0;
-        player_has_move <= 0;
-        pc_has_move <= 0;
+	 
+	always_ff @(negedge clk or negedge rst) begin
+		 if (!rst) begin
+			  fill_with_water();
+			  player_actual_ship_amount <= 0;
+			  pc_actual_ship_amount <= 0;
+			  finished_placing <= 0;
+			  confirm_colocation_button_prev <= 1'b0;
+			  finished_setUp <= 0;
+			  confirm_attack_player_to_pc_prev <= 0;
+			  pc_ships_zero <= 0;
+			  player_ships_zero <= 0;
+			  player_has_move <= 0;
+			  pc_has_move <= 0;
     end else begin
         confirm_colocation_button_prev <= confirm_colocation_button;
         confirm_attack_player_to_pc_prev <= confirm_attack_player_to_pc;
@@ -76,6 +78,10 @@ always_ff @(negedge clk or negedge rst) begin
             j_random_interna_attack = j_random_attack;
             tablero_pc[i_actual][j_actual] = ATACA_BARCO;
             pc_actual_ship_amount <= pc_actual_ship_amount - 1;
+				
+					if (pc_actual_ship_amount == 1) begin 
+							pc_ships_zero = 1;
+						end
 
             player_has_move <= 1;
         end else if (player_turn_State && !confirm_attack_player_to_pc && confirm_attack_player_to_pc_prev && tablero_pc[i_actual][j_actual] == AGUA) begin
@@ -87,15 +93,25 @@ always_ff @(negedge clk or negedge rst) begin
             player_has_move <= 1;
         end else if (pc_turn_State && tablero_jugador[i_random_attack][j_random_attack] == BARCO) begin
             player_has_move <= 0;
+				i_random_interna_attack = i_random_attack;
+            j_random_interna_attack = j_random_attack;
 
-				tablero_jugador[i_random_attack][j_random_attack] = ATACA_BARCO;
+				tablero_jugador[i_random_interna_attack][j_random_interna_attack] = ATACA_BARCO;
 
             player_actual_ship_amount <= player_actual_ship_amount - 1;
-            pc_has_move <= 1;
-
+            
+				
+					if (player_actual_ship_amount == 1) begin 
+								player_ships_zero = 1;
+							end
+				
+				pc_has_move <= 1;
         end else if (pc_turn_State && tablero_jugador[i_random_attack][j_random_attack] == AGUA) begin
 		      player_has_move <= 0;
-            tablero_jugador[i_random_attack][j_random_attack] = ATACA_AGUA;
+				i_random_interna_attack = i_random_attack;
+            j_random_interna_attack = j_random_attack;
+				
+            tablero_jugador[i_random_interna_attack][j_random_interna_attack] = ATACA_AGUA;
             pc_has_move <= 1;
         end 
     end
